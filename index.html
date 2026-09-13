@@ -1,129 +1,163 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<title>MediaBay® — From Street to Screen</title>
-<meta name="description" content="MediaBay — Real worlds. Digital impact. Explore Cagliari.">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>MediaBay® — Explore</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#090909;font-family:Inter,Arial,sans-serif;color:#fff;touch-action:none}
-#world{position:fixed;inset:0;overflow:hidden;background:#090909}
-#photo{position:absolute;width:max(100vw,177.78vh);height:max(56.25vw,100vh);max-width:none;object-fit:cover;left:50%;top:50%;transform:translate3d(-50%,-50%,0) scale(1.08);will-change:transform;user-select:none;-webkit-user-drag:none}
-#shade{position:absolute;inset:0;background:linear-gradient(180deg,#0008 0%,transparent 18%,transparent 67%,#0008 100%);pointer-events:none}
-.ui{position:fixed;inset:0;pointer-events:none}
-.nav{position:absolute;left:0;right:0;top:0;padding:24px 3.5vw;display:flex;align-items:center;gap:42px}
-.logo{font-weight:950;font-size:21px;letter-spacing:-.07em;text-shadow:0 2px 15px #000}
-.links{display:flex;gap:30px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-left:auto}
-.links a{color:#fff;text-decoration:none;pointer-events:auto}
-.contact{border:1px solid #fff9;border-radius:30px;padding:11px 17px}
-.hero{position:absolute;left:50%;bottom:11%;transform:translateX(-50%);text-align:center;width:min(700px,90vw);text-shadow:0 4px 30px #000}
-.kicker{font-size:10px;letter-spacing:.22em;color:#d9ff45;text-transform:uppercase;margin-bottom:12px}
-h1{font-size:clamp(45px,7vw,86px);line-height:.82;letter-spacing:-.065em;margin:0;text-transform:uppercase}
-.hero p{font-size:14px;line-height:1.45;margin:15px auto 0;max-width:540px;color:#eee}
-.drag{margin-top:19px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#ddd}
-.hotspot{position:absolute;pointer-events:auto;border:0;background:transparent;color:#fff;text-align:left;cursor:pointer;text-shadow:0 2px 12px #000;transition:transform .2s}
-.dot{width:31px;height:31px;border:2px solid #d9ff45;border-radius:50%;display:grid;place-items:center;background:#080808aa;box-shadow:0 0 0 5px #d9ff4520}
-.dot i{width:7px;height:7px;border-radius:50%;background:#d9ff45}
-.label{margin-top:7px;background:#050505cc;border:1px solid #fff5;padding:9px 12px;backdrop-filter:blur(7px);min-width:170px}
-.label b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase}.label span{display:block;font-size:10px;color:#bbb;margin-top:4px}
-.hotspot:hover{transform:scale(1.04)}
-#bike{left:5%;top:61%}#campaign{left:32%;top:49%}#digital{right:25%;top:43%}#ai{right:5%;top:50%}
-#cagliari{left:51%;top:29%}
-.panel{position:absolute;right:3.5vw;top:50%;transform:translateY(-50%) translateX(30px);width:min(390px,88vw);padding:29px;background:#080909ed;border:1px solid #fff4;box-shadow:0 25px 80px #000;opacity:0;visibility:hidden;transition:.35s;pointer-events:auto}
-.panel.open{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0)}
-.close{float:right;background:none;border:0;color:#fff;font-size:24px;cursor:pointer}.tag{color:#d9ff45;font-size:9px;letter-spacing:.2em;text-transform:uppercase}.title{font-size:39px;line-height:.9;letter-spacing:-.05em;margin:14px 0}.desc{color:#bbb;font-size:13px;line-height:1.6}.cta{display:inline-block;margin-top:18px;padding:12px 16px;background:#fff;color:#000;text-decoration:none;font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
-.bottom{position:absolute;left:3.5vw;right:3.5vw;bottom:20px;display:flex;justify-content:space-between;align-items:end;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#eee}
-.bottom nav{display:flex;gap:25px}.bottom nav a{pointer-events:auto;color:#fff;text-decoration:none}
-.scrollline{width:100px;height:1px;background:#fff8;margin-bottom:5px}
-#loading{position:fixed;inset:0;background:#080909;z-index:20;display:grid;place-items:center;transition:opacity .7s}.load{text-align:center;font-size:10px;letter-spacing:.25em;text-transform:uppercase}.bar{width:160px;height:1px;background:#333;margin-top:18px}.bar i{display:block;width:0;height:100%;background:#fff;transition:width .8s}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080909}
+body{font-family:Arial,Helvetica,sans-serif;touch-action:none}
+#viewport{position:fixed;inset:0;overflow:hidden;background:#080909;cursor:grab}
+#viewport.dragging{cursor:grabbing}
+#world{position:absolute;left:0;top:0;width:100vw;height:100vh;transform-origin:0 0;will-change:transform}
+#world img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
+#veil{position:absolute;inset:0;background:linear-gradient(180deg,#0004 0%,transparent 16%,transparent 82%,#0005 100%);pointer-events:none}
+#brand{position:fixed;z-index:10;top:20px;left:24px;color:#fff;font-weight:900;letter-spacing:-.07em;font-size:20px;text-shadow:0 2px 14px #000;pointer-events:none}
+#hint{position:fixed;z-index:10;left:50%;bottom:20px;transform:translateX(-50%);color:#fff;font-size:9px;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 2px 12px #000;white-space:nowrap;pointer-events:none;opacity:.85}
+.hot{position:absolute;z-index:5;transform:translate(-50%,-50%);border:0;background:none;padding:0;color:#fff;display:block;pointer-events:auto;cursor:pointer}
+.pin{width:28px;height:28px;border:2px solid #d9ff45;border-radius:50%;background:#070707aa;display:grid;place-items:center;box-shadow:0 0 0 5px #d9ff4520,0 4px 20px #0008}
+.pin:after{content:"";width:7px;height:7px;border-radius:50%;background:#d9ff45}
+.caption{margin-top:8px;min-width:155px;text-align:left;padding:9px 11px;background:#050505dd;border:1px solid #fff4;backdrop-filter:blur(8px);text-shadow:none}
+.caption strong{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.caption span{display:block;font-size:9px;color:#aaa;margin-top:4px}
+#bike{left:14%;top:72%}#campaign{left:36%;top:55%}#digital{left:69%;top:50%}#ai{left:88%;top:54%}#origin{left:53%;top:27%}
+#panel{position:fixed;z-index:20;right:24px;top:50%;transform:translateY(-50%) translateX(25px);width:min(370px,86vw);padding:28px;background:#070808ed;border:1px solid #fff3;color:#fff;box-shadow:0 30px 90px #000;opacity:0;visibility:hidden;transition:.3s;pointer-events:auto}
+#panel.open{opacity:1;visibility:visible;transform:translateY(-50%)}
+#close{float:right;border:0;background:none;color:#fff;font-size:24px}
+.tag{font-size:9px;letter-spacing:.2em;color:#d9ff45;text-transform:uppercase}.title{font-size:38px;line-height:.9;letter-spacing:-.05em;margin:14px 0}.desc{font-size:13px;line-height:1.55;color:#bbb}
+#loading{position:fixed;inset:0;background:#080909;z-index:30;display:grid;place-items:center;transition:opacity .6s}.loadingText{color:#fff;font-size:10px;letter-spacing:.24em;text-transform:uppercase}.line{height:1px;width:150px;background:#333;margin:17px auto}.line i{display:block;height:100%;width:0;background:#fff}
 @media(max-width:700px){
- .nav{padding:18px 5vw}.links{display:none}.logo{font-size:19px}
- .hero{bottom:10%}.hero p{font-size:12px;max-width:370px}.drag{font-size:7px}
- .hotspot{transform:scale(.82);transform-origin:top left}.hotspot:hover{transform:scale(.82)}
- #bike{left:2%;top:58%}#campaign{left:27%;top:48%}#digital{right:15%;top:42%}#ai{right:-1%;top:48%}#cagliari{left:45%;top:27%}
- .label{min-width:145px}.bottom{bottom:14px}.bottom nav{gap:12px}.bottom nav a:nth-child(n+3){display:none}
- .panel{right:5vw;left:5vw;width:auto}
+ #brand{left:18px;top:17px;font-size:18px}.hot{transform:translate(-50%,-50%) scale(.78)}#hint{bottom:15px;font-size:7px}
+ #panel{left:5vw;right:5vw;width:auto}.caption{min-width:150px}
 }
 </style>
 </head>
 <body>
-<div id="world">
-  <img id="photo" src="cagliari-home.png" alt="Cagliari — MediaBay interactive home">
-  <div id="shade"></div>
+<div id="viewport">
+  <div id="world">
+    <img src="cagliari-world.jpg" alt="">
+    <div id="veil"></div>
+
+    <!-- Hotspots are part of the interactive world and move with the image. -->
+    <button class="hot" id="bike"><span class="pin"></span><span class="caption"><strong>MediaBike</strong><span>Street Media · Mobility</span></span></button>
+    <button class="hot" id="campaign"><span class="pin"></span><span class="caption"><strong>Campaign Square</strong><span>Activation · Experiences</span></span></button>
+    <button class="hot" id="digital"><span class="pin"></span><span class="caption"><strong>Digital District</strong><span>Web · Commerce · Growth</span></span></button>
+    <button class="hot" id="ai"><span class="pin"></span><span class="caption"><strong>AI Lab</strong><span>Automation · Intelligence</span></span></button>
+    <button class="hot" id="origin"><span class="pin"></span><span class="caption"><strong>Cagliari</strong><span>Our home · A global stage</span></span></button>
+  </div>
 </div>
-<div class="ui">
-  <header class="nav">
-    <div class="logo">MEDIABAY®</div>
-    <nav class="links">
-      <a href="#real">Real World</a><a href="#digital">Digital</a><a href="#campaigns">Campaigns</a><a href="#ai">AI</a>
-      <a class="contact" href="mailto:hello@mediabay.it">Contact →</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <div class="kicker">Cagliari · Sardinia · Since 2013</div>
-    <h1>From Street<br>To Screen.</h1>
-    <p>We connect real-world presence, digital experiences, content and intelligence to make brands move.</p>
-    <div class="drag">← Drag to explore Cagliari →</div>
-  </section>
+<div id="brand">MEDIABAY®</div>
+<div id="hint">Trascina per esplorare · Pinch per zoomare · Tocca un punto</div>
 
-  <button class="hotspot" id="bike" data-key="real">
-    <div class="dot"><i></i></div><div class="label"><b>MediaBike</b><span>Street Media · Mobility</span></div>
-  </button>
-  <button class="hotspot" id="campaign" data-key="campaign">
-    <div class="dot"><i></i></div><div class="label"><b>Campaign Square</b><span>Activation · Content · Experiences</span></div>
-  </button>
-  <button class="hotspot" id="digital" data-key="digital">
-    <div class="dot"><i></i></div><div class="label"><b>Digital District</b><span>Web · Commerce · Growth</span></div>
-  </button>
-  <button class="hotspot" id="ai" data-key="ai">
-    <div class="dot"><i></i></div><div class="label"><b>AI Lab</b><span>Automation · Intelligence</span></div>
-  </button>
-  <button class="hotspot" id="cagliari" data-key="cagliari">
-    <div class="dot"><i></i></div><div class="label"><b>Cagliari</b><span>Our home · A global stage</span></div>
-  </button>
-
-  <aside class="panel" id="panel">
-    <button class="close" id="close">×</button>
-    <div class="tag" id="tag"></div><div class="title" id="title"></div><div class="desc" id="desc"></div>
-    <a class="cta" href="mailto:hello@mediabay.it">Start a project ↗</a>
-  </aside>
-
-  <footer class="bottom">
-    <nav><a href="#real">REAL WORLD</a><a href="#digital">DIGITAL</a><a href="#campaigns">CAMPAIGNS</a><a href="#ai">AI</a></nav>
-    <div><div class="scrollline"></div>Explore</div>
-  </footer>
+<div id="panel">
+  <button id="close">×</button>
+  <div class="tag" id="tag"></div>
+  <div class="title" id="title"></div>
+  <div class="desc" id="desc"></div>
 </div>
-<div id="loading"><div><div class="load">MediaBay · Cagliari</div><div class="bar"><i id="bar"></i></div></div></div>
+
+<div id="loading"><div><div class="loadingText">Entering Cagliari</div><div class="line"><i id="bar"></i></div></div></div>
 
 <script>
+const viewport=document.getElementById('viewport'), world=document.getElementById('world');
 const data={
- real:['02 / REAL WORLD','Mobility & Street Media','Media in motion. Portiamo i brand nello spazio reale e trasformiamo l’attenzione fisica in contenuto e distribuzione digitale.'],
- campaign:['03 / MOVE','Phygital Campaigns','Il servizio flagship: activation, guerrilla marketing, mobility e creatività progettate insieme al sistema digitale.'],
- digital:['01 / DIGITAL','Web & Commerce','Siti, landing page, e-commerce ed esperienze digitali premium costruite per comunicare valore e convertire.'],
- ai:['04 / INTELLIGENCE','AI & Automation','Automazioni e strumenti intelligenti per rendere marketing e operazioni più semplici, scalabili e accessibili.'],
- cagliari:['MEDIA BAY / ORIGIN','Cagliari','Dalla Sardegna al mondo. Una città reale come punto di partenza per idee, media e brand experience.']
+ bike:['02 / REAL WORLD','MediaBike','Street media, mobility e attivazioni nel mondo reale, trasformate in contenuto e impatto digitale.'],
+ campaign:['03 / MOVE','Phygital Campaigns','Il servizio flagship MediaBay: activation, guerrilla marketing, mobility e creatività connesse al digitale.'],
+ digital:['01 / DIGITAL','Digital District','Web, commerce, content e digital experiences progettate per comunicare valore e convertire.'],
+ ai:['04 / INTELLIGENCE','AI Lab','AI e automazione per rendere marketing e operazioni più semplici, intelligenti e scalabili.'],
+ origin:['MEDIA BAY / ORIGIN','Cagliari','Il nostro punto di partenza: una città reale, mediterranea e aperta al mondo.']
 };
 const panel=document.getElementById('panel');
-document.querySelectorAll('.hotspot').forEach(el=>el.addEventListener('click',()=>{
- const d=data[el.dataset.key];document.getElementById('tag').textContent=d[0];document.getElementById('title').textContent=d[1];document.getElementById('desc').textContent=d[2];panel.classList.add('open');
+document.querySelectorAll('.hot').forEach(b=>b.addEventListener('click',e=>{
+ e.stopPropagation(); const d=data[b.id];
+ document.getElementById('tag').textContent=d[0];
+ document.getElementById('title').textContent=d[1];
+ document.getElementById('desc').textContent=d[2];
+ panel.classList.add('open');
 }));
 document.getElementById('close').onclick=()=>panel.classList.remove('open');
 
-// Smooth image exploration: the finger/mouse directly controls the view, with inertial easing.
-const img=document.getElementById('photo');
-let targetX=0,currentX=0,drag=false,lastX=0,velocity=0;
-function setX(x){targetX=Math.max(-12,Math.min(12,x))}
-window.addEventListener('pointerdown',e=>{if(e.target.closest('.hotspot,.panel,.nav'))return;drag=true;lastX=e.clientX;velocity=0});
-window.addEventListener('pointermove',e=>{
- if(!drag)return;const dx=e.clientX-lastX;lastX=e.clientX;setX(targetX+dx*.055);velocity=dx*.055;
+// The image is a virtual world: drag pans it continuously; pinch/wheel zooms toward the gesture.
+// On mobile, two-finger pinch works natively through Pointer Events.
+let scale=1.0, tx=0, ty=0, targetScale=1, targetTx=0, targetTy=0;
+let dragging=false,lastX=0,lastY=0;
+let pointers=new Map(), pinchStartDist=0,pinchStartScale=1,pinchStartCenter={x:0,y:0};
+const minScale=1,maxScale=3.2;
+
+function bounds(s){
+ const vw=innerWidth,vh=innerHeight;
+ // image is 16:9 and fills the viewport with cover.
+ const base=Math.max(vw/(16/9),vh);
+ const w=base*(16/9),h=base;
+ return {
+  minX:vw-w*s, maxX:0,
+  minY:vh-h*s, maxY:0
+ };
+}
+function clamp(){
+ const b=bounds(targetScale);
+ targetTx=Math.max(b.minX,Math.min(b.maxX,targetTx));
+ targetTy=Math.max(b.minY,Math.min(b.maxY,targetTy));
+}
+function render(){
+ scale+=(targetScale-scale)*.16;
+ tx+=(targetTx-tx)*.16;
+ ty+=(targetTy-ty)*.16;
+ const vw=innerWidth,vh=innerHeight;
+ const base=Math.max(vw/(16/9),vh);
+ const w=base*(16/9),h=base;
+ world.style.width=w+'px';world.style.height=h+'px';
+ world.style.transform=`translate3d(${tx}px,${ty}px,0) scale(${scale})`;
+ requestAnimationFrame(render);
+}
+function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+function center(a,b){return{x:(a.x+b.x)/2,y:(a.y+b.y)/2}}
+function zoomAt(factor,cx,cy){
+ const old=targetScale,newScale=Math.max(minScale,Math.min(maxScale,old*factor));
+ if(newScale===old)return;
+ // Keep the point under the fingers/mouse stationary.
+ targetTx=cx-(cx-targetTx)*(newScale/old);
+ targetTy=cy-(cy-targetTy)*(newScale/old);
+ targetScale=newScale;clamp();
+}
+viewport.addEventListener('pointerdown',e=>{
+ if(e.target.closest('.hot,#panel'))return;
+ pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(pointers.size===1){dragging=true;lastX=e.clientX;lastY=e.clientY;viewport.classList.add('dragging')}
+ if(pointers.size===2){
+  const a=[...pointers.values()];pinchStartDist=dist(a[0],a[1]);pinchStartScale=targetScale;pinchStartCenter=center(a[0],a[1]);
+ }
 });
-window.addEventListener('pointerup',()=>{drag=false});
-function animate(){currentX+=(targetX-currentX)*.12; if(!drag){targetX+=velocity;velocity*=.92;setX(targetX)} img.style.transform=`translate3d(calc(-50% + ${currentX}vw),-50%,0) scale(1.08)`;requestAnimationFrame(animate)}
-animate();
+viewport.addEventListener('pointermove',e=>{
+ if(!pointers.has(e.pointerId))return;
+ pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(pointers.size===2){
+  const a=[...pointers.values()],d=dist(a[0],a[1]),c=center(a[0],a[1]);
+  const ns=Math.max(minScale,Math.min(maxScale,pinchStartScale*(d/pinchStartDist)));
+  targetTx=c.x-(pinchStartCenter.x-targetTx)*(ns/pinchStartScale);
+  targetTy=c.y-(pinchStartCenter.y-targetTy)*(ns/pinchStartScale);
+  targetScale=ns;clamp();
+ }else if(pointers.size===1&&dragging){
+  const dx=e.clientX-lastX,dy=e.clientY-lastY;lastX=e.clientX;lastY=e.clientY;
+  targetTx+=dx;targetTy+=dy;clamp();
+ }
+});
+function endPointer(e){
+ pointers.delete(e.pointerId);
+ if(pointers.size===0){dragging=false;viewport.classList.remove('dragging')}
+}
+viewport.addEventListener('pointerup',endPointer);viewport.addEventListener('pointercancel',endPointer);
+viewport.addEventListener('wheel',e=>{
+ e.preventDefault();zoomAt(Math.exp(-e.deltaY*.001),e.clientX,e.clientY);
+},{passive:false});
+
+function resize(){clamp()}
+addEventListener('resize',resize);
 
 for(let i=0;i<=100;i++)setTimeout(()=>document.getElementById('bar').style.width=i+'%',i*5);
 setTimeout(()=>{const l=document.getElementById('loading');l.style.opacity=0;setTimeout(()=>l.remove(),700)},800);
+render();
 </script>
 </body>
 </html>
