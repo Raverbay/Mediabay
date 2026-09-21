@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>MediaBay — Business Brief</title>
+<meta content="noindex,nofollow,noarchive" name="robots"/>
+<style>
+:root{--g:#b7ff18;--g2:#8bcf61;--b:#e9e2d3;--d:#10110f;--line:#10110f2e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--b);color:var(--d);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}a{color:inherit}
+.site-header{position:fixed;z-index:9000;left:0;top:0;width:100%;height:76px;padding:0 30px;display:flex;align-items:center;justify-content:space-between;color:#fff;border-bottom:1px solid #ffffff30;mix-blend-mode:difference}
+.lang{display:flex;gap:10px;font-size:10px;letter-spacing:.18em}.lang button{border:0;background:transparent;color:inherit;padding:0;font:inherit;font-size:inherit;letter-spacing:inherit;cursor:pointer;opacity:.5}.lang button.active{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.header-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:31px;height:34px;object-fit:contain}.menu-btn{border:0;background:none;color:inherit;padding:0;width:30px;height:20px;cursor:pointer;position:relative;z-index:10001}.menu-icon{width:30px;height:17px;position:relative;display:block}.menu-icon i{position:absolute;left:0;width:100%;height:1px;background:currentColor;transition:transform .35s,top .35s}.menu-icon i:first-child{top:4px}.menu-icon i:last-child{top:13px}.menu-btn.open .menu-icon i:first-child{top:8px;transform:rotate(45deg)}.menu-btn.open .menu-icon i:last-child{top:8px;transform:rotate(-45deg)}
+.site-menu{position:fixed;z-index:8999;inset:0;background:var(--g);color:var(--d);padding:105px 5vw 28px;display:flex;flex-direction:column;transform:translateY(-101%);transition:transform .65s cubic-bezier(.77,0,.18,1)}.site-menu.open{transform:translateY(0)}.menu-info,.menu-foot{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.17em;text-transform:uppercase}.site-menu nav{margin:auto 0}.site-menu nav a{display:grid;grid-template-columns:55px 1fr;text-decoration:none;color:inherit;font-size:clamp(52px,9.5vw,145px);line-height:.84;letter-spacing:-.08em;font-weight:800;border-bottom:1px solid #18231840;padding:5px 0}.site-menu nav span{font-size:10px;letter-spacing:.1em;font-weight:400}
+@media(max-width:700px){.site-menu{padding:82px 18px 20px}.menu-info,.menu-foot{font-size:7px}.site-menu nav a{grid-template-columns:32px 1fr;font-size:15.2vw;padding:7px 0}.site-menu nav span{font-size:8px}}
+.hero{min-height:100svh;background:var(--g);padding:150px 5.5vw 70px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.kicker,.section-meta,.field label,.smallcaps{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.hero-top{display:flex;justify-content:space-between;gap:30px}.hero-top span:last-child{text-align:right}
+.hero h1{font-size:clamp(58px,10.5vw,160px);line-height:.82;letter-spacing:-.085em;margin:10vh 0 7vh;max-width:1050px}
+.hero h1 em{font-style:normal;display:block;margin-left:9vw}
+.hero p{font-size:clamp(18px,2.2vw,27px);line-height:1.35;max-width:700px;margin:0}
+.hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:70px}.count{font-size:10px;letter-spacing:.2em}.arrow{font-size:28px}
+.intro{background:var(--b);padding:110px 5.5vw 90px}.intro-grid{display:grid;grid-template-columns:1fr 2fr;gap:7vw}.intro h2{font-size:clamp(38px,6vw,82px);line-height:.9;letter-spacing:-.07em;margin:0}.intro-copy{font-size:clamp(19px,2.3vw,29px);line-height:1.35;max-width:760px}.intro-copy p{margin:0 0 25px}.intro-copy strong{font-weight:700}
+form{background:var(--b);padding:0 5.5vw 110px}
+fieldset{border:0;border-top:1px solid var(--d);padding:58px 0 70px;margin:0}
+.legend{display:flex;justify-content:space-between;gap:30px;margin-bottom:48px}.section-title{font-size:clamp(32px,5vw,72px);font-weight:800;line-height:.88;letter-spacing:-.07em;max-width:850px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:35px 55px}.full{grid-column:1/-1}.field label{display:block;margin-bottom:12px;color:#55584f}.field input,.field textarea,.field select{width:100%;border:0;border-bottom:1px solid #10110f66;background:transparent;color:var(--d);padding:14px 0 13px;font:inherit;font-size:17px;outline:none;border-radius:0}.field input:focus,.field textarea:focus,.field select:focus{border-bottom-color:var(--d)}textarea{min-height:125px;resize:vertical}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}.choice{position:relative;border-bottom:1px solid var(--line);padding:20px 12px 20px 0;display:flex;align-items:center;gap:12px;font-size:16px}.choice input{accent-color:var(--d);width:17px;height:17px}
+.upload{border:1px dashed #10110f66;padding:32px;margin-top:8px}.upload input{width:100%;font:inherit}.hint{font-size:12px;line-height:1.5;color:#686b62;margin-top:12px}
+.submit{background:var(--g);margin:0 -5.5vw;padding:85px 5.5vw;display:flex;justify-content:space-between;align-items:end;gap:50px}.submit-copy{max-width:600px}.submit-copy .smallcaps{margin-bottom:22px}.submit-copy h2{font-size:clamp(45px,7vw,100px);line-height:.85;letter-spacing:-.075em;margin:0}.submit-copy p{font-size:15px;line-height:1.5;max-width:530px;margin:28px 0 0}.submit button{border:1px solid var(--d);background:var(--d);color:var(--g);font:inherit;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:23px 30px;min-width:225px;cursor:pointer}.submit button:hover{background:transparent;color:var(--d)}
+.success{display:none;background:var(--g);min-height:100svh;padding:150px 5.5vw 80px}.success .smallcaps{margin-bottom:25px}.success h1{font-size:clamp(65px,12vw,180px);line-height:.8;letter-spacing:-.09em;margin:0 0 40px}.success p{font-size:clamp(20px,2.5vw,30px);line-height:1.35;max-width:650px}.success a{display:inline-block;margin-top:35px;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+@media(max-width:700px){
+.site-header{height:64px;padding:0 20px}.header-logo{width:29px;height:32px}.hero{padding:115px 6vw 40px;min-height:100svh}.hero-top{font-size:9px}.hero h1{font-size:16.5vw;line-height:.83;margin:18vh 0 11vh}.hero h1 em{margin-left:8vw}.hero p{font-size:18px;line-height:1.42}.hero-bottom{margin-top:55px}.intro{padding:72px 6vw 65px}.intro-grid{display:block}.intro h2{font-size:15vw;margin-bottom:45px}.intro-copy{font-size:19px}.grid{grid-template-columns:1fr;gap:30px}.full{grid-column:auto}.choice-grid{grid-template-columns:1fr}.legend{display:block;margin-bottom:35px}.section-title{font-size:12vw;margin-top:12px}form{padding:0 6vw 75px}fieldset{padding:45px 0 55px}.submit{margin:0 -6vw;padding:60px 6vw;display:block}.submit-copy h2{font-size:15vw}.submit button{width:100%;margin-top:35px}.success{padding:115px 6vw 60px}.success h1{font-size:18vw}
+}
+</style>
+<style id="mediabay-success-final">
+.success{
+  display:none;
+  min-height:100svh;
+  background:#b7ff18;
+  color:#10110f;
+  padding:76px 5.5vw 32px;
+  position:relative;
+  overflow:hidden;
+  flex-direction:column;
+}
+.success:after{
+  content:"";
+  position:absolute;
+  width:42vw;height:42vw;
+  border:1px solid rgba(16,17,15,.12);
+  right:-15vw;bottom:-20vw;
+  transform:rotate(45deg);
+  pointer-events:none;
+}
+.success-top,.success-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  position:relative;
+  z-index:1;
+}
+.success-top{
+  border-bottom:1px solid rgba(16,17,15,.28);
+  padding:24px 0 20px;
+}
+.success-center{
+  position:relative;
+  z-index:1;
+  margin:auto 0;
+  max-width:1050px;
+}
+.success-kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:28px}
+.success h1{
+  font-size:clamp(76px,13vw,190px);
+  line-height:.76;
+  letter-spacing:-.09em;
+  margin:0 0 45px;
+  font-weight:800;
+}
+.success h1 em{font-style:normal;margin-left:9vw}
+.success p{
+  font-size:clamp(19px,2.3vw,29px);
+  line-height:1.32;
+  max-width:650px;
+  margin:0 0 15px;
+}
+.success-back{
+  display:inline-block;
+  margin-top:35px;
+  color:#10110f;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:1px solid #10110f;
+  padding-bottom:5px;
+}
+.success-bottom{
+  border-top:1px solid rgba(16,17,15,.28);
+  padding-top:18px;
+  font-size:9px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+@media(max-width:700px){
+  .success{padding:64px 6vw 24px}
+  .success-top{padding:22px 0 18px;align-items:flex-start}
+  .success-top span:last-child{display:none}
+  .success-center{margin:auto 0}
+  .success-kicker{font-size:8px;line-height:1.4;margin-bottom:24px}
+  .success h1{font-size:20vw;line-height:.78;margin-bottom:34px}
+  .success h1 em{margin-left:7vw}
+  .success p{font-size:19px;line-height:1.4;max-width:100%}
+  .success-back{margin-top:28px}
+  .success-bottom{display:block;line-height:1.7}
+  .success-bottom span{display:block}
+  .success-bottom span+span{margin-top:5px}
+}
+</style>
+<style id="mediabay-v92-page-preloader">
+body.loading{overflow:hidden}
+/* V92 — identical MediaBay loading screen on first load and internal page changes */
+#preloader{
+ position:fixed;inset:0;z-index:99999;
+ background:#c8ff32;
+ display:flex;align-items:center;justify-content:center;
+ opacity:1;visibility:visible;
+ transition:transform .9s cubic-bezier(.77,0,.18,1),opacity .35s ease;
+ overflow:hidden;
+}
+#preloader.done{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-100%)}
+.preloader-logo{width:clamp(88px,11vw,150px);height:auto;display:block;opacity:0;transform:scale(.82);animation:mbLoaderLogo 1.25s cubic-bezier(.16,1,.3,1) .08s forwards,mbLoaderPulse 1.8s ease-in-out 1.33s infinite}
+@keyframes mbLoaderLogo{0%{opacity:0;transform:scale(.82)}65%{opacity:1;transform:scale(1.04)}100%{opacity:1;transform:scale(1)}}
+@keyframes mbLoaderPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+@media(max-width:700px){.preloader-logo{width:100px}}
+@media(prefers-reduced-motion:reduce){.preloader-logo{animation:none;opacity:1;transform:none}#preloader{transition:opacity .35s ease,visibility .35s ease}.done{transform:none}}
+</style>
+<style id="mediabay-cookie-style">
+#mb-cookie-banner{position:fixed;left:24px;right:24px;bottom:24px;z-index:99999;display:none;background:rgba(13,31,24,.97);color:#f5f4ec;border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 60px rgba(0,0,0,.28);border-radius:18px;padding:22px 24px;font-family:inherit;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+#mb-cookie-banner .mb-cookie-inner{display:flex;align-items:center;gap:28px;justify-content:space-between;max-width:1280px;margin:auto}
+#mb-cookie-banner .mb-cookie-copy{max-width:760px;font-size:13px;line-height:1.55;letter-spacing:.01em}
+#mb-cookie-banner .mb-cookie-title{font-size:15px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:7px}
+#mb-cookie-banner .mb-cookie-copy a{color:#b7d83d;text-decoration:underline;text-underline-offset:3px}
+#mb-cookie-banner .mb-cookie-actions{display:flex;align-items:center;gap:9px;flex-shrink:0}
+#mb-cookie-banner button{appearance:none;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;border-radius:999px;padding:11px 18px;font:inherit;font-size:12px;cursor:pointer;white-space:nowrap}
+#mb-cookie-banner .mb-cookie-accept{background:#b7d83d;border-color:#b7d83d;color:#102018;font-weight:650}
+#mb-cookie-banner button:hover{transform:translateY(-1px)}
+@media(max-width:720px){#mb-cookie-banner{left:12px;right:12px;bottom:12px;padding:18px;border-radius:16px}#mb-cookie-banner .mb-cookie-inner{display:block}#mb-cookie-banner .mb-cookie-copy{font-size:12px}.mb-cookie-title{font-size:13px!important}.mb-cookie-actions{margin-top:15px;display:block!important}.mb-cookie-actions button{width:100%}}
+</style>
+</head>
+<body class="loading"><div aria-hidden="true" id="preloader"><img alt="MediaBay" class="preloader-logo" src="mediabay-logo-white.png"/></div>
+<header class="site-header">
+<div aria-label="Language" class="lang"><button class="active" data-lang="it" type="button">IT</button><button data-lang="en" type="button">EN</button></div>
+<a aria-label="MediaBay home" href="/"><img alt="MediaBay" class="header-logo" src="mediabay-symbol-transparent.png"/></a>
+<button aria-controls="siteMenu" aria-expanded="false" aria-label="Open menu" class="menu-btn" id="menuBtn" type="button"><span class="menu-icon"><i></i><i></i></span></button>
+</header>
+<div aria-hidden="true" class="site-menu" id="siteMenu">
+<div class="menu-info"><span>MEDIA BAY</span><span>PHYGITAL MARKETING · SINCE 2013</span></div>
+<nav>
+<a href="/#team"><span>02</span><span data-menu-en="ABOUT" data-menu-it="ABOUT">ABOUT</span></a>
+<a href="/#demo"><span>03</span><span data-menu-en="YOUR STARTING POINT" data-menu-it="YOUR STARTING POINT">YOUR STARTING POINT</span></a>
+<a href="/#manifesto"><span>04</span><span data-menu-en="MANIFESTO" data-menu-it="MANIFESTO">MANIFESTO</span></a>
+<a href="/#services"><span>05</span><span data-menu-en="SERVICES" data-menu-it="SERVICES">SERVICES</span></a>
+<a href="/#projects"><span>06</span><span data-menu-en="APPROACH" data-menu-it="APPROACH">APPROACH</span></a>
+<a href="/#clients"><span>07</span><span data-menu-en="EXPERIENCE" data-menu-it="EXPERIENCE">EXPERIENCE</span></a>
+<a href="/#contact"><span>08</span><span data-menu-en="LET’S BUILD" data-menu-it="LET’S BUILD">LET’S BUILD</span></a>
+</nav>
+<div class="menu-foot"><span>WEB · SOCIAL · AI · MOBILITY</span><span>ENTER THE BAY ↘</span></div>
+</div>
+<main id="briefPage">
+<section class="hero">
+<div class="hero-top"><span>01 / CLIENT BRIEF</span><span>LET'S BUILD ↘</span></div>
+<div>
+<div class="kicker">MEDIA BAY / DIGITAL PRESENCE</div>
+<h1>TELL US ABOUT THE BUSINESS.</h1>
+<p>Non servono testi perfetti. Ci servono le informazioni giuste per capire il business, il punto di partenza e dove vuoi arrivare.</p>
+</div>
+<div class="hero-bottom"><span class="count">01 / 08</span><span class="arrow">↓</span></div>
+</section>
+<section class="intro">
+<div class="intro-grid">
+<h2>START FROM REALITY.</h2>
+<div class="intro-copy">
+<p>Raccontaci l’attività con le tue parole. Al sistema, alla struttura e al design pensiamo noi.</p>
+<p>Puoi allegare logo, fotografie, cataloghi, menu, listini e qualsiasi materiale possa aiutarci a capire il tuo mondo.</p>
+</div>
+</div>
+</section>
+<form action="https://formsubmit.co/info@mediabay.it" enctype="multipart/form-data" id="clientBrief" method="POST">
+<input name="_next" type="hidden" value="https://mediabay.it/brief-received.html"/>
+<input name="_subject" type="hidden" value="MediaBay · CLIENT BRIEF · Nuova richiesta"/>
+<input name="_captcha" type="hidden" value="false"/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_url" type="hidden" value="https://mediabay.it/brief.html"/>
+<input aria-hidden="true" autocomplete="off" name="_honey" style="display:none !important;position:absolute;left:-9999px;height:0;width:0;opacity:0" tabindex="-1" type="text"/>
+<fieldset><div class="legend"><span class="section-meta">02</span><div class="section-title">LA TUA ATTIVITÀ</div></div>
+<div class="grid">
+<div class="field"><label>Nome attività *</label><input name="Nome attività" required=""/></div>
+<div class="field"><label>Nome referente *</label><input name="Referente" required=""/></div>
+<div class="field"><label>Settore *</label><input name="Settore" required=""/></div>
+<div class="field"><label>Da quanto tempo?</label><input name="Anni di attività"/></div>
+<div class="field full"><label>Descrivi brevemente la tua attività *</label><textarea name="Descrizione attività" required=""></textarea></div>
+<div class="field"><label>Indirizzo</label><input name="Indirizzo"/></div>
+<div class="field"><label>Telefono</label><input name="Telefono"/></div>
+<div class="field"><label>WhatsApp</label><input name="WhatsApp"/></div>
+<div class="field"><label>Email *</label><input autocomplete="email" name="email" required="" type="email"/></div>
+</div></fieldset>
+<fieldset><div class="legend"><span class="section-meta">03</span><div class="section-title">IL BUSINESS</div></div>
+<div class="grid">
+<div class="field full"><label>Quali prodotti o servizi offri? *</label><textarea name="Prodotti e servizi" required=""></textarea></div>
+<div class="field full"><label>Su cosa vuoi puntare maggiormente?</label><textarea name="Focus business"></textarea></div>
+<div class="field full"><label>Cosa ti distingue dai tuoi concorrenti?</label><textarea name="Differenziazione"></textarea></div>
+<div class="field"><label>Chi sono i tuoi clienti?</label><textarea name="Target"></textarea></div>
+<div class="field"><label>Qual è il tuo punto di forza?</label><textarea name="Punto di forza"></textarea></div>
+</div></fieldset>
+<fieldset><div class="legend"><span class="section-meta">04</span><div class="section-title">COSA DEVE FARE IL SITO?</div></div>
+<label class="smallcaps">Scegli gli obiettivi principali</label>
+<div class="choice-grid">
+<label class="choice"><input name="Obiettivo" type="checkbox" value="Far conoscere l'attività"/> Far conoscere l'attività</label>
+<label class="choice"><input name="Obiettivo" type="checkbox" value="Ricevere contatti"/> Ricevere contatti</label>
+<label class="choice"><input name="Obiettivo" type="checkbox" value="WhatsApp"/> Ricevere messaggi WhatsApp</label>
+<label class="choice"><input name="Obiettivo" type="checkbox" value="Portare clienti in negozio"/> Portare clienti nel punto vendita</label>
+<label class="choice"><input name="Obiettivo" type="checkbox" value="Prenotazioni"/> Ricevere prenotazioni</label>
+<label class="choice"><input name="Obiettivo" type="checkbox" value="Presentare prodotti e servizi"/> Presentare prodotti e servizi</label>
+</div>
+<div class="field" style="margin-top:40px"><label>Quale azione vuoi che faccia una persona dopo aver visitato il sito?</label><textarea name="Azione desiderata"></textarea></div>
+</fieldset>
+<fieldset><div class="legend"><span class="section-meta">05</span><div class="section-title">IDENTITÀ &amp; PRESENZA ONLINE</div></div>
+<div class="grid">
+<div class="field"><label>Instagram</label><input name="Instagram"/></div><div class="field"><label>Facebook</label><input name="Facebook"/></div>
+<div class="field"><label>Google Maps / Google Business</label><input name="Google Maps"/></div><div class="field"><label>Sito attuale</label><input name="Sito attuale"/></div>
+<div class="field full"><label>Ci sono siti che ti piacciono?</label><textarea name="Siti di riferimento" placeholder="Incolla qui i link."></textarea></div>
+</div></fieldset>
+<fieldset><div class="legend"><span class="section-meta">06</span><div class="section-title">FOTO &amp; MATERIALI</div></div>
+<p style="font-size:20px;line-height:1.4;max-width:700px">Inviaci quello che hai. Non preoccuparti di scegliere tutto perfettamente: ci interessa capire il business.</p>
+<div class="upload"><label class="smallcaps">Carica foto, logo e materiali</label><input accept="image/*,.pdf,.doc,.docx,.ppt,.pptx,.zip" multiple="" name="Materiali" type="file"/></div>
+<p class="hint">Puoi caricare più file. Se hai molte foto, puoi inviarle anche separatamente tramite WhatsApp o email.</p>
+</fieldset>
+<fieldset><div class="legend"><span class="section-meta">07</span><div class="section-title">LE TUE PAROLE</div></div>
+<div class="field"><label>Raccontaci la tua attività con le tue parole.</label><textarea name="Racconto" placeholder="Scrivi liberamente. Al copy pensiamo noi."></textarea></div>
+<div style="margin-top:45px"><label class="smallcaps">Lingue del sito</label><div class="choice-grid">
+<label class="choice"><input name="Lingua sito" type="checkbox" value="Italiano"/> Italiano</label>
+<label class="choice"><input name="Lingua sito" type="checkbox" value="Inglese"/> Inglese</label>
+<label class="choice"><input name="Lingua sito" type="checkbox" value="Entrambe"/> Entrambe</label>
+</div></div>
+</fieldset>
+<fieldset><div class="legend"><span class="section-meta">08</span><div class="section-title">ULTIMA COSA.</div></div>
+<div class="field"><label>C'è qualcosa che vuoi assolutamente vedere nel nuovo sito?</label><textarea name="Note finali"></textarea></div>
+</fieldset>
+<div class="submit">
+<div class="submit-copy"><div class="smallcaps">MEDIA BAY / NEXT STEP</div><h2>THEN WE BUILD.</h2><p>Con l'invio ci autorizzi a utilizzare le informazioni e i materiali forniti per preparare la proposta/demo e ricontattarti in merito al progetto.</p></div>
+<button type="submit">INVIA IL BRIEF ↗</button>
+</div>
+</form>
+</main>
+<section class="success" id="success">
+<div class="success-top">
+<span class="smallcaps">MEDIA BAY / BRIEF RECEIVED</span>
+<span class="smallcaps">THANK YOU ↘</span>
+</div>
+<div class="success-center">
+<div class="success-kicker">YOUR NEXT STEP STARTS HERE</div>
+<h1>BUSINESS BRIEF RECEIVED.</h1>
+<p>Abbiamo ricevuto le informazioni e i materiali che ci hai inviato.</p>
+<p>Adesso analizziamo il business e trasformiamo il brief nel prossimo passo concreto.</p>
+<a class="success-back" href="/">← TORNA A MEDIABAY</a>
+</div>
+<div class="success-bottom">
+<span>MEDIA BAY</span>
+<span>PHYGITAL MARKETING · SINCE 2013</span>
+</div>
+</section>
+<script id="mediabay-brief-ui">
+(function(){
+  const root=document.documentElement;
+  const menu=document.getElementById('siteMenu');
+  const menuBtn=document.getElementById('menuBtn');
+  const langButtons=[...document.querySelectorAll('[data-lang]')];
+  const T={
+    'LET\'S BUILD ↘':['COSTRUIAMO ↘',"LET'S BUILD ↘"],
+    'RACCONTACI':['RACCONTACI','TELL US ABOUT'],'IL TUO BUSINESS.':['IL TUO BUSINESS.','YOUR BUSINESS.'],
+    'Non servono testi perfetti. Ci servono le informazioni giuste per capire dove vuoi arrivare e costruire la tua demo.':['Non servono testi perfetti. Ci servono le informazioni giuste per capire dove vuoi arrivare e costruire la tua demo.',"You don't need perfect copy. We need the right information to understand where you want to go and build your demo."],
+    'PARTIAMO':['PARTIAMO','LET’S START'],'DA TE.':['DA TE.','WITH YOU.'],
+    'Raccontaci la tua attività con le tue parole.':['Raccontaci la tua attività con le tue parole.','Tell us about your business in your own words.'],
+    'Al copy, alla struttura e al design pensiamo noi.':['Al copy, alla struttura e al design pensiamo noi.','We take care of the copy, structure and design.'],
+    'Puoi allegare logo, fotografie, cataloghi, menu, listini e qualsiasi materiale possa aiutarci a capire il tuo mondo.':['Puoi allegare logo, fotografie, cataloghi, menu, listini e qualsiasi materiale possa aiutarci a capire il tuo mondo.','You can attach your logo, photos, catalogues, menus, price lists and anything that helps us understand your world.'],
+    'LA TUA ATTIVITÀ':['LA TUA ATTIVITÀ','YOUR BUSINESS'],'IL BUSINESS':['IL BUSINESS','THE BUSINESS'],'COSA DEVE FARE IL SITO?':['COSA DEVE FARE IL SITO?','WHAT SHOULD THE WEBSITE DO?'],'IDENTITÀ & PRESENZA ONLINE':['IDENTITÀ & PRESENZA ONLINE','IDENTITY & ONLINE PRESENCE'],'FOTO & MATERIALI':['FOTO & MATERIALI','PHOTOS & MATERIALS'],'LE TUE PAROLE':['LE TUE PAROLE','YOUR WORDS'],'ULTIMA COSA.':['ULTIMA COSA.','ONE LAST THING.'],
+    'Scegli gli obiettivi principali':['Scegli gli obiettivi principali','Choose the main objectives'],
+    'Far conoscere l’attività':['Far conoscere l’attività','Make the business known'],'Ricevere contatti':['Ricevere contatti','Receive enquiries'],'Ricevere messaggi WhatsApp':['Ricevere messaggi WhatsApp','Receive WhatsApp messages'],'Portare clienti nel punto vendita':['Portare clienti nel punto vendita','Bring customers to the store'],'Ricevere prenotazioni':['Ricevere prenotazioni','Receive bookings'],'Presentare prodotti e servizi':['Presentare prodotti e servizi','Present products and services'],
+    'Inviaci tutto quello che hai.':['Inviaci tutto quello che hai.','Send us everything you have.'],'Non preoccuparti di scegliere le immagini migliori: le selezioniamo noi.':['Non preoccuparti di scegliere le immagini migliori: le selezioniamo noi.',"Don't worry about choosing the best images: we'll select them."],'Carica foto, logo e materiali':['Carica foto, logo e materiali','Upload photos, logo and materials'],'Puoi caricare più file. Se hai molte foto, puoi inviarle anche separatamente tramite WhatsApp o email.':['Puoi caricare più file. Se hai molte foto, puoi inviarle anche separatamente tramite WhatsApp o email.','You can upload multiple files. If you have many photos, you can also send them separately via WhatsApp or email.'],
+    'Scrivi liberamente. Al copy pensiamo noi.':['Scrivi liberamente. Al copy pensiamo noi.','Write freely. We take care of the copy.'],'Lingue del sito':['Lingue del sito','Website languages'],'Italiano':['Italiano','Italian'],'Inglese':['Inglese','English'],'Entrambe':['Entrambe','Both'],
+    'C’è qualcosa che vuoi assolutamente vedere nel nuovo sito?':["C’è qualcosa che vuoi assolutamente vedere nel nuovo sito?","Is there anything you definitely want to see on the new website?"],
+    "C'è qualcosa che vuoi assolutamente vedere nel nuovo sito?": ["C'è qualcosa che vuoi assolutamente vedere nel nuovo sito?","Is there anything you definitely want to see on the new website?"],
+    'MEDIA BAY / NEXT STEP':['MEDIA BAY / NEXT STEP','MEDIA BAY / NEXT STEP'],'ORA TOCCA':['ORA TOCCA','NOW IT’S'],'A NOI.':['A NOI.','OUR TURN.'],
+    "Con l'invio ci autorizzi a utilizzare le informazioni e i materiali forniti per la preparazione della tua demo e per ricontattarti in merito al progetto.":["Con l'invio ci autorizzi a utilizzare le informazioni e i materiali forniti per la preparazione della tua demo e per ricontattarti in merito al progetto.",'By submitting, you authorise us to use the information and materials provided to prepare your demo and contact you about the project.'],
+    'INVIA IL BRIEF ↗':['INVIA IL BRIEF ↗','SEND THE BRIEF ↗'],'INVIO IN CORSO…':['INVIO IN CORSO…','SENDING…'],
+    'Non siamo riusciti a inviare il brief. Riprova tra poco oppure scrivici a info@mediabay.it.':['Non siamo riusciti a inviare il brief. Riprova tra poco oppure scrivici a info@mediabay.it.',"We couldn't send the brief. Please try again shortly or email us at info@mediabay.it."]
+  };
+  const P={
+    'Incolla qui i link.':['Incolla qui i link.','Paste links here.'],
+    'Scrivi liberamente. Al copy pensiamo noi.':['Scrivi liberamente. Al copy pensiamo noi.','Write freely. We take care of the copy.']
+  };
+  const L={
+    'Nome attività *':['Nome attività *','Business name *'],'Nome referente *':['Nome referente *','Contact person *'],'Settore *':['Settore *','Industry *'],'Da quanto tempo?':['Da quanto tempo?','How long have you been in business?'],'Descrivi brevemente la tua attività *':['Descrivi brevemente la tua attività *','Briefly describe your business *'],'Indirizzo':['Indirizzo','Address'],'Telefono':['Telefono','Phone'],'WhatsApp':['WhatsApp','WhatsApp'],'Email *':['Email *','Email *'],'Quali prodotti o servizi offri? *':['Quali prodotti o servizi offri? *','What products or services do you offer? *'],'Su cosa vuoi puntare maggiormente?':['Su cosa vuoi puntare maggiormente?','What do you want to focus on most?'],'Cosa ti distingue dai tuoi concorrenti?':['Cosa ti distingue dai tuoi concorrenti?','What sets you apart from competitors?'],'Chi sono i tuoi clienti?':['Chi sono i tuoi clienti?','Who are your customers?'],'Qual è il tuo punto di forza?':['Qual è il tuo punto di forza?','What is your main strength?'],'Quale azione vuoi che faccia una persona dopo aver visitato il sito?':['Quale azione vuoi che faccia una persona dopo aver visitato il sito?','What action should someone take after visiting the website?'],'Instagram':['Instagram','Instagram'],'Facebook':['Facebook','Facebook'],'Google Maps / Google Business':['Google Maps / Google Business','Google Maps / Google Business'],'Sito attuale':['Sito attuale','Current website'],'Ci sono siti che ti piacciono?':['Ci sono siti che ti piacciono?','Are there websites you like?'],"C'è qualcosa che vuoi assolutamente vedere nel nuovo sito?":["C'è qualcosa che vuoi assolutamente vedere nel nuovo sito?","Is there anything you definitely want to see on the new website?"]
+  };
+  function textNodes(node){const out=[];const w=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode())out.push(n);return out;}
+  function applyLang(lang){
+    textNodes(document.body).forEach(n=>{const key=n.nodeValue.trim();if(T[key]){const lead=n.nodeValue.match(/^\s*/)[0],trail=n.nodeValue.match(/\s*$/)[0];n.nodeValue=lead+T[key][lang==='en'?1:0]+trail;}});
+    document.querySelectorAll('label').forEach(label=>{const key=[...label.childNodes].filter(n=>n.nodeType===3).map(n=>n.nodeValue.trim()).find(Boolean);if(L[key]){const texts=[...label.childNodes].filter(n=>n.nodeType===3);const target=texts[texts.length-1];if(target){const lead=target.nodeValue.match(/^\s*/)[0];target.nodeValue=lead+(lang==='en'?L[key][1]:L[key][0]);}}});
+    document.querySelectorAll('[placeholder]').forEach(el=>{const key=el.getAttribute('placeholder');if(P[key])el.placeholder=lang==='en'?P[key][1]:P[key][0];});
+    root.lang=lang;localStorage.setItem('mediabay-language',lang);langButtons.forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  }
+  function closeMenu(){menu.classList.remove('open');menuBtn.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu');menu.setAttribute('aria-hidden','true');}
+  menuBtn.addEventListener('click',()=>{const open=!menu.classList.contains('open');menu.classList.toggle('open',open);menuBtn.classList.toggle('open',open);menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');menu.setAttribute('aria-hidden',String(!open));});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  langButtons.forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+  const saved=localStorage.getItem('mediabay-language');applyLang(saved==='en'?'en':'it');
+})();
+</script>
+<script>
+(function(){
+  const p=new URLSearchParams(location.search);
+  if(p.get('sent')==='1'){
+    document.getElementById('briefPage').style.display='none';
+    document.getElementById('success').style.display='block';
+    window.scrollTo(0,0);
+    return;
+  }
+
+  const form=document.getElementById('clientBrief');
+  if(!form) return;
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+
+    const button=form.querySelector('button[type="submit"]');
+    const original=button ? button.textContent : '';
+    if(button){
+      button.disabled=true;
+      button.textContent='INVIO IN CORSO…';
+    }
+
+    const errorOld=form.querySelector('.form-error');
+    if(errorOld) errorOld.remove();
+
+    try{
+      const formData=new FormData(form);
+      const response=await fetch('https://formsubmit.co/ajax/info@mediabay.it',{
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body:formData
+      });
+
+      const result=await response.json().catch(()=>({}));
+      if(!response.ok || result.success===false){
+        throw new Error('Submission failed');
+      }
+
+      window.location.href='https://mediabay.it/brief-received.html';
+    }catch(err){
+      if(button){
+        button.disabled=false;
+        button.textContent=original;
+      }
+      const msg=document.createElement('div');
+      msg.className='form-error';
+      msg.textContent='Non siamo riusciti a inviare il brief. Riprova tra poco oppure scrivici a info@mediabay.it.';
+      form.appendChild(msg);
+      msg.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+  });
+})();
+</script>
+<script id="mediabay-v92-preloader">
+(function(){
+  const loader=document.getElementById('preloader');
+  if(!loader)return;
+  document.body.classList.add('loading');
+  function finish(){
+    setTimeout(function(){
+      loader.classList.add('done');
+      document.body.classList.remove('loading');
+      setTimeout(function(){if(loader.parentNode)loader.remove()},950);
+    },650);
+  }
+  if(document.readyState==='complete') finish();
+  else window.addEventListener('load',finish,{once:true});
+})();
+</script>
+<div aria-label="Cookie notice" aria-live="polite" id="mb-cookie-banner" role="dialog">
+<div class="mb-cookie-inner">
+<div class="mb-cookie-copy">
+<div class="mb-cookie-title" data-cookie-en="Your privacy matters." data-cookie-it="La tua privacy conta.">La tua privacy conta.</div>
+<span data-cookie-en="We use only essential cookies needed for this website to work. Read our " data-cookie-it="Usiamo solo cookie tecnici necessari al funzionamento del sito. Puoi consultare la nostra ">Usiamo solo cookie tecnici necessari al funzionamento del sito. Puoi consultare la nostra </span><a data-cookie-en="Cookie Policy" data-cookie-it="Cookie Policy" href="cookie-policy.html">Cookie Policy</a><span data-cookie-en=" for more information." data-cookie-it=" per maggiori informazioni."> per maggiori informazioni.</span>
+</div>
+<div class="mb-cookie-actions"><button class="mb-cookie-accept" data-cookie-en="OK" data-cookie-it="OK" type="button">OK</button></div>
+</div>
+</div>
+<script id="mediabay-cookie-script">
+(function(){
+  const KEY='mediabay_cookie_notice_v1';
+  const banner=document.getElementById('mb-cookie-banner');
+  if(!banner)return;
+  function hide(){banner.style.display='none';}
+  function show(){banner.style.display='block';}
+  try{if(!localStorage.getItem(KEY)) show();}catch(e){show();}
+  const setCopy=(lang)=>{
+    banner.querySelectorAll('[data-cookie-it]').forEach(el=>{
+      const v=el.getAttribute(lang==='it'?'data-cookie-it':'data-cookie-en');
+      if(v!==null) el.textContent=v;
+    });
+  };
+  setCopy(localStorage.getItem('mediabay-language')||'it');
+  banner.querySelector('.mb-cookie-accept').addEventListener('click',function(){try{localStorage.setItem(KEY,'accepted')}catch(e){} hide();});
+  document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>setCopy(btn.dataset.lang)));
+})();
+</script>
+</body>
+</html>
