@@ -296,6 +296,260 @@ body.mb-leaving #mb-loader .mb-loader-line:after{animation:none;transform:transl
 .mb-cookie-btn.primary{background:#c8ff00;border-color:#c8ff00}
 @media(max-width:700px){#mb-cookie{left:12px;right:12px;bottom:12px;grid-template-columns:1fr;gap:14px;padding:16px}.mb-cookie-actions{justify-content:flex-start}.mb-cookie-btn{flex:1}}
 </style>
+
+<style id="mediabay-v118-cleanup">
+
+/* =========================================================
+   V118 — CLEAN COMMERCIAL HIERARCHY
+   ========================================================= */
+
+.hero-role{
+  font-size:clamp(28px,4vw,52px);
+  line-height:.9;
+  font-weight:800;
+  letter-spacing:-.07em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+  color:var(--service-accent,var(--lime));
+}
+
+.hero-side p{
+  margin:0;
+}
+
+/* Commerce must have its own identity */
+.identity-commerce{
+  --commerce-red:#ff3b30;
+  --commerce-black:#070a0b;
+}
+
+.identity-commerce .site-header{
+  background:#070a0bd9;
+  color:#fff;
+  border-color:#ffffff14;
+}
+
+.identity-commerce .site-header .logo small,
+.identity-commerce .eyebrow{
+  color:var(--commerce-red);
+}
+
+.identity-commerce .lang button{
+  color:#fff;
+}
+
+.identity-commerce .menu{
+  color:#fff;
+  border-color:#ffffff44;
+}
+
+.identity-commerce .page-hero{
+  background:#070a0b;
+  color:#f0eee7;
+}
+
+.identity-commerce .page-hero:after{
+  background:
+    linear-gradient(
+      90deg,
+      #070a0b 0%,
+      #070a0be8 42%,
+      #070a0b38 100%
+    );
+}
+
+.identity-commerce .page-hero h1 em{
+  color:var(--commerce-red);
+}
+
+.identity-commerce .hero-role{
+  color:var(--commerce-red);
+}
+
+.identity-commerce .hero-copy{
+  color:#c1c9ca;
+}
+
+.identity-commerce .price-band{
+  background:var(--commerce-red);
+  color:#fff;
+}
+
+.identity-commerce .price-band .price{
+  color:#fff;
+}
+
+.identity-commerce .price-band p{
+  color:#fff;
+}
+
+.identity-commerce .feature-grid{
+  background:#ffffff18;
+}
+
+.identity-commerce .feature{
+  background:#111315;
+  color:#f0eee7;
+}
+
+.identity-commerce .feature:nth-child(2){
+  background:#16191b;
+}
+
+.identity-commerce .feature:nth-child(3){
+  background:#191b1d;
+}
+
+.identity-commerce .feature:nth-child(4){
+  background:#1c1e20;
+}
+
+.identity-commerce .feature p{
+  color:#aeb5b7;
+}
+
+.identity-commerce .section.paper{
+  background:#0b0e10;
+  color:#f0eee7;
+}
+
+.identity-commerce .section.paper .section-head p{
+  color:#9ca5a6;
+}
+
+.identity-commerce .faq summary{
+  color:#f0eee7;
+}
+
+.identity-commerce .faq p{
+  color:#9ca5a6;
+}
+
+.identity-commerce .cta{
+  background:#070a0b;
+}
+
+/* =========================================================
+   MOBILE — REAL HIERARCHY
+   ========================================================= */
+
+@media(max-width:800px){
+
+  .page-hero{
+    min-height:auto !important;
+    padding-bottom:48px !important;
+  }
+
+  .hero-content{
+    position:relative;
+    z-index:2;
+  }
+
+  .hero-side{
+    max-width:none !important;
+    width:100%;
+    margin-top:34px !important;
+    padding:20px 0 0 !important;
+    border-top:1px solid #ffffff30 !important;
+    border-left:0 !important;
+  }
+
+  .hero-role{
+    font-size:clamp(25px,8vw,42px);
+    margin-bottom:14px;
+  }
+
+  .hero-side p{
+    font-size:12px !important;
+    line-height:1.5;
+    max-width:360px;
+  }
+
+  .price-band{
+    padding:32px 20px !important;
+  }
+
+  .price-band .price{
+    font-size:clamp(3.1rem,14vw,5rem) !important;
+    line-height:.85;
+    white-space:normal;
+  }
+
+  .price-band small{
+    font-size:9px;
+  }
+
+  .price-band p{
+    font-size:12px !important;
+    line-height:1.5;
+    margin-top:16px;
+  }
+
+  .section-head{
+    gap:16px !important;
+  }
+
+  .section-head h2{
+    max-width:100%;
+  }
+
+  .feature-grid{
+    margin-top:42px !important;
+  }
+
+  .feature{
+    min-height:205px !important;
+  }
+
+  .feature h3{
+    margin-top:48px !important;
+  }
+
+  .faq{
+    margin-top:42px !important;
+  }
+}
+
+/* Smaller phones */
+@media(max-width:480px){
+
+  .page-hero{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .page-hero h1{
+    font-size:clamp(3.5rem,17vw,6rem) !important;
+    line-height:.75 !important;
+  }
+
+  .hero-copy{
+    font-size:14px !important;
+    max-width:340px;
+  }
+
+  .hero-role{
+    font-size:27px;
+  }
+
+  .price-band{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .price-band .price{
+    font-size:clamp(2.9rem,14vw,4.4rem) !important;
+  }
+}
+
+/* Remove accidental horizontal overflow */
+html,body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+</style>
+
 </head><body class="identity-custom">
 
 <div id="mb-loader" aria-hidden="true">
@@ -331,9 +585,9 @@ body.mb-leaving #mb-loader .mb-loader-line:after{animation:none;transform:transl
 <section class="price-band">
 <div>
 <div style="font-size:8px;letter-spacing:.17em">MEDIABAY · CUSTOM</div>
-<div class="price">CUSTOM <small>/ MESE</small></div>
+<div class="price">CUSTOM <small>/ SU MISURA</small></div>
 <div style="font-size:9px;letter-spacing:.12em;margin-top:6px">
-SETUP SU PROGETTO · INCLUSO ALL’ATTIVAZIONE
+INVESTIMENTO · DEFINITO SUL PROGETTO
 </div>
 </div>
 <p data-it="Un sistema digitale progettato intorno al business. Scope, investimento e architettura vengono definiti sul progetto." data-en="Un sistema digitale progettato intorno al business. Scope, investimento e architettura vengono definiti sul progetto.">Un sistema digitale progettato intorno al business. Scope, investimento e architettura vengono definiti sul progetto.</p>
@@ -561,7 +815,7 @@ document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',(
   const body=document.body;
   const loader=document.getElementById('mb-loader');
   body.classList.add('mb-loading');
-  const hideLoader=()=>{setTimeout(()=>{body.classList.remove('mb-loading');loader?.classList.add('is-hidden')},950)};
+  const hideLoader=()=>{setTimeout(()=>{body.classList.remove('mb-loading');loader?.classList.add('is-hidden')},500)};
   if(document.readyState==='complete') hideLoader(); else window.addEventListener('load',hideLoader,{once:true});
 
   document.querySelectorAll('a[href]').forEach(a=>{
