@@ -1,0 +1,65 @@
+# V-FINAL — 2026-09-20
+
+## Client Presentation Release
+- Unified local asset cache-busting to V55.0.
+- Removed the external Unsplash dependency from the homepage hero rotation.
+- Preserved the repaired global preloader/header runtime and cart API.
+- Checkout request object now retains all submitted customer fields in the demo session.
+- Order confirmation wording changed from completed order language to request-received language.
+- Corrected remaining awkward activation wording in information pages.
+- Deployment documentation updated for `Raverbay/333`.
+
+## Go-live items still requiring client confirmation
+- Final product inventory, sizes, prices and availability.
+- Final shipping/returns/legal wording.
+- Production payment provider and order backend.
+- Final domain/canonical URL and analytics/cookie consent configuration.
+- Client-owned/licensed product/editorial photography where required.
+
+## V38 — Hero Showcase
+- Converted the hero editorial panel into a full-bleed background gallery.
+- Added a fourth local editorial slide from the supplied Flip&Co image.
+- Added mobile-specific overlays/readability and reduced-motion handling.
+- Preserved the existing hero controls, links and autoplay behavior.
+
+## V37 — Production Polish
+- Removed visible demo labels from customer-facing editorial copy.
+- Preserved V36 navigation, commerce and data architecture.
+- Added final production QA checklist.
+
+# Changelog
+
+## Fresh Start V1 — 2026-09-18
+- Complete rebuild from a clean repository structure.
+- Unified global header, navigation, search, cart and footer.
+- Editorial fashion-led homepage.
+- Responsive shop, collections, brand index and product page.
+- Demo checkout and confirmation flow.
+- One-inventory model preserved.
+- Local fallback data allows core pages to work in file preview where browser fetch is restricted.
+
+## V5 — 2026-09-18
+- Reworked catalog around the researched New Balance, Barrow, Moschino and Dsquared2 selection.
+- Added official product URLs and image CDNs where accessible.
+- Added DSQUARED2 D2Kids Junior Jeans.
+- Removed duplicate DSQUARED2 puffer entry.
+- Fixed shop count initialization and improved product cards.
+- Added PDP source verification note, official-brand link and go-live inventory disclaimer.
+- Added cookie bar and responsive commerce polish.
+- Converted checkout wording to an order-request flow pending payment-provider integration.
+
+
+## V6 — Human Commerce
+- Reframed the experience around the customer: Uomo / Donna / Kids.
+- Introduced Online Edit vs Full Store Experience positioning.
+- Added “Ti facciamo il look” service with in-store and WhatsApp paths.
+- Reworked homepage hierarchy, copy, CTA system and responsive art direction.
+- Added PDP human-assistance block and stronger store bridge.
+
+
+## V7 — Discovery Homepage
+- Added stronger personality and customer-first entry points.
+- Added quick paths for Uomo / Donna / Kids and “Ti facciamo il look”.
+- Added interactive Flip Finder to create a first micro-selection.
+- Reinforced Online Edit vs broader store selection narrative.
+- Added responsive interaction styling and stronger conversion paths.
