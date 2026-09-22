@@ -1,0 +1,1124 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>MediaBay — Presence · The Digital Storefront</title>
+  <meta property="og:description" content="Presence is MediaBay's digital storefront system for businesses that need to be found, understood and contacted.">
+  <meta property="og:title" content="MediaBay — Presence · The Digital Storefront">
+  <link rel="canonical" href="https://mediabay.it/presence.html">
+  <meta name="description" content="Presence is MediaBay's digital storefront system for businesses that need to be found, understood and contacted."><style>
+:root{--ink:#070a0b;--panel:#0d1214;--paper:#eceae3;--lime:#c8ff00;--cyan:#64e8ff;--blue:#5da5ff;--red:#ff3b30;--muted:#aab3b4;--line:#ffffff22;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);overflow-x:hidden}a{color:inherit}button{font:inherit}
+.site-header{position:fixed;z-index:100;top:0;left:0;width:100%;height:70px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;background:#070a0bd9;border-bottom:1px solid #ffffff14;backdrop-filter:blur(14px);color:#fff}
+.logo{font-size:20px;font-weight:900;letter-spacing:-.06em;text-decoration:none}.logo small{display:block;font-size:7px;font-weight:400;letter-spacing:.14em;color:var(--lime);margin-top:2px}
+.nav{display:flex;gap:22px;font-size:8px;letter-spacing:.15em;text-transform:uppercase}.nav a{text-decoration:none;opacity:.65}.nav a:hover{opacity:1;color:var(--lime)}
+.lang{display:flex;gap:7px;font-size:8px;letter-spacing:.15em}.lang button{border:0;background:none;color:#fff;opacity:.4;cursor:pointer;padding:3px}.lang button.active{opacity:1;color:var(--lime)}
+.menu{display:none;background:none;border:1px solid #ffffff30;color:#fff;padding:8px 11px;font-size:8px;letter-spacing:.13em;text-transform:uppercase}
+.page-hero{min-height:86svh;padding:125px 4vw 60px;display:grid;grid-template-columns:1fr .75fr;align-items:end;gap:6vw;position:relative;overflow:hidden;background:#070a0b}
+.page-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#070a0b 0%,#070a0bdc 42%,#070a0b55 100%);z-index:0}
+.page-art{position:absolute;right:0;top:0;width:62%;height:100%;object-fit:cover;opacity:.52}
+.hero-content,.hero-side{position:relative;z-index:1}.eyebrow{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--lime)}
+.page-hero h1{font-size:clamp(4rem,9vw,10rem);line-height:.77;letter-spacing:-.09em;margin:25px 0;font-weight:900;max-width:850px}.page-hero h1 em{font-style:normal;color:var(--lime)}
+.hero-copy{max-width:540px;font-size:16px;line-height:1.5;color:#c1c9ca}.hero-side{justify-self:end;max-width:300px}.hero-side .big{font-family:var(--serif);font-size:clamp(3rem,6vw,6rem);line-height:.85;margin:0 0 20px}.hero-side p{font-size:10px;line-height:1.55;color:#8e9899}
+.btn{display:inline-flex;padding:14px 20px;background:var(--lime);color:var(--ink);text-decoration:none;font-size:8px;letter-spacing:.15em;text-transform:uppercase;font-weight:900;margin-top:20px}.btn.alt{background:transparent;color:#fff;border:1px solid #ffffff55}
+.section{padding:9vw 4vw}.paper{background:var(--paper);color:var(--ink)}.dark{background:#080b0c}
+.section-head{display:grid;grid-template-columns:1fr .7fr;gap:6vw;align-items:end}.section h2{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,6.5vw,7rem);line-height:.85;letter-spacing:-.06em;margin:18px 0}.section-head p{font-size:14px;line-height:1.55;color:#7e8787;max-width:460px}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#18231833;margin-top:6vw}.feature{padding:30px;min-height:220px;background:#f5f2e9}.feature:nth-child(2){background:#dce8df}.feature:nth-child(3){background:#dfe8ed}.feature:nth-child(4){background:#eadbd1}.feature b{font-size:8px;letter-spacing:.16em}.feature h3{font-size:clamp(2.1rem,4vw,4.3rem);line-height:.84;letter-spacing:-.06em;margin:70px 0 10px}.feature p{font-size:10px;line-height:1.5;opacity:.68;max-width:380px}
+.metric{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:5vw}.metric-card{background:#101719;border:1px solid #ffffff18;padding:28px}.metric-card strong{display:block;font-size:clamp(3rem,5vw,6rem);line-height:.8;color:var(--lime);letter-spacing:-.08em}.metric-card span{display:block;margin-top:20px;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:#9ca5a6}
+.process{border-top:1px solid #ffffff30;margin-top:6vw}.process-row{display:grid;grid-template-columns:70px 1fr 1fr;gap:20px;padding:26px 0;border-bottom:1px solid #ffffff30}.process-row b{font-size:8px;color:var(--cyan);letter-spacing:.15em}.process-row h3{margin:0;font-size:clamp(2rem,4vw,4rem);letter-spacing:-.06em;line-height:.85}.process-row p{margin:0;color:#8f999a;font-size:10px;line-height:1.5}
+.price-band{background:var(--lime);color:var(--ink);padding:45px 4vw;display:flex;justify-content:space-between;align-items:center;gap:30px}.price-band .price{font-size:clamp(3.5rem,7vw,7rem);font-weight:900;letter-spacing:-.08em}.price-band small{font-size:10px;letter-spacing:.12em}.price-band p{max-width:430px;font-size:12px;line-height:1.5}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:5vw}.faq details{border-top:1px solid #ffffff30;padding:18px 0}.faq summary{cursor:pointer;font-size:11px;letter-spacing:.06em}.faq p{color:#8f999a;font-size:10px;line-height:1.55;max-width:500px}
+.cta{background:#080b0c;color:#fff;padding:9vw 4vw;min-height:48vh;display:flex;flex-direction:column;justify-content:space-between;background-image:linear-gradient(90deg,#080b0cf4,#080b0c66),url("assets/tech-art-cta.jpg");background-size:cover;background-position:center}.cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(3.2rem,6.5vw,7rem);line-height:.84;letter-spacing:-.06em;margin:18px 0}.footer{border-top:1px solid #ffffff30;padding-top:15px;display:flex;justify-content:space-between;gap:20px;font-size:8px;letter-spacing:.14em;text-transform:uppercase}
+#menuPanel{position:fixed;inset:0;z-index:90;background:var(--lime);color:var(--ink);padding:105px 5vw 25px;transform:translateY(-101%);transition:transform .7s cubic-bezier(.77,0,.18,1);display:flex;flex-direction:column}#menuPanel.open{transform:none}#menuPanel nav{margin:auto 0;display:grid}#menuPanel nav a{font-size:clamp(3rem,8vw,8.5rem);line-height:.82;text-decoration:none;font-weight:900;letter-spacing:-.08em;border-bottom:1px solid #18231844;padding:6px 0}
+@media(max-width:800px){.site-header{height:62px;padding:0 18px}.nav{display:none}.menu{display:block}.page-hero{display:block;min-height:92svh;padding:92px 20px 38px}.page-art{width:100%;height:65%;opacity:.42}.page-hero:after{background:linear-gradient(180deg,#070a0b25,#070a0b72 42%,#070a0b 73%)}.page-hero h1{font-size:clamp(3.7rem,16vw,6.4rem);margin-top:42vh}.hero-copy{font-size:14px}.hero-side{margin-top:35px}.section{padding:80px 20px}.section-head{grid-template-columns:1fr;gap:20px}.feature-grid,.metric,.faq{grid-template-columns:1fr}.feature{min-height:210px}.feature h3{margin-top:55px}.process-row{grid-template-columns:38px 1fr;gap:10px}.process-row p{grid-column:2}.price-band{display:block;padding:38px 20px}.price-band p{margin-top:20px}.footer{flex-direction:column}.cta{padding:80px 20px}#menuPanel{padding:85px 20px 20px}#menuPanel nav a{font-size:15vw}}
+
+body.identity-presence{background:#e9e7df;color:#182318}
+.identity-presence .site-header{background:#e9e7dfdf;color:#182318;border-color:#18231818}
+.identity-presence .site-header .logo small,.identity-presence .eyebrow{color:#69a84f}
+.identity-presence .site-header .lang button{color:#182318}.identity-presence .menu{color:#182318;border-color:#18231844}
+.identity-presence .page-hero{background:#e9e7df;color:#182318;min-height:82svh}
+.identity-presence .page-hero:after{background:linear-gradient(90deg,#e9e7df 0%,#e9e7dfc9 44%,#e9e7df30 100%)}
+.identity-presence .page-art{opacity:.55;filter:saturate(.72) sepia(.08)}
+.identity-presence .hero-copy,.identity-presence .hero-side p{color:#4d554d}
+.identity-presence .page-hero h1 em{color:#69a84f}
+.identity-presence .price-band{background:#b7ff00}
+.identity-presence .feature-grid{background:#18231822}.identity-presence .feature{background:#f4f1e8}.identity-presence .feature:nth-child(2){background:#e0ead8}
+.identity-presence .cta{background:#182318}
+
+
+/* V100 PRESENCE — "THE FIRST IMPRESSION" */
+body.identity-presence{
+  --presence-green:#69a84f;
+  --presence-dark:#182318;
+  --presence-paper:#eee9dc;
+  --presence-mist:#dce5d5;
+  background:var(--presence-paper);color:var(--presence-dark);
+}
+.identity-presence .site-header{
+  background:#eee9dce8;color:var(--presence-dark);
+  border-bottom:1px solid #18231818;
+}
+.identity-presence .site-header .logo small,
+.identity-presence .eyebrow{color:var(--presence-green)}
+.identity-presence .site-header .lang button{color:var(--presence-dark)}
+.identity-presence .menu{color:var(--presence-dark);border-color:#18231844}
+
+/* Hero: editorial / calm / local / human */
+.identity-presence .page-hero{
+  min-height:94svh;background:var(--presence-paper);color:var(--presence-dark);
+  grid-template-columns:1.05fr .65fr;padding-top:110px;
+}
+.identity-presence .page-hero:before{
+  content:"01";position:absolute;right:5vw;top:105px;
+  font-size:10px;letter-spacing:.2em;color:#18231866;z-index:2;
+}
+.identity-presence .page-hero:after{
+  background:
+    linear-gradient(90deg,#eee9dc 0%,#eee9dc 37%,#eee9dc55 68%,#eee9dc05 100%);
+}
+.identity-presence .page-art{
+  width:58%;height:88%;top:8%;opacity:.82;
+  filter:saturate(.72) contrast(.96) sepia(.08);
+  clip-path:polygon(9% 0,100% 0,100% 88%,0 100%,0 15%);
+}
+.identity-presence .page-hero h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(5rem,10vw,11rem);
+  line-height:.72;letter-spacing:-.085em;margin:20px 0 30px;
+}
+.identity-presence .page-hero h1 em{
+  color:var(--presence-green);font-style:italic;
+}
+.identity-presence .hero-copy{
+  max-width:470px;color:#4c554b;font-size:17px;
+}
+.identity-presence .hero-side{
+  align-self:center;justify-self:end;
+  max-width:280px;padding:22px 0 0 28px;border-left:1px solid #18231855;
+}
+.identity-presence .hero-side .big{
+  font-family:var(--sans);font-weight:800;font-size:clamp(3.8rem,6vw,6.5rem);
+  letter-spacing:-.09em;color:var(--presence-green);
+}
+.identity-presence .hero-side p{color:#687066}
+
+/* Package navigation becomes a progression, not generic links */
+.identity-presence .page-hero .hero-content:after{
+  content:"PRESENCE  /  THE FOUNDATION";
+  display:block;margin-top:42px;font-size:7px;letter-spacing:.2em;
+  color:#18231866;
+}
+
+/* Price band = reassurance */
+.identity-presence .price-band{
+  background:#b7ff00;color:var(--presence-dark);
+  padding:32px 4vw;position:relative;
+}
+.identity-presence .price-band:after{
+  content:"START SMALL. BUILD WELL.";
+  position:absolute;right:4vw;top:50%;transform:translateY(-50%);
+  font-size:8px;letter-spacing:.18em;font-weight:800;
+}
+.identity-presence .price-band .price{font-size:clamp(3.8rem,7vw,7rem)}
+
+/* Distinct value story */
+.identity-presence .section.paper{
+  background:var(--presence-paper);
+}
+.identity-presence #details .section-head{
+  grid-template-columns:1.2fr .55fr;
+}
+.identity-presence #details h2{
+  font-size:clamp(4rem,7vw,8rem);
+}
+.identity-presence .feature-grid{
+  grid-template-columns:repeat(4,1fr);
+  background:#18231822;
+}
+.identity-presence .feature{
+  min-height:330px;padding:24px;background:#f6f1e5;
+}
+.identity-presence .feature:nth-child(2){background:#e2eadb}
+.identity-presence .feature:nth-child(3){background:#e8eee3}
+.identity-presence .feature:nth-child(4){background:#d9e4d1}
+.identity-presence .feature h3{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.4rem,3.7vw,4.3rem);
+  margin:92px 0 12px;
+}
+.identity-presence .feature p{color:#596257}
+
+/* A signature "digital storefront" section */
+.identity-presence .presence-window{
+  margin-top:6vw;display:grid;grid-template-columns:.75fr 1.25fr;
+  min-height:500px;background:var(--presence-dark);color:#f3f0e7;
+}
+.identity-presence .presence-window .window-copy{
+  padding:44px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.identity-presence .presence-window h3{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(3rem,5vw,6rem);line-height:.83;
+  letter-spacing:-.06em;margin:20px 0;
+}
+.identity-presence .presence-window p{max-width:340px;color:#aab4a9;font-size:12px;line-height:1.55}
+.identity-presence .presence-window .window-art{
+  background:
+    linear-gradient(90deg,#182318 0%,#18231811 25%),
+    url("assets/tech-art-hero.jpg") center/cover;
+  min-height:420px;filter:saturate(.55) sepia(.08);
+  position:relative;
+}
+.identity-presence .presence-window .window-art:after{
+  content:"YOUR BUSINESS / ONLINE";
+  position:absolute;left:28px;bottom:28px;
+  color:#fff;font-size:8px;letter-spacing:.18em;
+}
+
+/* Process is intentionally slower and more human */
+.identity-presence .section.dark{
+  background:var(--presence-dark);
+}
+.identity-presence .process-row{
+  padding:34px 0;
+}
+.identity-presence .process-row h3{
+  font-family:var(--serif);font-weight:400;
+}
+.identity-presence .process-row b{color:var(--presence-green)}
+
+/* FAQ becomes reassurance */
+.identity-presence .faq details{
+  border-color:#18231833;padding:24px 0;
+}
+.identity-presence .faq summary{font-size:12px}
+.identity-presence .cta{
+  background:var(--presence-dark);
+  background-image:
+    linear-gradient(90deg,#182318f5,#182318a6),
+    url("assets/tech-art-cta.jpg");
+}
+.identity-presence .cta h2{font-family:var(--serif);font-weight:400}
+.identity-presence .cta .eyebrow{color:var(--presence-green)}
+
+@media(max-width:800px){
+  .identity-presence .page-hero{
+    display:block;min-height:100svh;padding:86px 20px 36px;
+  }
+  .identity-presence .page-art{
+    width:100%;height:55%;top:62px;opacity:.58;
+    clip-path:none;
+  }
+  .identity-presence .page-hero:after{
+    background:linear-gradient(180deg,#eee9dc05 0%,#eee9dc20 27%,#eee9dcc8 48%,#eee9dc 66%);
+  }
+  .identity-presence .page-hero h1{
+    font-size:clamp(4.2rem,19vw,7rem);margin-top:48vh;
+  }
+  .identity-presence .hero-copy{font-size:14px}
+  .identity-presence .hero-side{
+    margin-top:28px;padding:16px 0 0;border-left:0;border-top:1px solid #18231844;
+    display:flex;align-items:baseline;justify-content:space-between;gap:20px;
+  }
+  .identity-presence .hero-side .big{font-size:4rem}
+  .identity-presence .page-hero .hero-content:after{margin-top:25px}
+  .identity-presence .price-band:after{position:static;display:block;transform:none;margin-top:9px}
+  .identity-presence .feature-grid{grid-template-columns:1fr 1fr}
+  .identity-presence .feature{min-height:260px;padding:18px}
+  .identity-presence .feature h3{font-size:2.15rem;margin-top:68px}
+  .identity-presence .presence-window{grid-template-columns:1fr;min-height:auto}
+  .identity-presence .presence-window .window-copy{padding:30px 22px}
+  .identity-presence .presence-window .window-art{min-height:300px}
+}
+@media(max-width:480px){
+  .identity-presence .feature-grid{grid-template-columns:1fr}
+  .identity-presence .feature{min-height:220px}
+  .identity-presence .feature h3{margin-top:52px}
+}
+
+
+/* V115.6 FOOTER — CONTACT + SUBMENU */
+.footer{margin-top:70px;border-top:1px solid #ffffff30;padding:42px 0 18px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:42px;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.footer-col{display:flex;flex-direction:column;gap:11px}
+.footer-label{font-size:8px;letter-spacing:.18em;opacity:.55;margin-bottom:4px}
+.footer-brand{font-size:22px;letter-spacing:-.03em;font-weight:800;line-height:1}
+.footer-muted{opacity:.65;line-height:1.7;text-transform:none;letter-spacing:.02em}
+.footer a{color:inherit;text-decoration:none}
+.footer a:hover{text-decoration:underline;text-underline-offset:4px}
+.footer-nav{display:grid;grid-template-columns:1fr 1fr;gap:9px 18px}
+.footer-nav a{font-size:9px;letter-spacing:.12em}
+.footer-bottom{grid-column:1/-1;border-top:1px solid #ffffff20;padding-top:14px;margin-top:8px;display:flex;justify-content:space-between;gap:20px;opacity:.65;font-size:8px}
+@media(max-width:760px){.footer{grid-template-columns:1fr;gap:30px;margin-top:48px;padding-top:34px}.footer-nav{grid-template-columns:1fr 1fr}.footer-bottom{grid-column:auto;flex-direction:column;gap:7px}}
+</style>
+
+
+<style id="mediabay-ui-css">
+/* MEDIABAY — PRELOADER + PAGE TRANSITIONS */
+#mb-loader{position:fixed;inset:0;z-index:9999;background:#070a0b;color:#f0eee7;display:grid;place-items:center;transition:opacity .45s ease,visibility .45s ease}
+#mb-loader.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.mb-loader-inner{text-align:center;padding:30px}
+.mb-loader-logo{font:800 clamp(42px,9vw,82px)/.85 Arial,Helvetica,sans-serif;letter-spacing:-.075em}
+.mb-loader-sub{margin-top:10px;font:600 9px/1 Arial,Helvetica,sans-serif;letter-spacing:.22em;color:#c8ff00;text-transform:uppercase}
+.mb-loader-line{width:120px;height:2px;background:#ffffff18;margin:28px auto 0;overflow:hidden}
+.mb-loader-line:after{content:"";display:block;width:45%;height:100%;background:#c8ff00;animation:mbLoad 1s ease-in-out infinite}
+@keyframes mbLoad{0%{transform:translateX(-120%)}100%{transform:translateX(340%)}}
+body.mb-loading{overflow:hidden}
+body.mb-leaving #mb-loader{opacity:1;visibility:visible}
+body.mb-leaving #mb-loader .mb-loader-line:after{animation:none;transform:translateX(120%)}
+@media(prefers-reduced-motion:reduce){#mb-loader{transition:none}.mb-loader-line:after{animation:none}}
+
+/* MEDIABAY — COOKIE NOTICE */
+#mb-cookie{position:fixed;z-index:9998;left:18px;right:18px;bottom:18px;max-width:760px;background:#f0eee7;color:#070a0b;border:1px solid #070a0b22;box-shadow:0 18px 60px #0005;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;transform:translateY(0);transition:transform .35s ease,opacity .35s ease}
+#mb-cookie.is-hidden{transform:translateY(130%);opacity:0;pointer-events:none}
+.mb-cookie-copy strong{display:block;font:800 10px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.13em;text-transform:uppercase;margin-bottom:7px}
+.mb-cookie-copy p{margin:0;max-width:560px;font:400 11px/1.45 Arial,Helvetica,sans-serif;color:#303633}
+.mb-cookie-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mb-cookie-btn{border:1px solid #070a0b;background:transparent;color:#070a0b;padding:12px 15px;font:800 8px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.mb-cookie-btn.primary{background:#c8ff00;border-color:#c8ff00}
+@media(max-width:700px){#mb-cookie{left:12px;right:12px;bottom:12px;grid-template-columns:1fr;gap:14px;padding:16px}.mb-cookie-actions{justify-content:flex-start}.mb-cookie-btn{flex:1}}
+</style>
+
+<style id="mediabay-v118-cleanup">
+
+/* =========================================================
+   V118 — CLEAN COMMERCIAL HIERARCHY
+   ========================================================= */
+
+.hero-role{
+  font-size:clamp(28px,4vw,52px);
+  line-height:.9;
+  font-weight:800;
+  letter-spacing:-.07em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+  color:var(--service-accent,var(--lime));
+}
+
+.hero-side p{
+  margin:0;
+}
+
+/* Commerce must have its own identity */
+.identity-commerce{
+  --commerce-red:#ff3b30;
+  --commerce-black:#070a0b;
+}
+
+.identity-commerce .site-header{
+  background:#070a0bd9;
+  color:#fff;
+  border-color:#ffffff14;
+}
+
+.identity-commerce .site-header .logo small,
+.identity-commerce .eyebrow{
+  color:var(--commerce-red);
+}
+
+.identity-commerce .lang button{
+  color:#fff;
+}
+
+.identity-commerce .menu{
+  color:#fff;
+  border-color:#ffffff44;
+}
+
+.identity-commerce .page-hero{
+  background:#070a0b;
+  color:#f0eee7;
+}
+
+.identity-commerce .page-hero:after{
+  background:
+    linear-gradient(
+      90deg,
+      #070a0b 0%,
+      #070a0be8 42%,
+      #070a0b38 100%
+    );
+}
+
+.identity-commerce .page-hero h1 em{
+  color:var(--commerce-red);
+}
+
+.identity-commerce .hero-role{
+  color:var(--commerce-red);
+}
+
+.identity-commerce .hero-copy{
+  color:#c1c9ca;
+}
+
+.identity-commerce .price-band{
+  background:var(--commerce-red);
+  color:#fff;
+}
+
+.identity-commerce .price-band .price{
+  color:#fff;
+}
+
+.identity-commerce .price-band p{
+  color:#fff;
+}
+
+.identity-commerce .feature-grid{
+  background:#ffffff18;
+}
+
+.identity-commerce .feature{
+  background:#111315;
+  color:#f0eee7;
+}
+
+.identity-commerce .feature:nth-child(2){
+  background:#16191b;
+}
+
+.identity-commerce .feature:nth-child(3){
+  background:#191b1d;
+}
+
+.identity-commerce .feature:nth-child(4){
+  background:#1c1e20;
+}
+
+.identity-commerce .feature p{
+  color:#aeb5b7;
+}
+
+.identity-commerce .section.paper{
+  background:#0b0e10;
+  color:#f0eee7;
+}
+
+.identity-commerce .section.paper .section-head p{
+  color:#9ca5a6;
+}
+
+.identity-commerce .faq summary{
+  color:#f0eee7;
+}
+
+.identity-commerce .faq p{
+  color:#9ca5a6;
+}
+
+.identity-commerce .cta{
+  background:#070a0b;
+}
+
+/* =========================================================
+   MOBILE — REAL HIERARCHY
+   ========================================================= */
+
+@media(max-width:800px){
+
+  .page-hero{
+    min-height:auto !important;
+    padding-bottom:48px !important;
+  }
+
+  .hero-content{
+    position:relative;
+    z-index:2;
+  }
+
+  .hero-side{
+    max-width:none !important;
+    width:100%;
+    margin-top:34px !important;
+    padding:20px 0 0 !important;
+    border-top:1px solid #ffffff30 !important;
+    border-left:0 !important;
+  }
+
+  .hero-role{
+    font-size:clamp(25px,8vw,42px);
+    margin-bottom:14px;
+  }
+
+  .hero-side p{
+    font-size:12px !important;
+    line-height:1.5;
+    max-width:360px;
+  }
+
+  .price-band{
+    padding:32px 20px !important;
+  }
+
+  .price-band .price{
+    font-size:clamp(3.1rem,14vw,5rem) !important;
+    line-height:.85;
+    white-space:normal;
+  }
+
+  .price-band small{
+    font-size:9px;
+  }
+
+  .price-band p{
+    font-size:12px !important;
+    line-height:1.5;
+    margin-top:16px;
+  }
+
+  .section-head{
+    gap:16px !important;
+  }
+
+  .section-head h2{
+    max-width:100%;
+  }
+
+  .feature-grid{
+    margin-top:42px !important;
+  }
+
+  .feature{
+    min-height:205px !important;
+  }
+
+  .feature h3{
+    margin-top:48px !important;
+  }
+
+  .faq{
+    margin-top:42px !important;
+  }
+}
+
+/* Smaller phones */
+@media(max-width:480px){
+
+  .page-hero{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .page-hero h1{
+    font-size:clamp(3.5rem,17vw,6rem) !important;
+    line-height:.75 !important;
+  }
+
+  .hero-copy{
+    font-size:14px !important;
+    max-width:340px;
+  }
+
+  .hero-role{
+    font-size:27px;
+  }
+
+  .price-band{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .price-band .price{
+    font-size:clamp(2.9rem,14vw,4.4rem) !important;
+  }
+}
+
+/* Remove accidental horizontal overflow */
+html,body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+</style>
+
+
+<style id="presence-v120-dark-fix">
+/* V120 — dark section visual correction */
+.section.dark {
+  color: #f0eee7;
+}
+
+.section.dark .section-head h2,
+.section.dark h2 {
+  color: #f0eee7 !important;
+}
+
+.section.dark .section-head p,
+.section.dark p {
+  color: rgba(240,238,231,.72);
+}
+
+.section.dark .eyebrow {
+  color: #8bcf61 !important;
+}
+
+.section.dark .process-row {
+  color: #f0eee7;
+  border-color: rgba(240,238,231,.14);
+}
+
+.section.dark .process-row b,
+.section.dark .process-row h3 {
+  color: #f0eee7 !important;
+}
+
+.section.dark .process-row p {
+  color: rgba(240,238,231,.68);
+}
+
+.section.dark .feature,
+.section.dark .card {
+  color: #f0eee7;
+}
+
+.section.dark h3,
+.section.dark strong {
+  color: #f0eee7 !important;
+}
+
+.section.dark [style*="margin-top:40px"] {
+  color: #f0eee7;
+}
+
+/* tighter editorial rhythm */
+.section.dark {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.section.dark .process {
+  margin-top: 55px;
+}
+
+@media (max-width: 700px) {
+  .section.dark {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .section.dark .process {
+    margin-top: 35px;
+  }
+}
+</style>
+
+</head><body class="identity-presence">
+
+<div id="mb-loader" aria-hidden="true">
+  <div class="mb-loader-inner">
+    <div class="mb-loader-logo">MediaBay</div>
+    <div class="mb-loader-sub">PHYGITAL MARKETING</div>
+    <div class="mb-loader-line"></div>
+  </div>
+</div>
+
+
+<header class="site-header">
+<a class="logo" href="index.html">MediaBay<small>PHYGITAL MARKETING</small></a>
+<nav class="nav"><a href="index.html#system">SYSTEM</a><a href="index.html#diagnostic">STARTING POINT</a><a href="index.html#packages">PACKAGES</a><a href="index.html#process">HOW IT WORKS</a><a href="businesses.html">CASES</a><a href="brief.html">START</a></nav>
+<div style="display:flex;align-items:center;gap:18px"><div class="lang"><button class="active" data-lang="it">IT</button><button data-lang="en">EN</button></div><button class="menu" id="menuBtn">MENU</button></div>
+</header>
+<div id="menuPanel"><div style="display:flex;justify-content:space-between;font-size:8px;letter-spacing:.16em;text-transform:uppercase"><span>MEDIABAY</span><span>ART × TECHNOLOGY × PEOPLE</span></div><nav>
+<a href="index.html#system">01 SYSTEM</a><a href="index.html#diagnostic">02 STARTING POINT</a><a href="index.html#packages">03 PACKAGES</a><a href="index.html#process">04 HOW IT WORKS</a><a href="businesses.html">05 CASES</a><a href="brief.html">06 START</a>
+</nav><div style="display:flex;justify-content:space-between;font-size:8px;letter-spacing:.16em;text-transform:uppercase"><span>WEB · SOCIAL · AI · COMMERCE</span><span>2026</span></div></div>
+
+<section class="page-hero">
+<img class="page-art" src="assets/tech-art-hero.jpg" alt="">
+<div class="hero-content">
+<div class="eyebrow">01 · PRESENCE</div>
+<h1 data-it="QUANDO TI CERCANO,<br>COSA TROVANO?" data-en="WHEN THEY SEARCH YOU,<br>WHAT DO THEY FIND?">QUANDO TI CERCANO,<br>COSA TROVANO?</h1>
+<p class="hero-copy" data-it="Il tuo prossimo cliente potrebbe averti già cercato. Su Google. Dal telefono. Dopo aver visto il tuo nome. Prima di contattarti, vuole capire chi sei, cosa fai e perché dovrebbe sceglierti.<br><br><strong>Presence costruisce quel momento.</strong>" data-en="Your next customer may have already searched for you. On Google. From their phone. After seeing your name. Before contacting you, they want to understand who you are, what you do and why they should choose you.<br><br><strong>Presence builds that moment.</strong>">Il tuo prossimo cliente potrebbe averti già cercato. Su Google. Dal telefono. Dopo aver visto il tuo nome. Prima di contattarti, vuole capire chi sei, cosa fai e perché dovrebbe sceglierti.<br><br><strong>Presence costruisce quel momento.</strong></p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:25px;font-size:7px;letter-spacing:.14em;text-transform:uppercase;opacity:.65"><span>€39,90 / MESE</span><span>·</span><span>SETUP €399 INCLUSO</span></div>
+<a class="btn" href="brief.html" data-it="COSTRUISCI LA TUA PRESENZA ↗" data-en="BUILD YOUR PRESENCE ↗">COSTRUISCI LA TUA PRESENZA ↗</a>
+<p style="font-size:8px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-top:12px" data-it="Prima la piattaforma. Poi decidi." data-en="See the platform first. Then decide.">Prima la piattaforma. Poi decidi.</p>
+</div>
+</section>
+
+<section class="section paper" id="details">
+<div class="section-head"><div><div class="eyebrow" style="color:#182318">01 · IL PRIMO CONTATTO</div><h2 data-it="NON È IL SITO.<br>È LA PRIMA IMPRESSIONE." data-en="IT'S NOT THE WEBSITE.<br>IT'S THE FIRST IMPRESSION.">NON È IL SITO.<br>È LA PRIMA IMPRESSIONE.</h2></div>
+<p data-it="Prima di chiamarti, scriverti o venire da te, una persona vuole capire tre cose: chi sei, cosa fai e perché dovrebbe sceglierti. Presence elimina questo lavoro e trasforma i tuoi canali digitali in un punto di riferimento chiaro." data-en="Before calling, messaging or visiting you, people want to understand three things: who you are, what you do and why they should choose you. Presence removes that friction and turns your digital channels into a clear point of reference.">Prima di chiamarti, scriverti o venire da te, una persona vuole capire tre cose: chi sei, cosa fai e perché dovrebbe sceglierti. Presence elimina questo lavoro e trasforma i tuoi canali digitali in un punto di riferimento chiaro.</p></div>
+<div class="feature-grid">
+<article class="feature"><b>01 · WEB</b><h3>FARTI CAPIRE.</h3><p>Un sito vetrina costruito intorno alla tua attività, ai tuoi servizi e alle informazioni che una persona deve conoscere prima di contattarti.</p></article>
+<article class="feature"><b>02 · VISIBILITÀ</b><h3>FARTI TROVARE.</h3><p>Struttura e basi SEO pensate per rendere il tuo business più comprensibile ai motori di ricerca e più facile da trovare.</p></article>
+<article class="feature"><b>03 · MOBILE FIRST</b><h3>FUNZIONARE NEL MOMENTO REALE.</h3><p>L'esperienza viene progettata prima di tutto per lo schermo che hai già in mano: semplice, veloce e leggibile.</p></article>
+<article class="feature"><b>04 · GESTIONE</b><h3>NON LASCIARTI UN ALTRO PROBLEMA.</h3><p>Hosting, manutenzione tecnica, supporto e gestione ordinaria restano nelle mani di MediaBay.</p></article>
+</div>
+</section>
+
+<section class="section paper" id="presence-experience">
+<div class="section-head"><div><div class="eyebrow" style="color:#182318">02 · IL TUO SPAZIO</div><h2 data-it="IL TUO BUSINESS<br>MERITA UN POSTO<br>TUTTO SUO." data-en="YOUR BUSINESS<br>DESERVES<br>ITS OWN SPACE.">IL TUO BUSINESS<br>MERITA UN POSTO<br>TUTTO SUO.</h2></div>
+<p data-it="Instagram è di Instagram. Google è di Google. WhatsApp è di WhatsApp. Presence è il tuo spazio. Non sostituisce i tuoi canali: li mette in ordine e dà loro una destinazione." data-en="Instagram belongs to Instagram. Google belongs to Google. WhatsApp belongs to WhatsApp. Presence is your space. It does not replace your channels: it gives them structure and a destination.">Instagram è di Instagram. Google è di Google. WhatsApp è di WhatsApp. Presence è il tuo spazio. Non sostituisce i tuoi canali: li mette in ordine e dà loro una destinazione.</p></div>
+</section>
+
+<section class="section dark">
+<div class="section-head"><div><div class="eyebrow">03 · IL PROCESSO</div><h2 data-it="SEMPLICE PER TE.<br>STRUTTURATO DA NOI." data-en="SIMPLE FOR YOU.<br>BUILT BY US.">SEMPLICE PER TE.<br>STRUTTURATO DA NOI.</h2></div>
+<p data-it="Tu ci dai il business. Noi costruiamo la base digitale. Non devi imparare a costruire siti, gestire server o diventare un esperto di marketing." data-en="You bring the business. We build the digital foundation. You do not need to learn web development, manage servers or become a marketing expert.">Tu ci dai il business. Noi costruiamo la base digitale. Non devi imparare a costruire siti, gestire server o diventare un esperto di marketing.</p></div>
+<div class="process">
+<div class="process-row"><b>01</b><h3>RACCONTA</h3><p>Ci racconti chi sei, cosa fai, cosa offri e cosa vuoi che una persona faccia dopo averti trovato.</p></div>
+<div class="process-row"><b>02</b><h3>COSTRUIAMO</h3><p>MediaBay trasforma queste informazioni in una presenza digitale professionale.</p></div>
+<div class="process-row"><b>03</b><h3>GUARDA</h3><p>Ti mostriamo la piattaforma. La guardi. La valuti. Prima di decidere.</p></div>
+<div class="process-row"><b>04</b><h3>ATTIVA</h3><p>Se riconosci il valore per il tuo business, attivi Presence.</p></div>
+<div class="process-row"><b>05</b><h3>EVOLVI</h3><p>La piattaforma continua a essere gestita e può crescere insieme al business.</p></div>
+</div>
+</section>
+
+<section class="section paper" id="package-scope">
+<div class="section-head"><div><div class="eyebrow" style="color:#182318">04 · PERIMETRO DEL PACCHETTO</div><h2>COSA<br>RICEVI.</h2></div><p>Una base digitale pronta a lavorare, senza aggiungere complessità inutile.</p></div>
+<div class="feature-grid">
+<article class="feature"><b>WEB</b><h3>SITO VETRINA</h3><p>Sito vetrina professionale responsive.</p></article>
+<article class="feature"><b>VISIBILITÀ</b><h3>SEO BASE</h3><p>Presenza online e basi SEO.</p></article>
+<article class="feature"><b>MOBILE FIRST</b><h3>OGNI DISPOSITIVO</h3><p>Esperienza progettata per smartphone, tablet e desktop.</p></article>
+<article class="feature"><b>GESTIONE</b><h3>MEDIA BAY</h3><p>Hosting, manutenzione, supporto e gestione ordinaria MediaBay.</p></article>
+</div>
+<div style="margin-top:50px"><div class="eyebrow" style="color:#182318">COSA NON STAI COMPRANDO</div><h2 style="margin-top:12px">SAI ESATTAMENTE<br>DOVE INIZIA.</h2></div>
+<div class="feature-grid" style="margin-top:24px">
+<article class="feature"><b>NON È GROWTH</b><h3>CONVERSIONE</h3><p>Funnel, lead generation e conversione avanzata appartengono a Growth.</p></article>
+<article class="feature"><b>NON È COMMERCE</b><h3>VENDITA ONLINE</h3><p>Catalogo prodotti, carrello e checkout appartengono a Commerce.</p></article>
+<article class="feature"><b>NON È CUSTOM</b><h3>SISTEMI SU MISURA</h3><p>AI, automazioni, integrazioni e sistemi personalizzati appartengono a Custom.</p></article>
+<article class="feature"><b>NON È SOCIAL MANAGEMENT</b><h3>EDITORIAL MANAGEMENT</h3><p>La gestione editoriale continuativa dei social non è inclusa.</p></article>
+</div>
+</section>
+
+<section class="section dark">
+<div class="section-head"><div><div class="eyebrow">05 · IL MODELLO</div><h2>NON COMPRARE UN SITO.<br>COSTRUISCI UNA BASE.</h2></div><p>MediaBay costruisce la piattaforma e continua a occuparsi dell'infrastruttura che la mantiene attiva.</p></div>
+<div class="grid">
+<div class="card"><strong>€39,90 / MESE</strong><p>Setup €399 · incluso all'attivazione.</p></div>
+<div class="card"><strong>PRIMO MESE −20%</strong><p>Se decidi di attivare il servizio.</p></div>
+<div class="card"><strong>NESSUN PAGAMENTO PRIMA DELLA CONSEGNA</strong><p>Prima vediamo la piattaforma. Poi decidi.</p></div>
+<div class="card"><strong>PUOI INTERROMPERE QUANDO VUOI</strong><p>Il servizio resta semplice e trasparente.</p></div>
+</div>
+<div style="margin-top:40px;max-width:760px"><h3>PERCHÉ €39,90?</h3><p>Perché una presenza digitale professionale non dovrebbe richiedere un grande investimento iniziale per essere accessibile.</p><p>Il modello Presence separa la costruzione della piattaforma dalla sua gestione nel tempo: invece di acquistare un progetto una tantum e poi gestirlo da solo, hai una piattaforma MediaBay costruita, mantenuta e supportata.</p><p><strong>Un costo mensile semplice. Una responsabilità tecnica in meno.</strong></p></div>
+</section>
+
+<section class="section paper">
+<div class="section-head"><div><div class="eyebrow" style="color:#182318">06 · OBIEZIONI</div><h2>“MA IO HO GIÀ<br>INSTAGRAM.”</h2></div><p>Perfetto. Non devi eliminarlo. Instagram ti permette di essere presente dentro una piattaforma. Presence ti permette di avere un punto di riferimento tuo.</p></div>
+<p style="max-width:800px">Puoi portare lì chi arriva da Instagram, Google, WhatsApp, QR code, passaparola o qualsiasi altro canale. <strong>Non devi scegliere tra i tuoi canali. Devi dare loro una destinazione.</strong></p>
+</section>
+
+<section class="section paper">
+<div class="section-head"><div><div class="eyebrow" style="color:#182318">07 · EVOLUZIONE</div><h2>E SE DOMANI<br>MI SERVE DI PIÙ?</h2></div><p>Non devi prevederlo oggi. Presence è il punto di partenza.</p></div>
+<div class="feature-grid">
+<article class="feature"><b>GROWTH</b><h3>STRATEGIA</h3><p>Per strategia e conversione.</p></article>
+<article class="feature"><b>COMMERCE</b><h3>VENDITA</h3><p>Per vendere online.</p></article>
+<article class="feature"><b>CUSTOM</b><h3>SISTEMI</h3><p>Per costruire sistemi su misura.</p></article>
+</div>
+<p style="margin-top:30px"><strong>Parti da ciò che ti serve oggi. Costruisci sopra quando ti serve domani.</strong></p>
+</section>
+
+<section class="section paper">
+<div class="section-head"><div><div class="eyebrow" style="color:#182318">08 · FAQ</div><h2>PRIMA DI<br>INIZIARE.</h2></div><p>Le risposte alle domande più importanti prima di attivare Presence.</p></div>
+<div class="faq">
+<details><summary>Il sito viene acquistato?</summary><p>No. Presence funziona con un modello in abbonamento: la piattaforma rimane nell'infrastruttura MediaBay e viene gestita nel tempo.</p></details>
+<details><summary>Devo pagare prima di vedere il risultato?</summary><p>No. Prima viene preparata la piattaforma. La guardi. La valuti. Poi decidi se attivare il servizio.</p></details>
+<details><summary>Quanto costa il setup?</summary><p>€399, incluso all'attivazione.</p></details>
+<details><summary>Quanto tempo serve?</summary><p>La piattaforma viene preparata entro 24h dalla ricezione di tutti i materiali necessari.</p></details>
+<details><summary>Posso interrompere?</summary><p>Sì. Puoi interrompere il servizio quando vuoi.</p></details>
+<details><summary>Posso passare a Growth o Commerce?</summary><p>Sì. La struttura MediaBay è pensata per permettere al sistema di crescere insieme al business.</p></details>
+</div>
+</section>
+
+<section class="cta" id="start">
+<div><div class="eyebrow">09 · START</div>
+<h2 data-it="NON DEVI<br>FARE TUTTO OGGI." data-en="YOU DON'T NEED<br>TO DO EVERYTHING TODAY.">NON DEVI<br>FARE TUTTO OGGI.</h2>
+<p style="max-width:650px;margin:18px 0 28px" data-it="Devi solo chiederti una cosa: quando qualcuno ti cerca, cosa vuoi che trovi?" data-en="You only need to ask yourself one thing: when someone searches for you, what do you want them to find?">Devi solo chiederti una cosa: quando qualcuno ti cerca, cosa vuoi che trovi?</p>
+<a class="btn" href="brief.html" data-it="COSTRUISCI LA TUA PRESENZA ↗" data-en="BUILD YOUR PRESENCE ↗">COSTRUISCI LA TUA PRESENZA ↗</a>
+<p style="font-size:8px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-top:14px">€39,90 / MESE · SETUP INCLUSO ALL'ATTIVAZIONE</p>
+<p style="font-size:8px;letter-spacing:.12em;text-transform:uppercase;opacity:.6">Prima la piattaforma. Poi decidi.</p>
+</div>
+</section><footer class="footer">
+  <div class="footer-col">
+    <span class="footer-label">MEDIABAY</span>
+    <span class="footer-brand">PHYSICAL PRESENCE.<br>DIGITAL IMPACT.</span>
+    <span class="footer-muted" data-it="Un ecosistema digitale per attività reali. Web · Commerce · AI · Social." data-en="A digital ecosystem for real businesses. Web · Commerce · AI · Social.">Un ecosistema digitale per attività reali. Web · Commerce · AI · Social.</span>
+  </div>
+  <div class="footer-col">
+    <span class="footer-label" data-it="NAVIGAZIONE" data-en="NAVIGATION">NAVIGAZIONE</span>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html#system" data-it="01 · SYSTEM" data-en="01 · SYSTEM">01 · SYSTEM</a>
+      <a href="index.html#diagnostic" data-it="02 · PUNTO DI PARTENZA" data-en="02 · STARTING POINT">02 · PUNTO DI PARTENZA</a>
+      <a href="index.html#system" data-it="03 · SISTEMA" data-en="03 · SYSTEM">03 · SISTEMA</a>
+      <a href="index.html#packages" data-it="04 · PACCHETTI" data-en="04 · PACKAGES">04 · PACCHETTI</a>
+      <a href="index.html#process" data-it="05 · COME FUNZIONA" data-en="05 · HOW IT WORKS">05 · COME FUNZIONA</a>
+      <a href="businesses.html" data-it="06 · BUSINESS" data-en="06 · BUSINESSES">06 · BUSINESS</a>
+      <a href="index.html#start" data-it="07 · INIZIA" data-en="07 · START">07 · INIZIA</a>
+    </nav>
+  </div>
+  <div class="footer-col">
+    <span class="footer-label" data-it="CONTATTI" data-en="CONTACT">CONTATTI</span>
+    <a href="mailto:info@mediabay.it">info@mediabay.it</a>
+    <a href="tel:+393518472396">+39 351 847 2396</a>
+    <span class="footer-muted">Via Mercurio 2<br>09045 Sardegna, Italia</span>
+    <a href="https://www.instagram.com/mediabay.it/" target="_blank" rel="noopener">Instagram @mediabay.it ↗</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MediaBay</span>
+    <span>EST. 2013 · MEDIA BIKE → MEDIABAY</span>
+    <span>Web · Social · AI</span>
+  </div>
+</footer>
+
+<script>
+const panel=document.getElementById('menuPanel'),btn=document.getElementById('menuBtn');
+btn.addEventListener('click',()=>{panel.classList.toggle('open');btn.textContent=panel.classList.contains('open')?'CLOSE':'MENU'});
+panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{panel.classList.remove('open');btn.textContent='MENU'}));
+function setLang(lang){localStorage.setItem('mediabay-language',lang);document.documentElement.lang=lang;
+document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+document.querySelectorAll('[data-it]').forEach(el=>{const v=el.getAttribute('data-'+lang);if(v!==null)el.innerHTML=v})}
+setLang(localStorage.getItem('mediabay-language')||'it');
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+</script>
+<div id="mb-cookie" role="dialog" aria-label="Informativa cookie">
+  <div class="mb-cookie-copy">
+    <strong>Cookie & privacy</strong>
+    <p>Usiamo cookie e strumenti tecnici necessari al funzionamento del sito e, se lo scegli, per ricordare le tue preferenze. Nessun cookie pubblicitario di terze parti è attivo in questa versione.</p>
+  </div>
+  <div class="mb-cookie-actions">
+    <button class="mb-cookie-btn" type="button" id="mb-cookie-close">Continua</button>
+    <button class="mb-cookie-btn primary" type="button" id="mb-cookie-ok">OK</button>
+  </div>
+</div>
+
+
+<script id="mediabay-ui-system">
+(function(){
+  const body=document.body;
+  const loader=document.getElementById('mb-loader');
+  body.classList.add('mb-loading');
+  const hideLoader=()=>{setTimeout(()=>{body.classList.remove('mb-loading');loader?.classList.add('is-hidden')},500)};
+  if(document.readyState==='complete') hideLoader(); else window.addEventListener('load',hideLoader,{once:true});
+
+  document.querySelectorAll('a[href]').forEach(a=>{
+    a.addEventListener('click',function(e){
+      const href=this.getAttribute('href');
+      if(!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || this.target==='_blank') return;
+      let url; try{url=new URL(href,location.href)}catch(_){return}
+      if(url.origin!==location.origin) return;
+      if(url.pathname===location.pathname && url.hash) return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+      e.preventDefault();
+      body.classList.add('mb-leaving');
+      setTimeout(()=>{location.href=url.href},260);
+    });
+  });
+
+  const cookie=document.getElementById('mb-cookie');
+  const close=()=>{localStorage.setItem('mediabay-cookie-notice-v116','seen');cookie?.classList.add('is-hidden')};
+  if(localStorage.getItem('mediabay-cookie-notice-v116')==='seen') cookie?.classList.add('is-hidden');
+  document.getElementById('mb-cookie-close')?.addEventListener('click',close);
+  document.getElementById('mb-cookie-ok')?.addEventListener('click',close);
+})();
+</script>
+
+
+
+
+</body></html>
+<style id="presence-v120-mobile-final">
+/* =========================================================
+   PRESENCE V120 — MOBILE SYSTEM
+   Real mobile composition, not desktop scaled down.
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  /* ---------- GLOBAL ---------- */
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .section,
+  .cta {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .section {
+    padding-top: 68px !important;
+    padding-bottom: 68px !important;
+  }
+
+  .section-head {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+  }
+
+  .section-head > div {
+    width: 100%;
+  }
+
+  .section-head h2 {
+    font-size: clamp(2.55rem, 11vw, 4.5rem) !important;
+    line-height: .88 !important;
+    letter-spacing: -.045em !important;
+    max-width: 100% !important;
+  }
+
+  .section-head > p {
+    width: 100%;
+    max-width: 100% !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .page-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    min-height: 100svh !important;
+    height: auto !important;
+    padding: 88px 20px 42px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .page-art {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    opacity: .30 !important;
+    z-index: 0 !important;
+  }
+
+  .page-hero:after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7,10,11,.15) 0%,
+        rgba(7,10,11,.38) 35%,
+        rgba(7,10,11,.92) 72%,
+        #070a0b 100%
+      ) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+
+  .hero-content {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(3.4rem, 15vw, 6.2rem) !important;
+    line-height: .80 !important;
+    letter-spacing: -.055em !important;
+    margin: 24px 0 0 !important;
+    max-width: 100% !important;
+  }
+
+  .hero-copy {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    max-width: 360px !important;
+    margin-top: 24px !important;
+  }
+
+  .hero-content .btn {
+    margin-top: 22px !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ---------- FIRST CONTACT ---------- */
+
+  .feature-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: 36px !important;
+  }
+
+  .feature {
+    min-height: 0 !important;
+    padding: 24px !important;
+  }
+
+  .feature h3 {
+    margin-top: 42px !important;
+    font-size: clamp(1.8rem, 8vw, 3rem) !important;
+    line-height: .92 !important;
+  }
+
+  .feature p {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* ---------- PROCESS ---------- */
+
+  .section.dark .process {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    margin-top: 38px !important;
+  }
+
+  .section.dark .process-row {
+    display: grid !important;
+    grid-template-columns: 42px 1fr !important;
+    column-gap: 14px !important;
+    row-gap: 8px !important;
+    padding: 22px 0 !important;
+  }
+
+  .section.dark .process-row b {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    font-size: 11px !important;
+  }
+
+  .section.dark .process-row h3 {
+    grid-column: 2 !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+  }
+
+  .section.dark .process-row p {
+    grid-column: 2 !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  /* ---------- PACKAGE / MODEL ---------- */
+
+  .price-band {
+    display: block !important;
+    padding: 32px 20px !important;
+  }
+
+  .price-band .price {
+    font-size: clamp(3.4rem, 16vw, 5.5rem) !important;
+    line-height: .82 !important;
+    letter-spacing: -.06em !important;
+  }
+
+  .price-band p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  .section.dark .section-head {
+    margin-bottom: 0 !important;
+  }
+
+  /* ---------- CARDS / GRIDS ---------- */
+
+  .grid,
+  .metric,
+  .faq {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .card {
+    padding: 22px !important;
+  }
+
+  /* ---------- FAQ ---------- */
+
+  .faq {
+    margin-top: 34px !important;
+  }
+
+  .faq summary {
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+    padding: 20px 0 !important;
+  }
+
+  .faq p {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* ---------- CTA ---------- */
+
+  .cta {
+    padding-top: 76px !important;
+    padding-bottom: 76px !important;
+  }
+
+  .cta h2 {
+    font-size: clamp(3rem, 14vw, 5.5rem) !important;
+    line-height: .82 !important;
+    letter-spacing: -.055em !important;
+  }
+
+  .cta .btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    margin-top: 28px !important;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  .footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+
+  .section,
+  .cta {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .page-hero {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    padding-top: 82px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(3.05rem, 15.8vw, 5.2rem) !important;
+    line-height: .79 !important;
+  }
+
+  .hero-copy {
+    font-size: 13px !important;
+  }
+
+  .section-head h2 {
+    font-size: clamp(2.35rem, 11.5vw, 4rem) !important;
+  }
+
+  .feature {
+    padding: 20px !important;
+  }
+
+  .feature h3 {
+    font-size: clamp(1.7rem, 8vw, 2.6rem) !important;
+  }
+
+  .section.dark .process-row {
+    grid-template-columns: 34px 1fr !important;
+  }
+
+  .price-band {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .cta h2 {
+    font-size: clamp(2.8rem, 14vw, 4.8rem) !important;
+  }
+}
+</style>
