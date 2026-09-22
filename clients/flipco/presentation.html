@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Flip&Co × MediaBay — Abbiamo costruito qualcosa per voi</title>
+<meta name="description" content="Una demo privata progettata da MediaBay per Flip&Co, Cagliari.">
+<style>
+:root{--ink:#080808;--paper:#f3f0e9;--acid:#d9ff3f;--soft:#a8aaa5;--line:rgba(243,240,233,.15);--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;border:0;background:none;color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}::selection{background:var(--acid);color:#000}
+body:before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;background:linear-gradient(90deg,transparent 0,transparent calc(100% - 1px),rgba(255,255,255,.03) calc(100% - 1px));opacity:.4}
+.cursor{position:fixed;left:0;top:0;width:18px;height:18px;border:1px solid var(--acid);border-radius:50%;pointer-events:none;z-index:200;transform:translate(-50%,-50%) scale(0);transition:transform .2s ease,background .2s,border .2s;mix-blend-mode:difference}.cursor.on{transform:translate(-50%,-50%) scale(1)}.cursor.big{transform:translate(-50%,-50%) scale(3);background:var(--acid);border-color:var(--acid)}
+.progress{position:fixed;right:22px;top:50%;z-index:80;width:2px;height:140px;background:rgba(255,255,255,.15);transform:translateY(-50%)}.progress i{display:block;width:100%;height:0;background:var(--acid);transition:height .15s}
+.nav{position:fixed;z-index:90;top:0;left:0;width:100%;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff}.brand{font-size:15px;font-weight:900;letter-spacing:-.06em}.brand span{color:var(--acid)}.nav-meta{font-size:9px;text-transform:uppercase;letter-spacing:.16em;opacity:.75}.nav-cta{padding:9px 12px;border:1px solid rgba(255,255,255,.5);font-size:9px;text-transform:uppercase;letter-spacing:.13em}
+.hero{min-height:100svh;position:relative;overflow:hidden;display:flex;align-items:flex-end}.hero-media{position:absolute;inset:0}.hero-media img{object-position:center 38%;filter:saturate(.78) contrast(1.08)}.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.05) 35%,rgba(0,0,0,.82))}.hero-content{position:relative;z-index:2;width:min(1380px,calc(100% - 56px));margin:auto;padding:0 0 70px}.eyebrow{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--acid);font-weight:800;margin-bottom:18px}.hero h1{font-size:clamp(58px,12vw,180px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:0;max-width:1100px}.hero h1 em{font-family:var(--serif);font-weight:400;text-transform:none;letter-spacing:-.06em}.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:35px}.hero-sub p{max-width:520px;font-size:15px;line-height:1.55;color:rgba(255,255,255,.78);margin:0}.scroll{font-size:9px;text-transform:uppercase;letter-spacing:.18em;display:flex;align-items:center;gap:12px}.scroll b{display:block;width:50px;height:1px;background:var(--acid)}
+.section{position:relative;padding:150px 0}.wrap{width:min(1240px,calc(100% - 56px));margin:auto}.eyebrow.dark{color:var(--acid)}.giant{font-size:clamp(50px,9vw,126px);line-height:.82;letter-spacing:-.075em;text-transform:uppercase;margin:0}.serif{font-family:var(--serif);font-weight:400;text-transform:none}.intro{background:var(--paper);color:#090909}.intro .eyebrow{color:#607800}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:end}.intro-copy{font-size:21px;line-height:1.55;max-width:570px}.intro-copy p{margin:0 0 25px}.intro-copy strong{font-weight:700}.quiet{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#666;margin-top:55px;padding-top:18px;border-top:1px solid rgba(0,0,0,.15)}
+.reveal{opacity:0;transform:translateY(45px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}.delay1{transition-delay:.12s}.delay2{transition-delay:.22s}
+.choice{background:#0b0b0b}.choice-head{display:flex;justify-content:space-between;gap:30px;align-items:flex-end}.choice-note{max-width:340px;color:var(--soft);font-size:12px;line-height:1.6}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:65px}.tab{position:relative;min-height:520px;background:#111;overflow:hidden;cursor:pointer}.tab img{position:absolute;inset:0;filter:grayscale(1);opacity:.5;transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .5s,filter .5s}.tab:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.9));}.tab-content{position:absolute;z-index:2;inset:auto 25px 28px}.tab-num{font-size:9px;color:var(--acid);letter-spacing:.16em}.tab h3{font-size:42px;letter-spacing:-.06em;margin:8px 0 8px;text-transform:uppercase}.tab p{font-size:11px;line-height:1.5;color:#bbb;max-width:210px;margin:0;opacity:0;transform:translateY(12px);transition:.4s}.tab:hover img,.tab.active img{transform:scale(1.06);opacity:.82;filter:grayscale(0)}.tab:hover p,.tab.active p{opacity:1;transform:none}
+.split{display:grid;grid-template-columns:.82fr 1.18fr;min-height:90vh}.split-copy{background:var(--acid);color:#080808;padding:100px clamp(28px,6vw,90px);display:flex;flex-direction:column;justify-content:center}.split-copy h2{font-size:clamp(50px,8vw,110px);line-height:.8;letter-spacing:-.08em;text-transform:uppercase;margin:0}.split-copy p{max-width:430px;font-size:16px;line-height:1.55;margin-top:35px}.look-stage{position:relative;min-height:90vh;background:#161616;overflow:hidden}.look-stage img{position:absolute;inset:0;object-position:center}.look-stage:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.15),transparent 55%,rgba(0,0,0,.4))}.hotspot{position:absolute;z-index:3;width:34px;height:34px;border:1px solid #fff;border-radius:50%;display:grid;place-items:center;cursor:pointer}.hotspot:before{content:"";width:8px;height:8px;background:var(--acid);border-radius:50%;box-shadow:0 0 0 8px rgba(217,255,63,.15);transition:.3s}.hotspot:hover:before{transform:scale(1.5)}.hotspot .tip{position:absolute;left:45px;top:-12px;min-width:150px;padding:12px;background:#fff;color:#000;font-size:10px;opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s}.hotspot:hover .tip{opacity:1;transform:none}
+.flow-section{background:var(--paper);color:#090909}.flow-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:90px}.flow-sticky{position:sticky;top:110px;height:max-content}.flow-sticky p{font-size:15px;line-height:1.55;max-width:340px;color:#666}.flow-list{border-top:1px solid rgba(0,0,0,.2)}.flow-row{min-height:170px;border-bottom:1px solid rgba(0,0,0,.2);display:flex;align-items:center;gap:30px}.flow-no{font-size:10px;color:#687b00;width:45px}.flow-row h3{font-size:clamp(34px,5vw,68px);letter-spacing:-.065em;text-transform:uppercase;margin:0}.arrow{margin-left:auto;font-size:30px;transition:.3s}.flow-row:hover .arrow{transform:translate(8px,-8px)}
+.demo{background:#080808;padding-bottom:0}.demo-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px}.demo-head p{max-width:390px;color:var(--soft);font-size:13px;line-height:1.6}.browser{border:1px solid rgba(255,255,255,.2);background:#111;padding:9px;box-shadow:0 40px 100px rgba(0,0,0,.5);transform:perspective(1400px) rotateX(2deg);transition:transform .8s}.browser:hover{transform:perspective(1400px) rotateX(0)}.browser-top{height:32px;display:flex;align-items:center;gap:6px;padding:0 8px}.dot{width:6px;height:6px;border-radius:50%;background:#555}.browser-url{margin-left:10px;font-size:8px;color:#777;letter-spacing:.08em}.preview{height:min(68vw,690px);overflow:hidden;position:relative}.preview img{object-position:center top;transition:transform 1.2s}.browser:hover .preview img{transform:scale(1.025)}.demo-cta{display:flex;justify-content:center;padding:55px 0 130px}.big-btn{display:inline-flex;align-items:center;gap:20px;border:1px solid rgba(255,255,255,.35);padding:20px 25px;font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;transition:.3s}.big-btn:hover{background:var(--acid);color:#000;border-color:var(--acid);padding-left:32px;padding-right:32px}
+.note{background:#151515}.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}.note-card{margin-top:50px;border-top:1px solid var(--line)}.note-item{padding:20px 0;border-bottom:1px solid var(--line);font-size:12px;color:#aaa;line-height:1.6}.note-item strong{display:block;color:#fff;margin-bottom:4px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.end{background:var(--paper);color:#080808;min-height:100svh;display:flex;align-items:center}.end h2{font-size:clamp(60px,11vw,150px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:0}.end h2 em{font-family:var(--serif);font-weight:400;text-transform:none}.end-copy{max-width:620px;margin-top:45px;font-size:18px;line-height:1.6;color:#555}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:42px}.action{padding:16px 20px;border:1px solid #bbb;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.action.primary{background:#080808;color:#fff;border-color:#080808}.action:hover{transform:translateY(-3px);background:var(--acid);color:#000;border-color:#000}.fine{margin-top:55px;padding-top:20px;border-top:1px solid #ccc;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#777}
+footer{background:#080808;padding:70px 0 25px}.foot{display:flex;justify-content:space-between;gap:40px;align-items:flex-end}.foot-brand{font-size:24px;font-weight:900;letter-spacing:-.06em}.foot-brand span{color:var(--acid)}.foot small{display:block;color:#666;font-size:9px;line-height:1.7;margin-top:10px}.foot-links{display:flex;gap:20px;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#888}.foot-links a:hover{color:#fff}
+@media(max-width:800px){.cursor{display:none}.progress{right:9px;height:100px}.nav{padding:18px 16px}.nav-meta{display:none}.nav-cta{padding:8px}.wrap{width:calc(100% - 32px)}.hero-content{width:calc(100% - 32px);padding-bottom:42px}.hero h1{font-size:clamp(55px,17vw,100px)}.hero-sub{display:block}.hero-sub p{font-size:14px;margin-bottom:25px}.section{padding:90px 0}.intro-grid,.flow-layout,.note-grid,.split{grid-template-columns:1fr;gap:45px}.intro-grid{display:block}.intro-copy{margin-top:45px;font-size:18px}.tabs{grid-template-columns:1fr 1fr}.tab{min-height:300px}.tab h3{font-size:28px}.tab p{opacity:1;transform:none}.split-copy{min-height:60vh;padding:70px 24px}.look-stage{min-height:75vh}.hotspot .tip{display:none}.flow-sticky{position:relative;top:auto}.flow-row{min-height:120px}.flow-row h3{font-size:38px}.demo-head{display:block}.demo-head p{margin-top:25px}.preview{height:65vw}.demo-cta{padding-bottom:80px}.end{min-height:80svh}.end h2{font-size:18vw}.end-copy{font-size:16px}.foot{display:block}.foot-links{margin-top:30px;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="cursor"></div><div class="progress"><i></i></div>
+<nav class="nav"><a class="brand" href="../../index.html">MEDIA<span>BAY</span></a><div class="nav-meta">Private presentation · Flip&Co · Cagliari</div><a class="nav-cta" href="index.html">Enter demo ↗</a></nav>
+
+<section class="hero" id="top">
+  <div class="hero-media"><img src="assets/hero/flipco-hero-04.jpg" alt="Flip&Co"></div>
+  <div class="hero-content">
+    <div class="eyebrow reveal">Flip&Co × MediaBay · 01 / 07</div>
+    <h1 class="reveal delay1">Abbiamo<br><em>costruito</em><br>qualcosa.</h1>
+    <div class="hero-sub reveal delay2"><p>Se siete arrivati qui, probabilmente vi siete chiesti perché avete ricevuto questo link. <strong>La risposta è semplice: abbiamo scelto Flip&Co e abbiamo iniziato a immaginare.</strong></p><div class="scroll"><b></b> Scorri per entrare</div></div>
+  </div>
+</section>
+
+<section class="section intro">
+ <div class="wrap intro-grid">
+  <div class="reveal"><div class="eyebrow">Perché siete qui</div><h2 class="giant">Non è<br>una<br><span class="serif">proposta.</span></h2></div>
+  <div class="intro-copy reveal delay1"><p>Non c'è un contratto. Non c'è un pagamento. Non c'è nessun obbligo.</p><p>Abbiamo semplicemente guardato una realtà vera — <strong>Flip&Co, il vostro negozio a Cagliari</strong> — e ci siamo fatti una domanda:</p><p><strong>“Come potrebbe vivere online tutta quella parte di esperienza che oggi accade dentro il negozio?”</strong></p><div class="quiet">Una demo costruita da MediaBay prima ancora di conoscervi.</div></div>
+ </div>
+</section>
+
+<section class="section choice">
+ <div class="wrap">
+  <div class="choice-head"><div class="reveal"><div class="eyebrow">Perché Flip&Co</div><h2 class="giant">Un negozio<br>non vende<br><span class="serif">solo prodotti.</span></h2></div><p class="choice-note reveal delay1">Vende scelta. Consiglio. Stile. Relazione. Abbiamo provato a portare queste quattro cose anche nello spazio digitale.</p></div>
+  <div class="tabs reveal delay1">
+   <article class="tab active"><img src="assets/editorial/home/flipco-uomo.jpg" alt="Uomo"><div class="tab-content"><div class="tab-num">01 · CATEGORIA</div><h3>Uomo</h3><p>Una porta d'ingresso nello stile Flip&Co.</p></div></article>
+   <article class="tab"><img src="assets/editorial/home/flipco-donna.jpg" alt="Donna"><div class="tab-content"><div class="tab-num">02 · CATEGORIA</div><h3>Donna</h3><p>Scoperta, ispirazione e scelta in un unico percorso.</p></div></article>
+   <article class="tab"><img src="assets/editorial/home/flipco-kids.jpg" alt="Kids"><div class="tab-content"><div class="tab-num">03 · CATEGORIA</div><h3>Kids</h3><p>Un'esperienza pensata anche per il mondo kids.</p></div></article>
+   <article class="tab"><img src="assets/editorial/home/flipco-campaign.jpg" alt="Teens"><div class="tab-content"><div class="tab-num">04 · CATEGORIA</div><h3>Teens</h3><p>Il digitale diventa un nuovo modo di entrare nel brand.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="split">
+ <div class="split-copy reveal"><div class="eyebrow" style="color:#536400">L'idea</div><h2>Ti facciamo<br>il <em>look.</em></h2><p>Abbiamo immaginato una relazione che non finisce quando una persona chiude il sito. Il look può diventare il punto di partenza per scoprire prodotti, chiedere consiglio e arrivare in negozio.</p></div>
+ <div class="look-stage"><img src="assets/editorial/shop-the-look/look-donna.jpg" alt="Shop the look"><div class="hotspot" style="left:28%;top:40%"><span class="tip">LOOK · Outfit completo</span></div><div class="hotspot" style="left:62%;top:58%"><span class="tip">PRODUCT · Scopri il prodotto</span></div><div class="hotspot" style="left:72%;top:30%"><span class="tip">STORE · Vieni in negozio</span></div></div>
+</section>
+
+<section class="section flow-section">
+ <div class="wrap flow-layout">
+  <div class="flow-sticky reveal"><div class="eyebrow" style="color:#607800">Il percorso</div><h2 class="giant">Non un<br>catalogo.<br><span class="serif">Un percorso.</span></h2><p>La persona non deve semplicemente trovare un prodotto. Deve trovare un motivo per continuare.</p></div>
+  <div class="flow-list reveal delay1">
+   <div class="flow-row"><span class="flow-no">01</span><h3>Discover</h3><span class="arrow">↗</span></div>
+   <div class="flow-row"><span class="flow-no">02</span><h3>Get inspired</h3><span class="arrow">↗</span></div>
+   <div class="flow-row"><span class="flow-no">03</span><h3>Shop the look</h3><span class="arrow">↗</span></div>
+   <div class="flow-row"><span class="flow-no">04</span><h3>Choose</h3><span class="arrow">↗</span></div>
+   <div class="flow-row"><span class="flow-no">05</span><h3>Visit Cagliari</h3><span class="arrow">↗</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section demo">
+ <div class="wrap">
+  <div class="demo-head"><div class="reveal"><div class="eyebrow">Adesso guardatelo</div><h2 class="giant">Abbiamo<br>parlato<br><span class="serif">abbastanza.</span></h2></div><p class="reveal delay1">Questa è la parte che conta. Non vogliamo chiedervi di immaginare come potrebbe essere. <strong>Abbiamo provato a costruirlo.</strong></p></div>
+  <div class="browser reveal delay1"><div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="browser-url">flip&co · demo</span></div><a class="preview" href="index.html"><img src="assets/editorial/home/flipco-store-editorial.jpg" alt="Anteprima demo Flip&Co"></a></div>
+  <div class="demo-cta"><a class="big-btn" href="index.html">Avvia la demo <span>↗</span></a></div>
+ </div>
+</section>
+
+<section class="section note">
+ <div class="wrap note-grid">
+  <div class="reveal"><div class="eyebrow">Una cosa importante</div><h2 class="giant">Questa non è<br>la versione<br><span class="serif">finale.</span></h2></div>
+  <div class="note-card reveal delay1">
+   <div class="note-item"><strong>Nessun briefing</strong>Non ci avete ancora raccontato esigenze, priorità e obiettivi.</div>
+   <div class="note-item"><strong>Nessun materiale definitivo</strong>Foto, catalogo, contenuti e informazioni possono cambiare il risultato.</div>
+   <div class="note-item"><strong>Nessun feedback</strong>Quello che vedete è una nostra interpretazione, non un progetto approvato.</div>
+   <div class="note-item"><strong>Ed è proprio questo il punto</strong>Volevamo mostrarvi una possibilità concreta, non chiedervi di immaginarla.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section end">
+ <div class="wrap reveal">
+  <div class="eyebrow" style="color:#607800">E adesso?</div>
+  <h2>Se vi piace<br><em>l'idea...</em></h2>
+  <p class="end-copy">Possiamo parlarne. Possiamo modificare ciò che abbiamo costruito, partire da ciò che avete già, aggiungere ciò che manca e trasformare la demo in una piattaforma reale.</p>
+  <div class="actions"><a class="action primary" href="index.html">Esplora la demo ↗</a><a class="action" href="../../index.html#packages">Scopri MediaBay ↗</a><a class="action" href="../../brief.html">Parla con un consulente ↗</a></div>
+  <div class="fine">Nessun obbligo. Nessuna pressione. Speriamo semplicemente che la demo vi piaccia.</div>
+ </div>
+</section>
+
+<footer><div class="wrap foot"><div><div class="foot-brand">MEDIA<span>BAY</span></div><small>Physical presence. Digital impact.<br>Web · Commerce · AI · Automation</small></div><div class="foot-links"><a href="mailto:info@mediabay.it">info@mediabay.it</a><a href="https://wa.me/393518472396">WhatsApp</a><a href="../../index.html">MediaBay ↗</a></div></div></footer>
+<script>
+const cursor=document.querySelector('.cursor');
+if(matchMedia('(pointer:fine)').matches){document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.classList.add('on')});document.querySelectorAll('a,.tab,.hotspot').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('big'));el.addEventListener('mouseleave',()=>cursor.classList.remove('big'))})}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const progress=document.querySelector('.progress i');addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.height=(scrollY/Math.max(h,1)*100)+'%'},{passive:true});
+const tabs=[...document.querySelectorAll('.tab')];tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active')}));
+</script>
+</body>
+</html>
