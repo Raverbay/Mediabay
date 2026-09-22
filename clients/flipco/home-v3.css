@@ -1707,3 +1707,439 @@ body.has-cursor:before{opacity:1}
  .f43-stylist-big{font-size:22vw}
  .f43-look-bag-bar{position:sticky;bottom:0;background:#f0eee8;z-index:10}
 }
+
+
+/* V48 — FINAL EXPERIENCE LAYER */
+.f29-hero-lead{max-width:560px}
+.f29-hero-actions .f29-textlink{transition:opacity .2s,transform .2s}
+.f29-hero-actions .f29-textlink:hover{opacity:.6;transform:translateX(4px)}
+.f29-brand-intro p{max-width:560px}
+.f29-finder .f29-result{min-height:110px}
+.f29-finder .f29-result.is-ready{padding-bottom:22px}
+.flip-hotspot.is-selected{outline:2px solid #fff;outline-offset:4px;box-shadow:0 0 0 9px rgba(255,90,31,.18)!important}
+.f43-look-bag-bar{gap:28px}
+.f43-look-bag-actions{display:flex;gap:7px;align-items:center}
+.f43-look-bag-bar button{transition:transform .2s,opacity .2s,background .2s}
+.f43-look-bag-bar button:hover:not(:disabled){transform:translateY(-2px)}
+.f43-look-bag-bar button:disabled{opacity:.35;cursor:not-allowed}
+.f43-look-reset{background:transparent!important;color:#080808!important;border:1px solid #aaa!important}
+.f43-look-reset[hidden]{display:none}
+.f43-look-bag-bar strong{letter-spacing:-.02em}
+@media(max-width:700px){
+ .f43-look-bag-bar{align-items:flex-start;padding:14px 0}
+ .f43-look-bag-actions{flex-wrap:wrap;justify-content:flex-end}
+ .f43-look-bag-actions button{padding:10px 11px}
+ .f43-stylist-big{line-height:.78}
+}
+
+
+/* =========================================================
+   V49 — CLIENT EXPERIENCE POLISH
+   Consolidates the visual hierarchy without changing the
+   existing commerce logic.
+   ========================================================= */
+:root{
+  --flip-orange:#ff5a1f;
+  --flip-soft:#e7e2d9;
+  --flip-ease:cubic-bezier(.22,.7,.18,1);
+}
+
+/* HERO — stronger editorial entry, quieter UI */
+.f29-hero{position:relative;isolation:isolate;overflow:hidden}
+.f29-hero-left{position:relative;z-index:2}
+.f29-hero-title{max-width:5.4em;text-wrap:balance}
+.f29-hero-lead{max-width:470px}
+.f29-hero-actions{align-items:center}
+.f29-showcase{position:relative;overflow:hidden}
+.f29-showcase-image img{transition:transform 1.2s var(--flip-ease),filter .8s var(--flip-ease)}
+.f29-showcase:hover .f29-showcase-image img{transform:scale(1.025)}
+.f29-showcase-caption{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.f29-showcase-controls i{transition:width .35s var(--flip-ease),background .25s}
+.f29-showcase-controls i.active{width:26px;border-radius:0}
+
+/* Brand universe — make it feel like a chapter, not a generic logo wall */
+.f29-brand-wall{position:relative;overflow:hidden}
+.f29-brand-wall:after{content:"";position:absolute;inset:auto -10% 0;height:42%;background:radial-gradient(circle at 50% 100%,rgba(255,90,31,.10),transparent 62%);pointer-events:none}
+.f29-brand-intro{position:relative;z-index:1}
+.f29-marquee{position:relative;z-index:1;overflow:hidden}
+.f29-marquee>div{will-change:transform}
+
+/* Finder — one clear conversion moment */
+.f29-finder{position:relative;overflow:hidden}
+.f29-finder:before{content:"FIND / FLIP / REPEAT";position:absolute;right:-.02em;top:8%;font:clamp(46px,8vw,120px)/.8 var(--mono);letter-spacing:-.08em;color:rgba(17,17,15,.045);pointer-events:none;white-space:nowrap}
+.f29-finder-grid,.f29-result{position:relative;z-index:1}
+.f29-fstep button:focus-visible,.flip-look-arrow:focus-visible,.flip-hotspot:focus-visible,.f43-size:focus-visible,.f43-add-look:focus-visible,.f43-look-reset:focus-visible{outline:2px solid var(--flip-orange);outline-offset:3px}
+.f29-finder-picked a{transition:transform .35s var(--flip-ease)}
+.f29-finder-picked a:hover{transform:translateY(-5px)}
+.f29-finder-more{transition:opacity .2s,transform .2s}
+.f29-finder-more:hover{opacity:.65;transform:translateX(4px)}
+
+/* Story — stronger bridge between screen and store */
+.f29-story-image{overflow:hidden}
+.f29-story-image>span:last-child{background:rgba(17,17,15,.82);padding:7px 9px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.f29-story-actions{align-items:center}
+.f29-story-actions .f29-underlink{transition:transform .2s,opacity .2s}
+.f29-story-actions .f29-underlink:hover{transform:translateX(4px);opacity:.65}
+
+/* Shop the Look — make the image the hero of the interaction */
+.flip-lookbook{background:var(--paper)}
+.flip-lookbook-head{align-items:end}
+.flip-lookbook-intro{max-width:330px}
+.flip-lookbook-stage{margin-top:clamp(34px,5vw,64px)}
+.flip-look-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),transparent 55%,rgba(0,0,0,.18));pointer-events:none}
+.flip-hotspot{z-index:2}
+.flip-hotspot.is-selected{animation:none!important}
+.flip-look-caption{position:relative;z-index:3}
+.f43-look-bag-bar{background:rgba(251,250,247,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.f43-look-bag-bar strong{text-transform:uppercase}
+.f43-look-bag-actions button{min-height:40px}
+
+/* Personal stylist — less “feature block”, more fashion statement */
+.f43-stylist-section{position:relative;overflow:hidden}
+.f43-stylist-section:before{content:"TI FACCIAMO\A IL LOOK";white-space:pre;position:absolute;right:-.02em;top:12%;font:clamp(52px,9vw,150px)/.78 var(--display);font-weight:500;letter-spacing:-.09em;color:rgba(8,8,8,.08);pointer-events:none}
+.f43-stylist-grid{position:relative;z-index:1}
+.f43-stylist-copy>p{max-width:520px}
+.f43-stylist-steps>div{transition:padding-left .25s var(--flip-ease),background .25s}
+.f43-stylist-steps>div:hover{padding-left:8px;background:rgba(8,8,8,.045)}
+
+/* Product edit — more gallery, less catalogue */
+.f51-home-pieces{background:var(--paper);position:relative}
+.f51-pieces-head{align-items:end}
+.f51-pieces-copy{max-width:420px}
+.f51-piece-media{background:#ece9e3!important}
+.f51-piece-media img{transition:transform .9s var(--flip-ease),filter .5s!important}
+.f51-piece:hover .f51-piece-media img{transform:scale(1.04)!important;filter:saturate(.96)}
+.f51-piece-info{position:relative}
+.f51-piece-info .f51-piece-arrow{transition:transform .2s,opacity .2s}
+.f51-piece:hover .f51-piece-arrow{transform:translate(3px,-3px);opacity:1}
+
+/* Closing chapter — make the physical store the final memory */
+.f29-close{position:relative;overflow:hidden}
+.f29-close:before{content:"CAGLIARI";position:absolute;right:-.04em;bottom:-.15em;font:clamp(100px,24vw,360px)/.75 var(--display);font-weight:500;letter-spacing:-.11em;color:rgba(255,255,255,.035);pointer-events:none}
+.f29-close .wrap{position:relative;z-index:1}
+.f29-close .f29-btn-light{transition:transform .25s var(--flip-ease),background .25s,color .25s}
+.f29-close .f29-btn-light:hover{transform:translateY(-3px)}
+
+/* Footer bridge — presentation/demo relationship */
+#siteFooter a{transition:opacity .2s,transform .2s}
+#siteFooter a:hover{opacity:.65}
+
+@media(max-width:800px){
+  .f29-hero-title{max-width:none}
+  .f29-showcase:hover .f29-showcase-image img{transform:none}
+  .f29-finder:before{top:4%;font-size:48px}
+  .flip-lookbook-head{align-items:start}
+  .flip-lookbook-intro{max-width:100%}
+  .f43-stylist-section:before{top:22%;font-size:20vw}
+  .f51-pieces-head{align-items:start}
+  .f29-close:before{font-size:38vw}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .f29-showcase-image img,.f51-piece-media img,.f43-look-bag-bar,.f29-showcase-controls i{transition:none!important}
+}
+
+/* =========================================================
+   V50 — PRODUCT-LED HERO
+   The hero showcase is a product frame, not an editorial backdrop.
+   Keep the product fully visible and centered on every viewport.
+   ========================================================= */
+.f29-showcase{
+  background:#e9e4dc!important;
+}
+.f29-showcase-image{
+  background:#e9e4dc!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.f29-showcase-image:after{
+  background:linear-gradient(180deg,rgba(0,0,0,.02),transparent 62%,rgba(0,0,0,.20))!important;
+}
+.f29-showcase-image img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:0!important;
+  transform:none!important;
+  filter:none!important;
+}
+.f29-showcase:hover .f29-showcase-image img{
+  transform:scale(1.012)!important;
+}
+.f29-showcase-caption{
+  text-shadow:0 1px 12px rgba(0,0,0,.28);
+}
+@media(max-width:800px){
+  .f29-showcase-image img{
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+  .f29-showcase-image:after{
+    background:linear-gradient(180deg,rgba(0,0,0,0),transparent 65%,rgba(0,0,0,.16))!important;
+  }
+}
+
+
+/* V51 — HERO EDITORIAL IMAGERY */
+.f29-showcase-image img{object-fit:cover!important;object-position:center center!important;filter:none!important;background:#d6d0c7}
+.f29-showcase-image{background:#d6d0c7}
+@media(max-width:900px){.f29-showcase-image img{object-position:center center!important}}
+
+/* V53 — FINAL HERO IMAGE FIT
+   User-supplied 16:9 campaign frames. Preserve the top edge and full vertical composition.
+   The frame crops only the lateral sides when the viewport is narrower; the subject/head is never cut from above. */
+.f29-showcase-image{
+  background:#0b7d8b!important;
+  overflow:hidden!important;
+}
+.f29-showcase-image img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center top!important;
+  padding:0!important;
+  filter:none!important;
+  transform:none!important;
+}
+.f29-showcase:hover .f29-showcase-image img{
+  transform:scale(1.008)!important;
+}
+@media(max-width:900px){
+  .f29-showcase-image img{
+    object-fit:cover!important;
+    object-position:center top!important;
+  }
+}
+
+
+/* =========================================================
+   V54 — MOBILE EXPERIENCE PASS
+   Mobile is a first-class composition: the Hero becomes a
+   full-bleed editorial frame with the copy layered over it.
+   All major homepage sections get tighter rhythm, touch-safe
+   controls and no horizontal overflow.
+   ========================================================= */
+@media(max-width:800px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+  body.flip29-home{font-size:14px}
+
+  /* Header */
+  body.flip29-home .header{height:68px}
+  body.flip29-home .header-inner{padding:0 16px}
+  body.flip29-home .brandmark img{width:94px}
+  body.flip29-home .menu-btn{width:38px;height:38px}
+  body.flip29-home .menu-btn i{width:25px}
+  body.flip29-home .head-actions{gap:14px}
+  body.flip29-home .icon svg,body.flip29-home .bag svg{width:21px;height:21px}
+
+  /* HERO — image behind the editorial copy */
+  .f29-hero{
+    position:relative!important;
+    display:block!important;
+    min-height:calc(100svh - 68px)!important;
+    height:calc(100svh - 68px)!important;
+    background:#111!important;
+    overflow:hidden!important;
+  }
+  .f29-showcase{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    z-index:0!important;
+    background:#0b7d8b!important;
+  }
+  .f29-showcase-image,
+  .f29-showcase-image img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+  }
+  .f29-showcase-image img{
+    object-fit:cover!important;
+    object-position:center top!important;
+    transform:none!important;
+  }
+  .f29-showcase-image:after{
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.24) 0%,rgba(0,0,0,.07) 52%,rgba(0,0,0,0) 78%),
+      linear-gradient(180deg,rgba(0,0,0,.04) 0%,rgba(0,0,0,.02) 44%,rgba(0,0,0,.42) 100%)!important;
+  }
+  .f29-hero-left{
+    position:relative!important;
+    z-index:4!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+    min-height:calc(100svh - 68px)!important;
+    height:100%!important;
+    padding:18px 18px 20px!important;
+    color:#fff!important;
+    pointer-events:none;
+  }
+  .f29-hero-left>*{pointer-events:auto}
+  .f29-overline{color:rgba(255,255,255,.92)!important;text-shadow:0 1px 8px rgba(0,0,0,.22)}
+  .f29-hero-title{
+    width:auto!important;
+    max-width:88%!important;
+    margin-top:11vh!important;
+    font-size:clamp(62px,18.5vw,96px)!important;
+    line-height:.69!important;
+    letter-spacing:-.085em!important;
+    color:#fff!important;
+    text-shadow:0 2px 18px rgba(0,0,0,.13);
+  }
+  .f29-hero-title span:nth-child(2){margin-left:.06em!important}
+  .f29-hero-title em{color:var(--flip-orange)!important;transform:translateX(2%)!important}
+  .f29-hero-lead{
+    max-width:330px!important;
+    margin-top:auto!important;
+    margin-bottom:18px!important;
+    color:#fff!important;
+    font-size:15px!important;
+    line-height:1.35!important;
+    text-shadow:0 2px 12px rgba(0,0,0,.35);
+  }
+  .f29-hero-actions{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:13px!important;margin-top:0!important}
+  .f29-hero-actions .f29-btn{width:min(100%,310px)!important;min-height:52px!important;padding:16px 18px!important;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+  .f29-hero-actions .f29-textlink{color:#fff!important;border-color:rgba(255,255,255,.75)!important;text-shadow:0 1px 7px rgba(0,0,0,.2)}
+  .f29-hero-meta{display:none!important}
+  .f32-scroll{left:50%!important;bottom:68px!important;transform:translateX(-50%)!important;color:#fff!important;text-shadow:0 1px 8px rgba(0,0,0,.3);font-size:8px!important}
+  .f29-showcase-top{padding:13px 16px!important;color:#fff!important;font-size:8px!important}
+  .f29-showcase-caption{display:none!important}
+  .f29-showcase-controls{left:14px!important;right:14px!important;bottom:15px!important}
+  .f29-showcase-controls button{width:40px!important;height:40px!important;background:rgba(10,10,10,.16)!important;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+
+  /* Ticker */
+  .f29-ticker{height:43px!important;padding:11px 0!important}
+  .f29-ticker div{animation-duration:24s}
+
+  /* Global section rhythm */
+  .wrap{width:calc(100% - 32px)!important}
+  .f29-label{font-size:8px!important;padding-top:10px!important}
+  .f29-intro,.f29-story{padding:76px 0!important}
+  .f29-intro-grid,.f29-brand-intro,.f29-finder-grid,.f29-story-grid{grid-template-columns:1fr!important;gap:30px!important;margin-top:34px!important}
+  .f29-intro h2,.f29-edit-head h2,.f29-brand-intro h2,.f29-finder h2,.f29-story-copy h2,.f29-close h2{font-size:clamp(52px,15.5vw,84px)!important;line-height:.8!important}
+  .f29-intro-grid p,.f29-story-copy>p:not(.f29-mini),.f29-brand-intro p{font-size:16px!important;line-height:1.45!important}
+
+  /* Curated pieces */
+  .f29-tiles{padding-bottom:78px!important}
+  .f29-edit-head{display:block!important;margin:34px 0 28px!important}
+  .f29-edit-head .f29-underlink{display:inline-block;margin-top:18px}
+  .f29-products{grid-template-columns:1fr 1fr!important;gap:30px 9px!important}
+  .f29-product-card:nth-child(2),.f29-product-card:nth-child(4){margin-top:24px!important}
+  .f29-product-image{aspect-ratio:4/5!important}
+  .f29-product-meta{padding-top:10px!important;gap:4px!important}
+  .f29-product-meta b{font-size:12px!important;line-height:1.1}
+  .f29-product-meta span{font-size:10px!important}
+
+  /* Brand wall */
+  .f29-brand-wall{padding:76px 0 0!important}
+  .f29-brand-intro{padding:34px 0 62px!important}
+  .f29-brand-intro p{max-width:100%!important}
+  .f29-marquee{font-size:34px!important;padding:20px 0!important}
+
+  /* Finder */
+  .f29-finder{padding:76px 0!important}
+  .f29-finder-grid{margin-top:34px!important}
+  .f29-finder-grid>div:first-child>p:last-child{font-size:16px!important}
+  .f29-fstep{padding:22px 0!important}
+  .f29-fstep>div{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important}
+  .f29-fstep button{min-height:45px!important;padding:11px 10px!important;font-size:9px!important}
+  .f29-finder .f29-result{margin-top:38px!important;padding-top:20px!important}
+  .f29-finder .f29-result-head strong{font-size:26px!important;line-height:1!important}
+  .f29-finder-picked{grid-template-columns:1fr 1fr!important;gap:18px 8px!important}
+  .f29-finder-picked .f29-product-card:nth-child(2),.f29-finder-picked .f29-product-card:nth-child(4){margin-top:22px!important}
+
+  /* Personal service */
+  .f29-story-grid{gap:34px!important}
+  .f29-story-image{order:1!important}
+  .f29-story-copy{order:2!important}
+  .f29-story-image img{aspect-ratio:4/5!important}
+  .f29-story-actions{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:16px!important}
+  .f29-story-actions .f29-btn{width:100%!important;justify-content:space-between!important;min-height:50px!important}
+
+  /* Shop the Look */
+  .flip-lookbook{padding:72px 0 82px!important}
+  .flip-lookbook-head{display:block!important;margin-bottom:26px!important}
+  .flip-lookbook-head h2{font-size:clamp(58px,17vw,88px)!important;line-height:.78!important;margin-top:12px!important}
+  .flip-lookbook-intro{max-width:100%!important;font-size:15px!important;line-height:1.4!important;margin-top:18px!important}
+  .flip-lookbook-stage{margin-top:30px!important}
+  .flip-look-image{aspect-ratio:4/5!important}
+  .flip-look-arrow{width:42px!important;height:42px!important;top:auto!important;bottom:76px!important}
+  .flip-look-prev{left:10px!important}.flip-look-next{right:10px!important}
+  .f43-look-bag-bar{position:sticky!important;bottom:0!important;z-index:30!important;padding:13px 0!important;gap:10px!important}
+  .f43-look-bag-bar strong{font-size:12px!important}
+  .f43-look-bag-actions{gap:6px!important}
+  .f43-look-bag-actions button{min-height:40px!important;padding:9px 10px!important;font-size:8px!important}
+  .f43-look-bag-actions #f43LookBag{background:#080808!important;color:#fff!important}
+  .f43-look-product-card{grid-template-columns:1fr!important}
+  .f43-product-visual{height:240px!important}
+  .f43-look-actions{display:grid!important;grid-template-columns:1fr 1fr!important}
+  .f43-look-actions>*{width:100%!important}
+
+  /* Stylist */
+  .f43-stylist-section{padding:78px 0!important}
+  .f43-stylist-grid{grid-template-columns:1fr!important;gap:38px!important;margin-top:35px!important}
+  .f43-stylist-big{font-size:21vw!important;line-height:.75!important}
+  .f43-stylist-copy>p{font-size:21px!important;line-height:1.02!important}
+  .f43-stylist-steps{margin-bottom:28px!important}
+  .f43-stylist-steps>div{padding:13px 0!important}
+  .f43-stylist-section:before{font-size:23vw!important;top:25%!important}
+
+  /* Product rail */
+  .f51-home-pieces{padding:70px 0!important}
+  .f51-pieces-head{display:block!important;margin-bottom:28px!important}
+  .f51-pieces-head h2{font-size:clamp(50px,16vw,78px)!important;line-height:.82!important;margin-top:14px!important}
+  .f51-pieces-copy{margin-top:20px!important;max-width:100%!important}
+  .f51-pieces-copy p{font-size:15px!important}
+  .f51-pieces-viewport{margin-right:-16px!important;padding-right:16px!important}
+  .f51-pieces-grid{gap:10px!important;padding-right:16px!important}
+  .f51-piece{width:70vw!important;min-width:70vw!important}
+  .f51-piece-media{aspect-ratio:4/5!important}
+  .f51-pieces-arrow{display:none!important}
+  .f51-pieces-nav{margin-top:18px!important}
+  .f51-pieces-nav a{font-size:8px!important}
+
+  /* Closing */
+  .f29-close{padding:78px 0!important}
+  .f29-close-top{margin-bottom:34px!important;font-size:8px!important}
+  .f29-close h2{font-size:clamp(56px,16vw,86px)!important}
+  .f29-close .f29-btn-light{margin-top:32px!important;width:100%!important;justify-content:space-between!important;min-height:50px!important}
+  .f29-close:before{font-size:40vw!important;bottom:-.08em!important}
+
+  /* Footer */
+  #siteFooter{overflow:hidden!important}
+}
+
+@media(max-width:420px){
+  .f29-hero-title{font-size:clamp(58px,18vw,82px)!important;margin-top:10vh!important}
+  .f29-hero-lead{max-width:290px!important;font-size:14px!important}
+  .f29-hero-actions .f29-btn{width:min(100%,290px)!important}
+  .f29-showcase-controls{bottom:12px!important}
+  .f32-scroll{bottom:64px!important}
+  .f29-fstep>div{grid-template-columns:1fr!important}
+  .f43-look-actions{grid-template-columns:1fr!important}
+  .f51-piece{width:78vw!important;min-width:78vw!important}
+}
+
+
+/* V55 — FINAL HERO CAMPAIGN FRAMES
+   Use the new user-supplied 16:9 campaign images. Keep the top of the frame
+   protected on narrow screens while preserving the wide editorial composition. */
+.f29-showcase-image img{
+  object-fit:cover!important;
+  object-position:center top!important;
+  width:100%!important;
+  height:100%!important;
+}
+@media(max-width:800px){
+  .f29-showcase-image img{
+    object-fit:cover!important;
+    object-position:center top!important;
+  }
+}

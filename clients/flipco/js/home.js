@@ -3,13 +3,14 @@ const esc=window.FLIPCO?.esc||((s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&
 const live=p=>{try{return FLIPCO.stock(p)>0||p.available===true}catch{return !!p?.available}};
 const fallback=p=>p?.art?`assets/products/${esc(p.art)}`:'';
 const src=p=>p?.image||fallback(p);
+const localImage=p=>fallback(p)||p?.image||'';
 const img=(p,alt='')=>`<img src="${esc(src(p))}" alt="${esc(alt||`${p?.brand||''} ${p?.name||''}`)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${fallback(p)}'>`;
 async function boot(){
  const products=await FLIPCO.load(); if(!products.length)return; const available=products.filter(live);
  const grid=document.querySelector('#fxEditGrid'),count=document.querySelector('#fxEditCount');
  const curated=['NB9060-ERC','FLI-GCDS-BAND-MAN','DSQ2-PUFF-KIDS','FLI-PINKO-LOVE-BAG'].map(id=>products.find(p=>p.id===id)).filter(Boolean).filter(live);
- const card=(p,i)=>`<a class="f29-product-card" href="product.html?id=${encodeURIComponent(p.id)}"><div class="f29-product-image">${img(p)}</div><div class="f29-product-meta"><small>${esc(p.brand)} · ${esc(p.category)}</small><b>${esc(p.name)}</b><span>${p.compareAt&&Number(p.compareAt)>Number(p.price)?`<del>${FLIPCO.money(p.compareAt)}</del> `:''}${FLIPCO.money(p.price)}</span><div class="f29-product-status">${esc(p.badge||'SELECTED')}</div></div></a>`;
- const render=arr=>{if(grid)grid.innerHTML=arr.map(card).join('');if(count)count.textContent=`${String(arr.length).padStart(2,'0')} PIECES / CURATED`};render(curated);
+ const productCard=(p,i)=>`<a class="f29-product-card" href="product.html?id=${encodeURIComponent(p.id)}"><div class="f29-product-image">${img(p)}</div><div class="f29-product-meta"><small>${esc(p.brand)} · ${esc(p.category)}</small><b>${esc(p.name)}</b><span>${p.compareAt&&Number(p.compareAt)>Number(p.price)?`<del>${FLIPCO.money(p.compareAt)}</del> `:''}${FLIPCO.money(p.price)}</span><div class="f29-product-status">${esc(p.badge||'SELECTED')}</div></div></a>`;
+ const render=arr=>{if(grid)grid.innerHTML=arr.map(productCard).join('');if(count)count.textContent=`${String(arr.length).padStart(2,'0')} PIECES / CURATED`};render(curated);
  
  const showcaseGrid=document.querySelector('#flipShowcaseGrid');
  const showcaseCount=document.querySelector('#flipShowcaseCount');
@@ -57,9 +58,9 @@ const homePieces=document.querySelector('#homePiecesGrid');
 
  const state={audience:null,need:null},result=document.querySelector('#finderResult');
  const audienceMatch=(p,a)=>{const c=String(p.category||'').toLowerCase(), q=a.toLowerCase(); return c===q||(c==='unisex'&&(q==='uomo'||q==='donna'))};
- function card(p){const why=(p.category==="Kids"?"KIDS EDIT":p.type==="sneaker"?"SNEAKER EDIT":"PERSONAL EDIT");return `<a class="f29-finder-card f43-stylist-card" href="product.html?id=${encodeURIComponent(p.id)}"><div class="f43-card-image"><img src="${esc(p.image)}" alt=""><span>${why}</span></div><div><small>${esc(p.brand)}</small><b>${esc(p.name)}</b><span>${FLIPCO.money(p.price)} <i>VIEW ↗</i></span></div></a>`}
+ function card(p){const why=(p.category==="Kids"?"KIDS EDIT":p.type==="sneaker"?"SNEAKER EDIT":"PERSONAL EDIT");const image=localImage(p);return `<a class="f29-finder-card f43-stylist-card" href="product.html?id=${encodeURIComponent(p.id)}"><div class="f43-card-image"><img src="${esc(image)}" alt="${esc(`${p.brand||""} ${p.name||""}`)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${esc(fallback(p))}'"><span>${why}</span></div><div><small>${esc(p.brand)}</small><b>${esc(p.name)}</b><span>${FLIPCO.money(p.price)} <i>VIEW ↗</i></span></div></a>`}
 const find=()=>available.filter(p=>{if(!state.audience||!state.need)return false;if(!audienceMatch(p,state.audience))return false;return state.need==='all'||String(p.type||'').toLowerCase()===state.need});
- const finder=()=>{if(!result)return;const n=Number(!!state.audience)+Number(!!state.need);result.classList.toggle('is-ready',n===2);result.querySelector('small').textContent=`${n} / 2`;if(n<2){result.querySelector('strong').textContent=n===1?'Perfetto. Ora scegli cosa cerchi.':'Completa le due scelte.';result.querySelector('#finderSelection')?.replaceChildren();return}const arr=find();result.querySelector('strong').textContent=arr.length?`Ecco cosa abbiamo scelto per te.`:'Non lo vediamo nell’Online Edit. Il team può cercarlo in store.';const sel=result.querySelector('#finderSelection');if(sel){sel.innerHTML=arr.length?`<div class="f29-finder-picked">${arr.slice(0,6).map(card).join('')}</div><a class="f29-finder-more" href="#edit">VIEW THE FULL EDIT ↘</a>`:`<div class="f29-finder-empty">Prova un'altra combinazione oppure chiedi al team Flip&Co.</div>`;}setTimeout(()=>result.scrollIntoView({behavior:'smooth',block:'start'}),80)};
+ const finder=()=>{if(!result)return;const n=Number(!!state.audience)+Number(!!state.need);result.classList.toggle('is-ready',n===2);result.querySelector('small').textContent=`${n} / 2`;if(n<2){result.querySelector('strong').textContent=n===1?'Perfetto. Ora scegli cosa cerchi.':'Completa le due scelte.';result.querySelector('#finderSelection')?.replaceChildren();return}const arr=find();result.querySelector('strong').textContent=arr.length?`Ecco cosa abbiamo scelto per te.`:'Non lo vediamo nell’Online Edit. Il team può cercarlo in store.';const sel=result.querySelector('#finderSelection');if(sel){sel.innerHTML=arr.length?`<div class="f29-finder-picked">${arr.slice(0,6).map(card).join('')}</div><a class="f29-finder-more" href="#pieces">VIEW THE FULL EDIT ↘</a>`:`<div class="f29-finder-empty">Prova un'altra combinazione oppure chiedi al team Flip&Co.</div>`;}setTimeout(()=>result.scrollIntoView({behavior:'smooth',block:'start'}),80)};
  document.querySelectorAll('[data-finder] button').forEach(b=>b.addEventListener('click',()=>{const g=b.closest('[data-finder]').dataset.finder;state[g]=b.dataset.value;b.parentElement.querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));finder()}));
  finder();
 
@@ -84,9 +85,11 @@ boot();
     let index=0,startX=0,deltaX=0,dragging=false;
 
     const fallback=p=>p?.art?`assets/products/${p.art}`:"";
+    const localImage=p=>fallback(p)||p?.image||"";
     const esc=window.FLIPCO?.esc||((s)=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])));
     const money=window.FLIPCO?.money||(v=>`€ ${Number(v||0).toFixed(0)}`);
     let catalog=[];
+    const lookSelection=new Map();
 
     const loadCatalog=async()=>{
       try{
@@ -106,15 +109,16 @@ boot();
       const p=productById(id);
       if(!box||!p)return;
       const art=fallback(p);
-      const image=p.image||art;
+      const image=localImage(p);
       const sale=p.compareAt&&Number(p.compareAt)>Number(p.price)
         ?`<del>${esc(money(p.compareAt))}</del> ${esc(money(p.price))}`
         :esc(money(p.price));
       const sizes=Array.isArray(p.sizes)?p.sizes:[];
-      const sizeMap=p.sizeStock||p.sizesMap||null;
-      const options=sizes.length?sizes.map(s=>`<button type="button" class="f43-size" data-look-size="${esc(s)}">${esc(s)}</button>`).join(''):'';
+      const selected=lookSelection.get(p.id)||{};
+      const options=sizes.length?sizes.map(s=>`<button type="button" class="f43-size ${selected.size===s?'is-selected':''}" data-look-size="${esc(s)}">${esc(s)}</button>`).join(''):'';
+      const inLook=lookSelection.has(p.id);
       box.innerHTML=`<article class="flip-look-product-card f43-look-product-card">
-        <div class="f43-product-visual"><img src="${esc(image)}" alt="${esc(`${p.brand||""} ${p.name||""}`)}" loading="lazy" onerror="this.onerror=null;this.src='${esc(art)}'"></div>
+        <div class="f43-product-visual"><img src="${esc(image)}" alt="${esc(`${p.brand||""} ${p.name||""}`)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${esc(art)}'"></div>
         <div class="flip-look-product-meta">
           <small>${esc(p.brand||"FLIP&CO")} · ${esc(p.category||"SELECTED")}</small>
           <strong>${esc(p.name||"Selected piece")}</strong>
@@ -122,25 +126,46 @@ boot();
           ${options?`<div class="f43-size-row"><small>SELECT SIZE</small><div>${options}</div></div>`:""}
           <div class="f43-look-actions">
             <a class="flip-look-product-link" href="product.html?id=${encodeURIComponent(p.id)}">VIEW PRODUCT ↗</a>
-            <button type="button" class="f43-add-look" data-look-add="${esc(p.id)}" ${sizes.length?"disabled":""}>${sizes.length?"SELECT SIZE":"ADD TO BAG"} <span>+</span></button>
+            <button type="button" class="f43-add-look ${inLook?'is-added':''}" data-look-add="${esc(p.id)}" ${sizes.length&&!selected.size?'disabled':''}>${inLook?'IN YOUR LOOK ✓':sizes.length?'ADD TO LOOK':'ADD TO LOOK'} <span>+</span></button>
           </div>
-          <small class="f43-store-note">Need help? Ask Flip&Co in Cagliari.</small>
+          <small class="f43-store-note">Build your look here. Add it to your bag when you're ready.</small>
         </div>
       </article>`;
-      let selected="";
       box.querySelectorAll("[data-look-size]").forEach(btn=>btn.addEventListener("click",()=>{
-        selected=btn.dataset.lookSize;
+        const current=lookSelection.get(p.id)||{};
+        lookSelection.set(p.id,{size:btn.dataset.lookSize});
         box.querySelectorAll("[data-look-size]").forEach(x=>x.classList.toggle("is-selected",x===btn));
         const add=box.querySelector("[data-look-add]");
-        if(add){add.disabled=false;add.textContent="ADD TO BAG +";}
+        if(add){add.disabled=false;add.textContent="ADD TO LOOK +";add.classList.remove("is-added");}
+        updateLookBar();
       }));
       box.querySelector("[data-look-add]")?.addEventListener("click",()=>{
-        const add=box.querySelector("[data-look-add]");
-        if(!add)return;
-        if(sizes.length&&!selected)return;
-        if(window.FLIPCO_CART){FLIPCO_CART.add(p.id,selected||"ONE SIZE",1);add.textContent="ADDED ✓";add.classList.add("is-added");}
+        const choice=lookSelection.get(p.id)||{};
+        if(sizes.length&&!choice.size)return;
+        lookSelection.set(p.id,{size:choice.size||"ONE SIZE"});
+        renderProduct(p.id);
+        updateLookBar();
       });
     }
+
+    function updateLookBar(){
+      const count=document.getElementById("f43LookCount");
+      const add=document.getElementById("f43LookAdd");
+      const reset=document.getElementById("f43LookReset");
+      const n=lookSelection.size;
+      if(count)count.textContent=n?`${n} ${n===1?"piece":"pieces"} in your look`:"Your look is empty";
+      if(add)add.disabled=!n;
+      if(reset)reset.hidden=!n;
+      slides.forEach(slide=>slide.querySelectorAll(".flip-hotspot").forEach(h=>h.classList.toggle("is-selected",lookSelection.has(h.dataset.productId))));
+    }
+
+    document.getElementById("f43LookAdd")?.addEventListener("click",()=>{
+      if(!window.FLIPCO_CART)return;
+      lookSelection.forEach((choice,id)=>FLIPCO_CART.add(id,choice.size||"ONE SIZE",1));
+      document.getElementById("f43LookAdd").textContent="ADDED TO BAG ✓";
+      setTimeout(()=>{const b=document.getElementById("f43LookAdd");if(b)b.textContent="ADD LOOK TO BAG ↗"},1400);
+    });
+    document.getElementById("f43LookReset")?.addEventListener("click",()=>{lookSelection.clear();updateLookBar();});
 
     root.addEventListener("click",e=>{
       const hotspot=e.target.closest(".flip-hotspot");
@@ -231,12 +256,10 @@ boot();
         el.addEventListener("pointerleave",()=>el.style.transform="");
       });
     }
-
-    // Hero local editorial rotation — never depend on remote imagery
+    // V52 — client-supplied editorial hero: two final campaign images.
     const hero=[
-      {image:"assets/assets/hero/flipco-hero-04.jpg",brand:"FLIP&CO",name:"THE EDIT",price:"CAGLIARI",link:"shop.html",pos:"center center"},
-      {image:"assets/editorial/home/flipco-campaign.jpg",brand:"FROM CAGLIARI",name:"NEW SEASON",price:"ONLINE EDIT",link:"collections.html",pos:"center center"},
-      {image:"assets/editorial/home/flipco-kids.jpg",brand:"FLIP&CO / KIDS",name:"SMALL SIZE. BIG ATTITUDE.",price:"KIDS EDIT",link:"shop.html?category=Kids",pos:"center 35%"}
+      {image:"assets/editorial/home/hero-01-red-edit-v2.jpg",brand:"FLIP&CO",name:"THE RED EDIT",price:"CAGLIARI",link:"shop.html",pos:"center center"},
+      {image:"assets/editorial/home/hero-02-yellow-edit-v2.jpg",brand:"FLIP&CO",name:"THE YELLOW EDIT",price:"CAGLIARI",link:"shop.html",pos:"center center"}
     ];
     let hi=0;
     const himg=document.querySelector("#heroImg");
@@ -278,19 +301,4 @@ boot();
     });
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);else boot();
-})();
-
-/* V44 — Look bag bridge */
-(function(){
-  const update=()=>{
-    const el=document.getElementById("f43LookCount");
-    if(!el||!window.FLIPCO_CART)return;
-    const n=FLIPCO_CART.count();
-    el.textContent=n?`${n} ${n===1?"piece":"pieces"} selected`:"0 pieces selected";
-  };
-  document.addEventListener("cart:change",update);
-  document.addEventListener("DOMContentLoaded",()=>{
-    update();
-    document.getElementById("f43LookBag")?.addEventListener("click",()=>document.getElementById("cartBtn")?.click());
-  });
 })();

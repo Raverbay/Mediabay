@@ -23,6 +23,25 @@ body:before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;ba
 .end{background:var(--paper);color:#080808;min-height:100svh;display:flex;align-items:center}.end h2{font-size:clamp(60px,11vw,150px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:0}.end h2 em{font-family:var(--serif);font-weight:400;text-transform:none}.end-copy{max-width:620px;margin-top:45px;font-size:18px;line-height:1.6;color:#555}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:42px}.action{padding:16px 20px;border:1px solid #bbb;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.action.primary{background:#080808;color:#fff;border-color:#080808}.action:hover{transform:translateY(-3px);background:var(--acid);color:#000;border-color:#000}.fine{margin-top:55px;padding-top:20px;border-top:1px solid #ccc;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#777}
 footer{background:#080808;padding:70px 0 25px}.foot{display:flex;justify-content:space-between;gap:40px;align-items:flex-end}.foot-brand{font-size:24px;font-weight:900;letter-spacing:-.06em}.foot-brand span{color:var(--acid)}.foot small{display:block;color:#666;font-size:9px;line-height:1.7;margin-top:10px}.foot-links{display:flex;gap:20px;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#888}.foot-links a:hover{color:#fff}
 @media(max-width:800px){.cursor{display:none}.progress{right:9px;height:100px}.nav{padding:18px 16px}.nav-meta{display:none}.nav-cta{padding:8px}.wrap{width:calc(100% - 32px)}.hero-content{width:calc(100% - 32px);padding-bottom:42px}.hero h1{font-size:clamp(55px,17vw,100px)}.hero-sub{display:block}.hero-sub p{font-size:14px;margin-bottom:25px}.section{padding:90px 0}.intro-grid,.flow-layout,.note-grid,.split{grid-template-columns:1fr;gap:45px}.intro-grid{display:block}.intro-copy{margin-top:45px;font-size:18px}.tabs{grid-template-columns:1fr 1fr}.tab{min-height:300px}.tab h3{font-size:28px}.tab p{opacity:1;transform:none}.split-copy{min-height:60vh;padding:70px 24px}.look-stage{min-height:75vh}.hotspot .tip{display:none}.flow-sticky{position:relative;top:auto}.flow-row{min-height:120px}.flow-row h3{font-size:38px}.demo-head{display:block}.demo-head p{margin-top:25px}.preview{height:65vw}.demo-cta{padding-bottom:80px}.end{min-height:80svh}.end h2{font-size:18vw}.end-copy{font-size:16px}.foot{display:block}.foot-links{margin-top:30px;flex-wrap:wrap}}
+
+/* V57 — presentation hero cleanup */
+.hero-media{background:
+  radial-gradient(circle at 78% 24%,rgba(217,255,63,.10),transparent 28%),
+  linear-gradient(135deg,#151515 0%,#090909 58%,#101010 100%);
+}
+.hero-media:before{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(0,0,0,.12),transparent 48%,rgba(217,255,63,.035)),
+  repeating-linear-gradient(90deg,transparent 0,transparent calc(12.5% - 1px),rgba(255,255,255,.035) calc(12.5% - 1px),rgba(255,255,255,.035) 12.5%);
+  opacity:.9;
+}
+.hero-media:after{background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.72));}
+@media(max-width:800px){
+  .hero{min-height:calc(100svh - 58px);align-items:flex-end;}
+  .hero-content{padding-bottom:34px;}
+  .hero h1{font-size:clamp(48px,15vw,78px);line-height:.84;max-width:100%;}
+  .hero-sub{margin-top:24px;}
+  .hero-sub p{font-size:14px;line-height:1.5;max-width:330px;}
+}
 </style>
 </head>
 <body>
@@ -30,29 +49,29 @@ footer{background:#080808;padding:70px 0 25px}.foot{display:flex;justify-content
 <nav class="nav"><a class="brand" href="../../index.html">MEDIA<span>BAY</span></a><div class="nav-meta">Private presentation · Flip&Co · Cagliari</div><a class="nav-cta" href="index.html">Enter demo ↗</a></nav>
 
 <section class="hero" id="top">
-  <div class="hero-media"><img src="assets/hero/flipco-hero-04.jpg" alt="Flip&Co"></div>
+  <div class="hero-media" aria-hidden="true"></div>
   <div class="hero-content">
     <div class="eyebrow reveal">Flip&Co × MediaBay · 01 / 07</div>
-    <h1 class="reveal delay1">Abbiamo<br><em>costruito</em><br>qualcosa.</h1>
-    <div class="hero-sub reveal delay2"><p>Se siete arrivati qui, probabilmente vi siete chiesti perché avete ricevuto questo link. <strong>La risposta è semplice: abbiamo scelto Flip&Co e abbiamo iniziato a immaginare.</strong></p><div class="scroll"><b></b> Scorri per entrare</div></div>
+    <h1 class="reveal delay1">Abbiamo<br><em>pensato a voi.</em></h1>
+    <div class="hero-sub reveal delay2"><p>Se siete arrivati qui, probabilmente vi siete chiesti perché avete ricevuto questo link. <strong>È semplicemente un progetto che abbiamo voluto realizzare per voi.</strong></p><div class="scroll"><b></b> Scorri per entrare</div></div>
   </div>
 </section>
 
 <section class="section intro">
  <div class="wrap intro-grid">
-  <div class="reveal"><div class="eyebrow">Perché siete qui</div><h2 class="giant">Non è<br>una<br><span class="serif">proposta.</span></h2></div>
-  <div class="intro-copy reveal delay1"><p>Non c'è un contratto. Non c'è un pagamento. Non c'è nessun obbligo.</p><p>Abbiamo semplicemente guardato una realtà vera — <strong>Flip&Co, il vostro negozio a Cagliari</strong> — e ci siamo fatti una domanda:</p><p><strong>“Come potrebbe vivere online tutta quella parte di esperienza che oggi accade dentro il negozio?”</strong></p><div class="quiet">Una demo costruita da MediaBay prima ancora di conoscervi.</div></div>
+  <div class="reveal"><div class="eyebrow">Perché abbiamo iniziato</div><h2 class="giant">È un'idea<br>che abbiamo<br><span class="serif">voluto condividere.</span></h2></div>
+  <div class="intro-copy reveal delay1"><p>Non c'è un contratto. Non c'è un pagamento. Non c'è nessun obbligo.</p><p>Abbiamo guardato una realtà vera — <strong>Flip&Co, il vostro negozio a Cagliari</strong> — e ci siamo fatti una domanda:</p><p><strong>“Come potrebbe vivere online una parte di quell'esperienza che oggi accade dentro il negozio?”</strong></p><div class="quiet">Una prima idea costruita da MediaBay, senza chiedervi nulla in cambio.</div></div>
  </div>
 </section>
 
 <section class="section choice">
  <div class="wrap">
-  <div class="choice-head"><div class="reveal"><div class="eyebrow">Perché Flip&Co</div><h2 class="giant">Un negozio<br>non vende<br><span class="serif">solo prodotti.</span></h2></div><p class="choice-note reveal delay1">Vende scelta. Consiglio. Stile. Relazione. Abbiamo provato a portare queste quattro cose anche nello spazio digitale.</p></div>
+  <div class="choice-head"><div class="reveal"><div class="eyebrow">Perché ci è venuto naturale pensare a voi</div><h2 class="giant">Un negozio<br>non è<br><span class="serif">solo prodotti.</span></h2></div><p class="choice-note reveal delay1">C'è scelta. C'è consiglio. C'è stile. C'è relazione. Abbiamo provato a immaginare come portare un po' di tutto questo anche nello spazio digitale.</p></div>
   <div class="tabs reveal delay1">
    <article class="tab active"><img src="assets/editorial/home/flipco-uomo.jpg" alt="Uomo"><div class="tab-content"><div class="tab-num">01 · CATEGORIA</div><h3>Uomo</h3><p>Una porta d'ingresso nello stile Flip&Co.</p></div></article>
    <article class="tab"><img src="assets/editorial/home/flipco-donna.jpg" alt="Donna"><div class="tab-content"><div class="tab-num">02 · CATEGORIA</div><h3>Donna</h3><p>Scoperta, ispirazione e scelta in un unico percorso.</p></div></article>
    <article class="tab"><img src="assets/editorial/home/flipco-kids.jpg" alt="Kids"><div class="tab-content"><div class="tab-num">03 · CATEGORIA</div><h3>Kids</h3><p>Un'esperienza pensata anche per il mondo kids.</p></div></article>
-   <article class="tab"><img src="assets/editorial/home/flipco-campaign.jpg" alt="Teens"><div class="tab-content"><div class="tab-num">04 · CATEGORIA</div><h3>Teens</h3><p>Il digitale diventa un nuovo modo di entrare nel brand.</p></div></article>
+   <article class="tab"><img src="assets/editorial/home/flipco-campaign.jpg" alt="Unisex"><div class="tab-content"><div class="tab-num">04 · CATEGORIA</div><h3>Unisex</h3><p>Una selezione trasversale che completa l’esperienza Flip&amp;Co.</p></div></article>
   </div>
  </div>
 </section>
@@ -77,7 +96,7 @@ footer{background:#080808;padding:70px 0 25px}.foot{display:flex;justify-content
 
 <section class="section demo">
  <div class="wrap">
-  <div class="demo-head"><div class="reveal"><div class="eyebrow">Adesso guardatelo</div><h2 class="giant">Abbiamo<br>parlato<br><span class="serif">abbastanza.</span></h2></div><p class="reveal delay1">Questa è la parte che conta. Non vogliamo chiedervi di immaginare come potrebbe essere. <strong>Abbiamo provato a costruirlo.</strong></p></div>
+  <div class="demo-head"><div class="reveal"><div class="eyebrow">Ora potete semplicemente guardarlo</div><h2 class="giant">Ecco<br>cosa abbiamo<br><span class="serif">immaginato.</span></h2></div><p class="reveal delay1">Non vogliamo raccontarvelo soltanto a parole. <strong>Abbiamo preferito costruire una prima versione e lasciarvela esplorare con calma.</strong></p></div>
   <div class="browser reveal delay1"><div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="browser-url">flip&co · demo</span></div><a class="preview" href="index.html"><img src="assets/editorial/home/flipco-store-editorial.jpg" alt="Anteprima demo Flip&Co"></a></div>
   <div class="demo-cta"><a class="big-btn" href="index.html">Avvia la demo <span>↗</span></a></div>
  </div>
@@ -85,21 +104,21 @@ footer{background:#080808;padding:70px 0 25px}.foot{display:flex;justify-content
 
 <section class="section note">
  <div class="wrap note-grid">
-  <div class="reveal"><div class="eyebrow">Una cosa importante</div><h2 class="giant">Questa non è<br>la versione<br><span class="serif">finale.</span></h2></div>
+  <div class="reveal"><div class="eyebrow">Prima di giudicarla</div><h2 class="giant">Questa è una<br>prima idea<br><span class="serif">concreta.</span></h2></div>
   <div class="note-card reveal delay1">
-   <div class="note-item"><strong>Nessun briefing</strong>Non ci avete ancora raccontato esigenze, priorità e obiettivi.</div>
-   <div class="note-item"><strong>Nessun materiale definitivo</strong>Foto, catalogo, contenuti e informazioni possono cambiare il risultato.</div>
-   <div class="note-item"><strong>Nessun feedback</strong>Quello che vedete è una nostra interpretazione, non un progetto approvato.</div>
-   <div class="note-item"><strong>Ed è proprio questo il punto</strong>Volevamo mostrarvi una possibilità concreta, non chiedervi di immaginarla.</div>
+   <div class="note-item"><strong>Senza briefing</strong>Non abbiamo ancora avuto modo di conoscere esigenze, priorità e obiettivi direttamente da voi.</div>
+   <div class="note-item"><strong>Materiali provvisori</strong>Abbiamo lavorato con ciò che avevamo a disposizione: il risultato può quindi cambiare insieme a voi.</div>
+   <div class="note-item"><strong>Nessun feedback ancora</strong>Quello che vedete è una nostra interpretazione iniziale, aperta alle vostre idee.</div>
+   <div class="note-item"><strong>Il motivo per cui ve la mostriamo</strong>Volevamo darvi qualcosa di concreto da guardare, commentare e, se vi va, sviluppare insieme.</div>
   </div>
  </div>
 </section>
 
 <section class="section end">
  <div class="wrap reveal">
-  <div class="eyebrow" style="color:#607800">E adesso?</div>
-  <h2>Se vi piace<br><em>l'idea...</em></h2>
-  <p class="end-copy">Possiamo parlarne. Possiamo modificare ciò che abbiamo costruito, partire da ciò che avete già, aggiungere ciò che manca e trasformare la demo in una piattaforma reale.</p>
+  <div class="eyebrow" style="color:#607800">Se l'idea vi incuriosisce</div>
+  <h2>Se vi piace<br><em>quello che vedete...</em></h2>
+  <p class="end-copy">Possiamo semplicemente parlarne. Possiamo cambiare ciò che non vi convince, partire da ciò che avete già e costruire insieme ciò che manca. Se per voi ha senso, questa demo può diventare una piattaforma reale. Se invece resta solo uno spunto, siamo comunque felici di avervela mostrata.</p>
   <div class="actions"><a class="action primary" href="index.html">Esplora la demo ↗</a><a class="action" href="../../index.html#packages">Scopri MediaBay ↗</a><a class="action" href="../../brief.html">Parla con un consulente ↗</a></div>
   <div class="fine">Nessun obbligo. Nessuna pressione. Speriamo semplicemente che la demo vi piaccia.</div>
  </div>
