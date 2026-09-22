@@ -940,68 +940,18 @@ html,body{
 
 
 
+
 <style id="commerce-mobile-grid-fix">
-@media(max-width:800px){
-
-  /* FORCE ONE CARD PER ROW */
-  .identity-commerce .service-grid,
-  .identity-commerce .scope-grid{
-    width:100% !important;
-    max-width:100% !important;
-    overflow:hidden !important;
-  }
-
-  .identity-commerce .service-grid > .service-card,
-  .identity-commerce .scope-grid > article{
-    grid-column:1 / -1 !important;
-    width:100% !important;
-    min-width:0 !important;
-    max-width:100% !important;
-    box-sizing:border-box !important;
-    overflow:hidden !important;
-  }
-
-  .identity-commerce .service-card h3,
-  .identity-commerce .service-card p,
-  .identity-commerce .scope-grid article h3,
-  .identity-commerce .scope-grid article p{
-    max-width:100% !important;
-    overflow-wrap:anywhere !important;
-  }
-
-}
-</style>
-
-<style id="mediabay-grid-fix">
-@media (max-width: 800px) {
-  .service-page .service-grid {
+@media screen and (max-width: 1200px) {
+  .identity-commerce .service-grid {
     display: grid !important;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
     width: 100% !important;
     max-width: 100% !important;
-    overflow: hidden !important;
   }
 
-  .service-page .service-card {
-    grid-column: 1 / -1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 26px 20px !important;
-  }
-
-  .service-page .scope-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
-  }
-
-  .service-page .scope-grid > * {
+  .identity-commerce .service-grid .service-card {
     grid-column: 1 / -1 !important;
     width: 100% !important;
     min-width: 0 !important;
@@ -1012,36 +962,17 @@ html,body{
 </style>
 
 
-<style id="mediabay-commerce-mobile-fix">
-@media (max-width: 800px) {
-
+<style id="commerce-mobile-scope-fix">
+@media screen and (max-width: 1200px) {
   .identity-commerce .scope-grid {
     display: grid !important;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
     width: 100% !important;
     max-width: 100% !important;
-    overflow: hidden !important;
   }
 
   .identity-commerce .scope-grid > article {
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .identity-commerce .service-grid,
-  .identity-commerce .services-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
-  }
-
-  .identity-commerce .service-grid > *,
-  .identity-commerce .services-grid > * {
     grid-column: 1 / -1 !important;
     width: 100% !important;
     min-width: 0 !important;
