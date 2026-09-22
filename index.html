@@ -290,6 +290,29 @@ body.mb-leaving #mb-loader .mb-loader-line:after{animation:none;transform:transl
 .mb-cookie-btn{border:1px solid #070a0b;background:transparent;color:#070a0b;padding:12px 15px;font:800 8px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
 .mb-cookie-btn.primary{background:#c8ff00;border-color:#c8ff00}
 @media(max-width:700px){#mb-cookie{left:12px;right:12px;bottom:12px;grid-template-columns:1fr;gap:14px;padding:16px}.mb-cookie-actions{justify-content:flex-start}.mb-cookie-btn{flex:1}}
+
+/* MOBILE HERO TYPOGRAPHY FIX */
+@media (max-width: 800px){
+  .hero h1{
+    font-size: clamp(3.25rem, 14.5vw, 6.2rem) !important;
+    line-height: .82 !important;
+    letter-spacing: -.055em !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    white-space: normal !important;
+  }
+
+  .hero h1 em{
+    font-style: normal;
+  }
+
+  .hero{
+    overflow: hidden !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -433,98 +456,7 @@ body.mb-leaving #mb-loader .mb-loader-line:after{animation:none;transform:transl
 </section>
 
 
-<section class="start-section" id="start">
-<div class="wrap">
-  <div class="start-head">
-    <div>
-      <div class="eyebrow">05 · START YOUR PROJECT</div>
-      <h2 data-it="Prima la piattaforma.<br>Poi decidi." data-en="Platform first.<br>Then you decide.">Prima la piattaforma.<br>Poi decidi.</h2>
-    </div>
-    <p data-it="Completa il brief e inviaci i materiali. Costruiamo la prima piattaforma entro 24 ore dalla ricezione completa. Prima non paghi nulla: quando la ricevi, la valuti e decidi se abbonarti." data-en="Complete the brief and send us the materials. We build the first platform within 24 hours after receiving everything. You pay nothing before that: when you receive it, you review it and decide whether to subscribe.">Completa il brief e inviaci i materiali. Costruiamo la prima piattaforma entro 24 ore dalla ricezione completa. Prima non paghi nulla: quando la ricevi, la valuti e decidi se abbonarti.</p>
-  </div>
 
-  <div class="checkout-layout">
-    <div class="checkout-main">
-      <div class="checkout-progress">
-        <span class="checkout-step active" data-step="1"><b>01</b><em data-it="PIANO" data-en="PLAN">PIANO</em></span>
-        <span class="checkout-line"></span>
-        <span class="checkout-step" data-step="2"><b>02</b><em data-it="BUSINESS" data-en="BUSINESS">BUSINESS</em></span>
-        <span class="checkout-line"></span>
-        <span class="checkout-step" data-step="3"><b>03</b><em data-it="MATERIALI" data-en="MATERIALS">MATERIALI</em></span>
-        <span class="checkout-line"></span>
-        <span class="checkout-step" data-step="4"><b>04</b><em data-it="RICHIESTA" data-en="REQUEST">RICHIESTA</em></span>
-      </div>
-
-      <div class="checkout-panel" data-panel="1">
-        <div class="panel-kicker">01 / <span data-it="SCEGLI IL TUO PIANO" data-en="CHOOSE YOUR PLAN">SCEGLI IL TUO PIANO</span></div>
-        <div class="plan-choice-grid">
-          <button class="plan-choice" data-plan="presence"><span>PRESENCE</span><strong>€39,90</strong><small>/ MESE</small></button>
-          <button class="plan-choice" data-plan="growth"><span>GROWTH</span><strong>€139,90</strong><small>/ MESE</small></button>
-          <button class="plan-choice" data-plan="commerce"><span>COMMERCE</span><strong>DA €199,90</strong><small>/ MESE</small></button>
-          <button class="plan-choice" data-plan="custom"><span>CUSTOM</span><strong>SU MISURA</strong><small>SYSTEM</small></button>
-        </div>
-        <div class="discount-note"><b>−20%</b><span data-it="sul primo mese se decidi di abbonarti" data-en="on the first month if you decide to subscribe">sul primo mese se decidi di abbonarti</span></div>
-        <button class="checkout-next" data-next="2" data-it="CONTINUA →" data-en="CONTINUE →">CONTINUA →</button>
-      </div>
-
-      <div class="checkout-panel" data-panel="2" hidden>
-        <div class="panel-kicker">02 / <span data-it="IL TUO BUSINESS" data-en="YOUR BUSINESS">IL TUO BUSINESS</span></div>
-        <div class="form-grid">
-          <label><span data-it="NOME ATTIVITÀ *" data-en="BUSINESS NAME *">NOME ATTIVITÀ *</span><input id="startBusiness" required placeholder="es. Lilli Studio"></label>
-          <label><span data-it="NOME E COGNOME *" data-en="FULL NAME *">NOME E COGNOME *</span><input id="startName" required placeholder="Mario Rossi"></label>
-          <label><span data-it="EMAIL *" data-en="EMAIL *">EMAIL *</span><input id="startEmail" type="email" required placeholder="nome@email.it"></label>
-          <label><span data-it="TELEFONO / WHATSAPP" data-en="PHONE / WHATSAPP">TELEFONO / WHATSAPP</span><input id="startPhone" placeholder="+39 ..."></label>
-          <label class="full"><span data-it="SITO ATTUALE (SE ESISTE)" data-en="CURRENT WEBSITE (IF ANY)">SITO ATTUALE (SE ESISTE)</span><input id="startWebsite" type="url" placeholder="https://"></label>
-        </div>
-        <div class="checkout-actions"><button class="checkout-back" data-back="1" data-it="← INDIETRO" data-en="← BACK">← INDIETRO</button><button class="checkout-next" data-next="3" data-it="CONTINUA →" data-en="CONTINUE →">CONTINUA →</button></div>
-      </div>
-
-      <div class="checkout-panel" data-panel="3" hidden>
-        <div class="panel-kicker">03 / <span data-it="MATERIALI PER COSTRUIRE" data-en="MATERIALS TO BUILD">MATERIALI PER COSTRUIRE</span></div>
-        <p class="panel-intro" data-it="Più il materiale è completo, più velocemente possiamo costruire. Puoi anche inviarlo dopo." data-en="The more complete the material, the faster we can build. You can also send it later.">Più il materiale è completo, più velocemente possiamo costruire. Puoi anche inviarlo dopo.</p>
-        <div class="material-grid">
-          <label><span>LOGO</span><input id="startLogo" type="text" placeholder="Link file / Drive"></label>
-          <label><span>IMMAGINI</span><input id="startImages" type="text" placeholder="Link cartella / Drive"></label>
-          <label><span>TESTI</span><input id="startTexts" type="text" placeholder="Link documento / note"></label>
-          <label><span>BRAND / SOCIAL</span><input id="startSocial" type="text" placeholder="@instagram o link"></label>
-        </div>
-        <label class="brief-field"><span data-it="COSA VUOI CHE LA PIATTAFORMA COMUNICHI?" data-en="WHAT SHOULD THE PLATFORM COMMUNICATE?">COSA VUOI CHE LA PIATTAFORMA COMUNICHI?</span><textarea id="startBrief" rows="4" placeholder="Obiettivo, prodotti/servizi, tono, informazioni importanti..."></textarea></label>
-        <div class="checkout-actions"><button class="checkout-back" data-back="2" data-it="← INDIETRO" data-en="← BACK">← INDIETRO</button><button class="checkout-next" data-next="4" data-it="VEDI IL RIEPILOGO →" data-en="SEE SUMMARY →">VEDI IL RIEPILOGO →</button></div>
-      </div>
-
-      <div class="checkout-panel" data-panel="4" hidden>
-        <div class="panel-kicker">04 / <span data-it="IL TUO RIEPILOGO" data-en="YOUR SUMMARY">IL TUO RIEPILOGO</span></div>
-        <div class="final-summary" id="finalSummary"></div>
-        <div class="confirm-box">
-          <label><input type="checkbox" id="startConsent"> <span data-it="Confermo che i dati inseriti sono corretti e voglio ricevere la piattaforma. So che prima non pago nulla e deciderò dopo la consegna se abbonarmi." data-en="I confirm the information is correct and want to receive the platform. I understand there is no payment before delivery and I will decide after delivery whether to subscribe.">Confermo che i dati inseriti sono corretti e voglio ricevere la piattaforma. So che prima non pago nulla e deciderò dopo la consegna se abbonarmi.</span></label>
-        </div>
-        <div class="checkout-actions"><button class="checkout-back" data-back="3" data-it="← MODIFICA" data-en="← EDIT">← MODIFICA</button><button class="checkout-confirm" id="checkoutConfirm" data-it="RICHIEDI LA TUA PIATTAFORMA ↗" data-en="REQUEST YOUR PLATFORM ↗">RICHIEDI LA TUA PIATTAFORMA ↗</button></div>
-        <p class="checkout-foot" data-it="Dopo aver ricevuto tutti i materiali, prepariamo la piattaforma entro 24 ore. Prima non paghi nulla. Quando la ricevi, decidi liberamente se abbonarti al piano: se scegli di continuare, hai il 20% di sconto sul primo mese. Puoi disdire quando vuoi." data-en="After receiving all required materials, we prepare the platform within 24 hours. You pay nothing before that. When you receive it, you decide whether to subscribe: if you continue, you get 20% off the first month. Cancel anytime.">Dopo aver ricevuto tutti i materiali, prepariamo la piattaforma entro 24 ore. Prima non paghi nulla. Quando la ricevi, decidi liberamente se abbonarti al piano: se scegli di continuare, hai il 20% di sconto sul primo mese. Puoi disdire quando vuoi.</p>
-      </div>
-
-      <div class="success-panel" id="checkoutSuccess" hidden>
-        <span>MEDIA BAY · RECEIVED</span>
-        <h3 data-it="Prima la piattaforma. Poi la tua decisione." data-en="Platform first. Then your decision.">Prima la piattaforma. Poi la tua decisione.</h3>
-        <p data-it="Abbiamo raccolto le informazioni. Ti contatteremo per completare il brief e ricevere gli eventuali materiali mancanti. Nessun pagamento ora: dopo la consegna potrai decidere se abbonarti." data-en="We've collected the information. We'll complete the brief and receive any missing materials. No payment now: after delivery, you can decide whether to subscribe.">Abbiamo raccolto le informazioni. Ti contatteremo per completare il brief e ricevere gli eventuali materiali mancanti. Nessun pagamento ora: dopo la consegna potrai decidere se abbonarti.</p>
-        <a id="whatsappStart" href="#" target="_blank" rel="noopener">CONFERMA I DATI SU WHATSAPP ↗</a>
-      </div>
-    </div>
-
-    <aside class="order-card">
-      <div class="order-kicker">MEDIA BAY · TRY FIRST</div>
-      <h3 id="orderPlan">SCEGLI UN PIANO</h3>
-      <div class="order-price" id="orderPrice">—</div>
-      <div class="order-discount"><b>€0</b><span data-it="ORA · NESSUN PAGAMENTO" data-en="NOW · NO PAYMENT">ORA · NESSUN PAGAMENTO</span></div>
-      <div class="decision-note"><strong data-it="PROVA PRIMA. DECIDI DOPO." data-en="TRY FIRST. DECIDE LATER.">PROVA PRIMA. DECIDI DOPO.</strong><span data-it="Ricevi la piattaforma, valutala e scegli tu se abbonarti. Nessun vincolo: puoi disdire quando vuoi." data-en="Receive the platform, review it and choose whether to subscribe. No lock-in: cancel anytime.">Ricevi la piattaforma, valutala e scegli tu se abbonarti. Nessun vincolo: puoi disdire quando vuoi.</span></div>
-      <ul>
-        <li data-it="Nessun pagamento prima della consegna" data-en="No payment before delivery">Nessun pagamento prima della consegna</li>
-        <li data-it="La piattaforma resta gestita da MediaBay" data-en="The platform remains managed by MediaBay">La piattaforma resta gestita da MediaBay</li>
-        <li data-it="Prima piattaforma entro 24h dai materiali completi" data-en="First platform within 24h after complete materials">Prima piattaforma entro 24h dai materiali completi</li>
-      </ul>
-    </aside>
-  </div>
-</div>
-</section>
 
 <section class="section system" id="system">
 
