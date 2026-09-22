@@ -221,8 +221,8 @@ body.identity-custom{
   .identity-custom .page-hero:after{background:linear-gradient(180deg,#08080a12,#08080a45 28%,#08080ae5 59%,#08080a 74%)}
   .identity-custom .page-hero h1{font-size:clamp(4rem,18vw,7rem);margin-top:48vh}
   .identity-custom .hero-copy{font-size:14px}
-  .identity-custom .hero-side{margin-top:28px;border-left:0;border-top:1px solid #b7ff0042;padding:16px 0 0;display:flex;justify-content:space-between;align-items:baseline;gap:18px}
-  .identity-custom .hero-side .big{font-size:4rem}
+  .identity-custom .hero-side{margin-top:28px;border-left:0;border-top:1px solid #b7ff0042;padding:16px 0 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(125px,.85fr);align-items:center;gap:20px}
+  .identity-custom .hero-side .big{font-size:3rem;white-space:nowrap}
   .identity-custom .hero-content:after{margin-top:24px}
   .identity-custom .price-band:after{position:static;display:block;transform:none;margin-top:10px}
   .identity-custom #details .section-head{display:block}
@@ -231,8 +231,8 @@ body.identity-custom{
   .identity-custom .feature{min-height:255px;padding:18px}
   .identity-custom .feature h3{font-size:2.1rem;margin-top:70px}
   .identity-custom .system-map{grid-template-columns:1fr;min-height:auto}
-  .identity-custom .system-copy{padding:30px 22px;min-height:360px}
-  .identity-custom .system-visual{min-height:390px}
+  .identity-custom .system-copy{padding:26px 22px 28px;min-height:0}
+  .identity-custom .system-visual{min-height:360px;height:360px}
   .identity-custom .principle{display:block;padding:30px 22px}
   .identity-custom .principle-text{text-align:left;margin-top:45px;font-size:3.5rem}
 }
