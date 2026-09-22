@@ -1,0 +1,526 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>MediaBay — Growth · The Decision Path</title><style>
+:root{--ink:#070a0b;--panel:#0d1214;--paper:#eceae3;--lime:#c8ff00;--cyan:#64e8ff;--blue:#5da5ff;--red:#ff3b30;--muted:#aab3b4;--line:#ffffff22;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);overflow-x:hidden}a{color:inherit}button{font:inherit}
+.site-header{position:fixed;z-index:100;top:0;left:0;width:100%;height:70px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;background:#070a0bd9;border-bottom:1px solid #ffffff14;backdrop-filter:blur(14px);color:#fff}
+.logo{font-size:20px;font-weight:900;letter-spacing:-.06em;text-decoration:none}.logo small{display:block;font-size:7px;font-weight:400;letter-spacing:.14em;color:var(--lime);margin-top:2px}
+.nav{display:flex;gap:22px;font-size:8px;letter-spacing:.15em;text-transform:uppercase}.nav a{text-decoration:none;opacity:.65}.nav a:hover{opacity:1;color:var(--lime)}
+.lang{display:flex;gap:7px;font-size:8px;letter-spacing:.15em}.lang button{border:0;background:none;color:#fff;opacity:.4;cursor:pointer;padding:3px}.lang button.active{opacity:1;color:var(--lime)}
+.menu{display:none;background:none;border:1px solid #ffffff30;color:#fff;padding:8px 11px;font-size:8px;letter-spacing:.13em;text-transform:uppercase}
+.page-hero{min-height:86svh;padding:125px 4vw 60px;display:grid;grid-template-columns:1fr .75fr;align-items:end;gap:6vw;position:relative;overflow:hidden;background:#070a0b}
+.page-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#070a0b 0%,#070a0bdc 42%,#070a0b55 100%);z-index:0}
+.page-art{position:absolute;right:0;top:0;width:62%;height:100%;object-fit:cover;opacity:.52}
+.hero-content,.hero-side{position:relative;z-index:1}.eyebrow{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--lime)}
+.page-hero h1{font-size:clamp(4rem,9vw,10rem);line-height:.77;letter-spacing:-.09em;margin:25px 0;font-weight:900;max-width:850px}.page-hero h1 em{font-style:normal;color:var(--lime)}
+.hero-copy{max-width:540px;font-size:16px;line-height:1.5;color:#c1c9ca}.hero-side{justify-self:end;max-width:300px}.hero-side .big{font-family:var(--serif);font-size:clamp(3rem,6vw,6rem);line-height:.85;margin:0 0 20px}.hero-side p{font-size:10px;line-height:1.55;color:#8e9899}
+.btn{display:inline-flex;padding:14px 20px;background:var(--lime);color:var(--ink);text-decoration:none;font-size:8px;letter-spacing:.15em;text-transform:uppercase;font-weight:900;margin-top:20px}.btn.alt{background:transparent;color:#fff;border:1px solid #ffffff55}
+.section{padding:9vw 4vw}.paper{background:var(--paper);color:var(--ink)}.dark{background:#080b0c}
+.section-head{display:grid;grid-template-columns:1fr .7fr;gap:6vw;align-items:end}.section h2{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,6.5vw,7rem);line-height:.85;letter-spacing:-.06em;margin:18px 0}.section-head p{font-size:14px;line-height:1.55;color:#7e8787;max-width:460px}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#18231833;margin-top:6vw}.feature{padding:30px;min-height:220px;background:#f5f2e9}.feature:nth-child(2){background:#dce8df}.feature:nth-child(3){background:#dfe8ed}.feature:nth-child(4){background:#eadbd1}.feature b{font-size:8px;letter-spacing:.16em}.feature h3{font-size:clamp(2.1rem,4vw,4.3rem);line-height:.84;letter-spacing:-.06em;margin:70px 0 10px}.feature p{font-size:10px;line-height:1.5;opacity:.68;max-width:380px}
+.metric{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:5vw}.metric-card{background:#101719;border:1px solid #ffffff18;padding:28px}.metric-card strong{display:block;font-size:clamp(3rem,5vw,6rem);line-height:.8;color:var(--lime);letter-spacing:-.08em}.metric-card span{display:block;margin-top:20px;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:#9ca5a6}
+.process{border-top:1px solid #ffffff30;margin-top:6vw}.process-row{display:grid;grid-template-columns:70px 1fr 1fr;gap:20px;padding:26px 0;border-bottom:1px solid #ffffff30}.process-row b{font-size:8px;color:var(--cyan);letter-spacing:.15em}.process-row h3{margin:0;font-size:clamp(2rem,4vw,4rem);letter-spacing:-.06em;line-height:.85}.process-row p{margin:0;color:#8f999a;font-size:10px;line-height:1.5}
+.price-band{background:var(--lime);color:var(--ink);padding:45px 4vw;display:flex;justify-content:space-between;align-items:center;gap:30px}.price-band .price{font-size:clamp(3.5rem,7vw,7rem);font-weight:900;letter-spacing:-.08em}.price-band small{font-size:10px;letter-spacing:.12em}.price-band p{max-width:430px;font-size:12px;line-height:1.5}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:5vw}.faq details{border-top:1px solid #ffffff30;padding:18px 0}.faq summary{cursor:pointer;font-size:11px;letter-spacing:.06em}.faq p{color:#8f999a;font-size:10px;line-height:1.55;max-width:500px}
+.cta{background:#080b0c;color:#fff;padding:9vw 4vw;min-height:48vh;display:flex;flex-direction:column;justify-content:space-between;background-image:linear-gradient(90deg,#080b0cf4,#080b0c66),url("assets/tech-art-cta.jpg");background-size:cover;background-position:center}.cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(3.2rem,6.5vw,7rem);line-height:.84;letter-spacing:-.06em;margin:18px 0}.footer{border-top:1px solid #ffffff30;padding-top:15px;display:flex;justify-content:space-between;gap:20px;font-size:8px;letter-spacing:.14em;text-transform:uppercase}
+#menuPanel{position:fixed;inset:0;z-index:90;background:var(--lime);color:var(--ink);padding:105px 5vw 25px;transform:translateY(-101%);transition:transform .7s cubic-bezier(.77,0,.18,1);display:flex;flex-direction:column}#menuPanel.open{transform:none}#menuPanel nav{margin:auto 0;display:grid}#menuPanel nav a{font-size:clamp(3rem,8vw,8.5rem);line-height:.82;text-decoration:none;font-weight:900;letter-spacing:-.08em;border-bottom:1px solid #18231844;padding:6px 0}
+@media(max-width:800px){.site-header{height:62px;padding:0 18px}.nav{display:none}.menu{display:block}.page-hero{display:block;min-height:92svh;padding:92px 20px 38px}.page-art{width:100%;height:65%;opacity:.42}.page-hero:after{background:linear-gradient(180deg,#070a0b25,#070a0b72 42%,#070a0b 73%)}.page-hero h1{font-size:clamp(3.7rem,16vw,6.4rem);margin-top:42vh}.hero-copy{font-size:14px}.hero-side{margin-top:35px}.section{padding:80px 20px}.section-head{grid-template-columns:1fr;gap:20px}.feature-grid,.metric,.faq{grid-template-columns:1fr}.feature{min-height:210px}.feature h3{margin-top:55px}.process-row{grid-template-columns:38px 1fr;gap:10px}.process-row p{grid-column:2}.price-band{display:block;padding:38px 20px}.price-band p{margin-top:20px}.footer{flex-direction:column}.cta{padding:80px 20px}#menuPanel{padding:85px 20px 20px}#menuPanel nav a{font-size:15vw}}
+
+.identity-growth .page-hero{background:#071116}
+.identity-growth .page-art{opacity:.62;filter:saturate(1.18) hue-rotate(-8deg)}
+.identity-growth .page-hero:after{background:linear-gradient(90deg,#071116 0%,#071116bd 42%,#07111622 100%)}
+.identity-growth .page-hero h1 em{color:#64e8ff}
+.identity-growth .eyebrow{color:#64e8ff}
+.identity-growth .price-band{background:#64e8ff}
+.identity-growth .price-band .price{color:#071116}
+.identity-growth .feature:nth-child(2){background:#dceef0}.identity-growth .feature:nth-child(3){background:#d8e4f0}
+.identity-growth .section.dark{background:#071116}
+.identity-growth .metric-card strong{color:#64e8ff}
+.identity-growth .cta{background:#071116}
+
+
+/* V101 GROWTH — SIGNAL / MOMENTUM / CHOICE */
+body.identity-growth{
+  --growth-cyan:#64e8ff;
+  --growth-blue:#5da5ff;
+  --growth-ink:#061116;
+  --growth-paper:#edf2ef;
+  background:var(--growth-ink);color:#f2f7f7;
+}
+.identity-growth .site-header{
+  background:#061116e8;color:#fff;border-bottom:1px solid #64e8ff24;
+}
+.identity-growth .site-header .logo small,.identity-growth .eyebrow{color:var(--growth-cyan)}
+.identity-growth .site-header .lang button{color:#fff}
+.identity-growth .menu{color:#fff;border-color:#ffffff42}
+
+/* Hero: motion, signal, measurable progress */
+.identity-growth .page-hero{
+  min-height:96svh;background:
+    radial-gradient(circle at 76% 35%,#64e8ff20 0 2px,transparent 3px),
+    linear-gradient(135deg,#061116 0%,#071a22 55%,#061116 100%);
+  color:#f2f7f7;
+}
+.identity-growth .page-hero:before{
+  content:"02 / SIGNAL";position:absolute;right:5vw;top:105px;
+  font-size:8px;letter-spacing:.22em;color:#64e8ff99;z-index:2;
+}
+.identity-growth .page-hero:after{
+  background:linear-gradient(90deg,#061116 0%,#061116e8 38%,#06111662 70%,#0611160a 100%);
+}
+.identity-growth .page-art{
+  width:66%;height:94%;top:3%;opacity:.7;
+  filter:saturate(1.3) hue-rotate(-10deg) contrast(1.08);
+  mix-blend-mode:screen;
+}
+.identity-growth .page-hero h1{
+  font-family:var(--sans);font-weight:900;
+  font-size:clamp(4.8rem,10.5vw,11rem);
+  line-height:.72;letter-spacing:-.1em;margin:22px 0 28px;
+}
+.identity-growth .page-hero h1 em{
+  color:var(--growth-cyan);font-style:normal;
+  text-shadow:0 0 35px #64e8ff25;
+}
+.identity-growth .hero-copy{max-width:500px;color:#b7c5c7;font-size:17px}
+.identity-growth .hero-side{
+  align-self:center;justify-self:end;max-width:320px;
+  border-left:1px solid #64e8ff55;padding-left:25px;
+}
+.identity-growth .hero-side .big{
+  font-family:var(--sans);font-weight:900;font-size:clamp(4rem,7vw,7rem);
+  letter-spacing:-.1em;color:var(--growth-cyan);
+}
+.identity-growth .hero-side p{color:#8fa1a5}
+
+/* Signal rail */
+.identity-growth .hero-content:after{
+  content:"ATTENTION  →  TRUST  →  ACTION  →  GROWTH";
+  display:block;margin-top:42px;font-size:7px;letter-spacing:.19em;color:#64e8ff88;
+}
+
+/* Price = operating level */
+.identity-growth .price-band{
+  background:var(--growth-cyan);color:var(--growth-ink);
+  padding:34px 4vw;position:relative;
+}
+.identity-growth .price-band:after{
+  content:"BUILD MOMENTUM.";
+  position:absolute;right:4vw;top:50%;transform:translateY(-50%);
+  font-size:8px;letter-spacing:.18em;font-weight:900;
+}
+
+/* Growth story */
+.identity-growth .section.paper{background:var(--growth-paper);color:#061116}
+.identity-growth #details .section-head{
+  grid-template-columns:1fr .65fr;
+}
+.identity-growth #details h2{
+  font-family:var(--sans);font-weight:900;
+  font-size:clamp(4rem,8vw,9rem);line-height:.76;
+  letter-spacing:-.1em;
+}
+.identity-growth #details .eyebrow{color:#087f9a}
+
+/* Features become growth signals */
+.identity-growth .feature-grid{
+  grid-template-columns:repeat(4,1fr);gap:0;background:#06111618;
+}
+.identity-growth .feature{
+  min-height:350px;padding:25px;background:#f4f7f4;
+  position:relative;overflow:hidden;
+}
+.identity-growth .feature:nth-child(2){background:#dfeef0}
+.identity-growth .feature:nth-child(3){background:#dfe8f2}
+.identity-growth .feature:nth-child(4){background:#d7e7ec}
+.identity-growth .feature:after{
+  content:"↗";position:absolute;right:22px;top:18px;
+  font-size:34px;color:#06111622;
+}
+.identity-growth .feature h3{
+  font-family:var(--sans);font-weight:900;
+  font-size:clamp(2.1rem,3.3vw,4rem);
+  line-height:.82;letter-spacing:-.08em;margin:100px 0 14px;
+}
+.identity-growth .feature p{color:#526166}
+
+/* Signature dashboard */
+.identity-growth .growth-dashboard{
+  margin-top:6vw;display:grid;grid-template-columns:1fr 1fr;
+  min-height:540px;background:#07181f;color:#f3f8f8;
+  border:1px solid #64e8ff25;
+}
+.identity-growth .dashboard-copy{
+  padding:45px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.identity-growth .dashboard-copy h3{
+  font-size:clamp(3rem,5.5vw,6rem);line-height:.78;
+  letter-spacing:-.09em;margin:22px 0;
+}
+.identity-growth .dashboard-copy p{max-width:390px;color:#9bb0b4;font-size:12px;line-height:1.55}
+.identity-growth .dashboard-screen{
+  position:relative;overflow:hidden;
+  background:
+    linear-gradient(#64e8ff10 1px,transparent 1px),
+    linear-gradient(90deg,#64e8ff10 1px,transparent 1px),
+    radial-gradient(circle at 50% 50%,#64e8ff18,transparent 48%);
+  background-size:34px 34px,34px 34px,100% 100%;
+}
+.identity-growth .dashboard-screen:before{
+  content:"";
+  position:absolute;left:7%;right:7%;top:50%;
+  height:2px;background:linear-gradient(90deg,transparent,#64e8ff,#5da5ff,transparent);
+  box-shadow:0 0 20px #64e8ff88;
+  transform:rotate(-9deg);
+}
+.identity-growth .dashboard-screen:after{
+  content:"REACH  /  SIGNAL  /  CONVERSION";
+  position:absolute;left:24px;bottom:24px;
+  font-size:7px;letter-spacing:.18em;color:#64e8ff;
+}
+
+/* Process = momentum */
+.identity-growth .section.dark{background:#061116}
+.identity-growth .process{border-color:#64e8ff30}
+.identity-growth .process-row{border-color:#64e8ff25}
+.identity-growth .process-row b{color:var(--growth-cyan)}
+.identity-growth .process-row h3{font-family:var(--sans);font-weight:900;letter-spacing:-.08em}
+
+/* FAQ / CTA */
+.identity-growth .faq details{border-color:#06111625}
+.identity-growth .cta{
+  background:#061116;
+  background-image:
+    linear-gradient(90deg,#061116f5,#0611169c),
+    url("assets/tech-art-cta.jpg");
+}
+.identity-growth .cta .eyebrow{color:var(--growth-cyan)}
+
+@media(max-width:800px){
+  .identity-growth .page-hero{display:block;min-height:100svh;padding:86px 20px 36px}
+  .identity-growth .page-art{width:100%;height:57%;top:62px;opacity:.48;mix-blend-mode:screen}
+  .identity-growth .page-hero:after{background:linear-gradient(180deg,#06111618,#06111635 28%,#061116df 59%,#061116 74%)}
+  .identity-growth .page-hero h1{font-size:clamp(4rem,18vw,7rem);margin-top:48vh}
+  .identity-growth .hero-copy{font-size:14px}
+  .identity-growth .hero-side{margin-top:28px;border-left:0;border-top:1px solid #64e8ff42;padding:16px 0 0;display:flex;justify-content:space-between;align-items:baseline;gap:18px}
+  .identity-growth .hero-side .big{font-size:4rem}
+  .identity-growth .hero-content:after{margin-top:24px}
+  .identity-growth .price-band:after{position:static;display:block;transform:none;margin-top:10px}
+  .identity-growth #details .section-head{display:block}
+  .identity-growth #details .section-head>p{max-width:520px;margin-top:28px}
+  .identity-growth .feature-grid{grid-template-columns:1fr 1fr}
+  .identity-growth .feature{min-height:255px;padding:18px}
+  .identity-growth .feature h3{font-size:2.1rem;margin-top:70px}
+  .identity-growth .growth-dashboard{grid-template-columns:1fr;min-height:auto}
+  .identity-growth .dashboard-copy{padding:30px 22px;min-height:350px}
+  .identity-growth .dashboard-screen{min-height:300px}
+}
+@media(max-width:480px){
+  .identity-growth .feature-grid{grid-template-columns:1fr}
+  .identity-growth .feature{min-height:220px}
+  .identity-growth .feature h3{margin-top:52px}
+}
+
+
+/* V102 — BEHAVIORAL UX / NEUROCOPY */
+.identity-growth #decision{background:#edf2ef;color:#061116}
+.identity-growth .decision-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  margin-top:6vw;gap:1px;background:#06111622;
+}
+.identity-growth .decision-grid article{
+  min-height:260px;padding:24px;background:#f7f9f7;
+  display:flex;flex-direction:column;
+}
+.identity-growth .decision-grid article:nth-child(2){background:#e2eff0}
+.identity-growth .decision-grid article:nth-child(3){background:#e1e9f2}
+.identity-growth .decision-grid article:nth-child(4){background:#d9e8ed}
+.identity-growth .decision-grid span{
+  font-size:8px;letter-spacing:.18em;color:#087f9a;
+}
+.identity-growth .decision-grid strong{
+  font-size:clamp(1.8rem,2.7vw,3.4rem);
+  line-height:.85;letter-spacing:-.07em;margin-top:auto;
+}
+.identity-growth .decision-grid p{
+  font-size:10px;line-height:1.5;color:#536268;max-width:220px;margin:15px 0 0;
+}
+.identity-growth .growth-mantra{
+  margin-top:1px;padding:45px;background:#061116;color:#fff;
+  display:flex;align-items:end;justify-content:space-between;gap:30px;
+}
+.identity-growth .growth-mantra .eyebrow{color:#64e8ff}
+.identity-growth .mantra-text{
+  font-size:clamp(2.8rem,6vw,6.5rem);font-weight:900;
+  line-height:.8;letter-spacing:-.09em;text-align:right;
+}
+@media(max-width:800px){
+  .identity-growth .decision-grid{grid-template-columns:1fr 1fr}
+  .identity-growth .decision-grid article{min-height:225px}
+  .identity-growth .decision-grid strong{font-size:2rem}
+  .identity-growth .growth-mantra{display:block;padding:30px 22px}
+  .identity-growth .mantra-text{text-align:left;margin-top:45px;font-size:3.5rem}
+}
+@media(max-width:480px){
+  .identity-growth .decision-grid{grid-template-columns:1fr}
+  .identity-growth .decision-grid article{min-height:190px}
+}
+
+
+/* V115.6 FOOTER — CONTACT + SUBMENU */
+.footer{margin-top:70px;border-top:1px solid #ffffff30;padding:42px 0 18px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:42px;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.footer-col{display:flex;flex-direction:column;gap:11px}
+.footer-label{font-size:8px;letter-spacing:.18em;opacity:.55;margin-bottom:4px}
+.footer-brand{font-size:22px;letter-spacing:-.03em;font-weight:800;line-height:1}
+.footer-muted{opacity:.65;line-height:1.7;text-transform:none;letter-spacing:.02em}
+.footer a{color:inherit;text-decoration:none}
+.footer a:hover{text-decoration:underline;text-underline-offset:4px}
+.footer-nav{display:grid;grid-template-columns:1fr 1fr;gap:9px 18px}
+.footer-nav a{font-size:9px;letter-spacing:.12em}
+.footer-bottom{grid-column:1/-1;border-top:1px solid #ffffff20;padding-top:14px;margin-top:8px;display:flex;justify-content:space-between;gap:20px;opacity:.65;font-size:8px}
+@media(max-width:760px){.footer{grid-template-columns:1fr;gap:30px;margin-top:48px;padding-top:34px}.footer-nav{grid-template-columns:1fr 1fr}.footer-bottom{grid-column:auto;flex-direction:column;gap:7px}}
+</style>
+<style id="mediabay-mobility-mini">
+.mobility-mini{background:#182318;color:#e9e2d3;border-top:1px solid rgba(233,226,211,.18)}
+.mobility-mini-inner{max-width:1200px;margin:0 auto;padding:72px 6vw 78px}
+.mobility-mini-kicker{font:600 12px/1.2 Arial,sans-serif;letter-spacing:.16em;color:#69a84f;margin-bottom:34px}
+.mobility-mini-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:7vw;align-items:end}
+.mobility-mini h2{margin:0;font:700 clamp(42px,6.5vw,92px)/.9 Arial,sans-serif;letter-spacing:-.045em}
+.mobility-mini-copy{max-width:470px}
+.mobility-mini-copy p{margin:0 0 28px;font:400 17px/1.55 Arial,sans-serif;color:rgba(233,226,211,.82)}
+.mobility-mini-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.mobility-mini-tags span{border:1px solid rgba(233,226,211,.25);padding:8px 11px;font:600 10px/1 Arial,sans-serif;letter-spacing:.12em}
+.mobility-mini-link{display:inline-block;color:#182318;background:#b7ff00;text-decoration:none;padding:14px 18px;font:700 11px/1 Arial,sans-serif;letter-spacing:.08em}
+@media(max-width:760px){
+  .mobility-mini-inner{padding:54px 6vw 58px}
+  .mobility-mini-grid{grid-template-columns:1fr;gap:34px}
+  .mobility-mini h2{font-size:48px}
+  .mobility-mini-copy p{font-size:16px}
+}
+</style>
+
+<style id="mediabay-ui-css">
+/* MEDIABAY — PRELOADER + PAGE TRANSITIONS */
+#mb-loader{position:fixed;inset:0;z-index:9999;background:#070a0b;color:#f0eee7;display:grid;place-items:center;transition:opacity .45s ease,visibility .45s ease}
+#mb-loader.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.mb-loader-inner{text-align:center;padding:30px}
+.mb-loader-logo{font:800 clamp(42px,9vw,82px)/.85 Arial,Helvetica,sans-serif;letter-spacing:-.075em}
+.mb-loader-sub{margin-top:10px;font:600 9px/1 Arial,Helvetica,sans-serif;letter-spacing:.22em;color:#c8ff00;text-transform:uppercase}
+.mb-loader-line{width:120px;height:2px;background:#ffffff18;margin:28px auto 0;overflow:hidden}
+.mb-loader-line:after{content:"";display:block;width:45%;height:100%;background:#c8ff00;animation:mbLoad 1s ease-in-out infinite}
+@keyframes mbLoad{0%{transform:translateX(-120%)}100%{transform:translateX(340%)}}
+body.mb-loading{overflow:hidden}
+body.mb-leaving #mb-loader{opacity:1;visibility:visible}
+body.mb-leaving #mb-loader .mb-loader-line:after{animation:none;transform:translateX(120%)}
+@media(prefers-reduced-motion:reduce){#mb-loader{transition:none}.mb-loader-line:after{animation:none}}
+
+/* MEDIABAY — COOKIE NOTICE */
+#mb-cookie{position:fixed;z-index:9998;left:18px;right:18px;bottom:18px;max-width:760px;background:#f0eee7;color:#070a0b;border:1px solid #070a0b22;box-shadow:0 18px 60px #0005;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;transform:translateY(0);transition:transform .35s ease,opacity .35s ease}
+#mb-cookie.is-hidden{transform:translateY(130%);opacity:0;pointer-events:none}
+.mb-cookie-copy strong{display:block;font:800 10px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.13em;text-transform:uppercase;margin-bottom:7px}
+.mb-cookie-copy p{margin:0;max-width:560px;font:400 11px/1.45 Arial,Helvetica,sans-serif;color:#303633}
+.mb-cookie-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mb-cookie-btn{border:1px solid #070a0b;background:transparent;color:#070a0b;padding:12px 15px;font:800 8px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.mb-cookie-btn.primary{background:#c8ff00;border-color:#c8ff00}
+@media(max-width:700px){#mb-cookie{left:12px;right:12px;bottom:12px;grid-template-columns:1fr;gap:14px;padding:16px}.mb-cookie-actions{justify-content:flex-start}.mb-cookie-btn{flex:1}}
+</style>
+</head><body class="identity-growth">
+
+<div id="mb-loader" aria-hidden="true">
+  <div class="mb-loader-inner">
+    <div class="mb-loader-logo">MediaBay</div>
+    <div class="mb-loader-sub">PHYGITAL MARKETING</div>
+    <div class="mb-loader-line"></div>
+  </div>
+</div>
+
+
+<header class="site-header">
+<a class="logo" href="index.html">MediaBay<small>PHYGITAL MARKETING</small></a>
+<nav class="nav"><a href="index.html#system">SYSTEM</a><a href="index.html#diagnostic">STARTING POINT</a><a href="index.html#packages">PACKAGES</a><a href="index.html#process">HOW IT WORKS</a><a href="businesses.html">CASES</a><a href="brief.html">START</a></nav>
+<div style="display:flex;align-items:center;gap:18px"><div class="lang"><button class="active" data-lang="it">IT</button><button data-lang="en">EN</button></div><button class="menu" id="menuBtn">MENU</button></div>
+</header>
+<div id="menuPanel"><div style="display:flex;justify-content:space-between;font-size:8px;letter-spacing:.16em;text-transform:uppercase"><span>MEDIABAY</span><span>ART × TECHNOLOGY × PEOPLE</span></div><nav>
+<a href="index.html#system">01 SYSTEM</a><a href="index.html#diagnostic">02 STARTING POINT</a><a href="index.html#packages">03 PACKAGES</a><a href="index.html#process">04 HOW IT WORKS</a><a href="businesses.html">05 CASES</a><a href="brief.html">06 START</a>
+</nav><div style="display:flex;justify-content:space-between;font-size:8px;letter-spacing:.16em;text-transform:uppercase"><span>WEB · SOCIAL · AI · COMMERCE · MOBILITY</span><span>2026</span></div></div>
+
+<section class="page-hero">
+<img class="page-art" src="assets/tech-art-hero.jpg" alt="">
+<div class="hero-content"><div class="eyebrow">02 · GROWTH</div><h1 data-it="FATTI<br><em>SCEGLIERE.</em>" data-en="GET<br><em>CHOSEN.</em>">FATTI<br><em>SCEGLIERE.</em></h1>
+<p class="hero-copy" data-it="Per trasformare la presenza digitale in attenzione, fiducia e crescita." data-en="Turn digital presence into attention, trust and growth.">Per trasformare la presenza digitale in attenzione, fiducia e crescita.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:25px;font-size:7px;letter-spacing:.14em;text-transform:uppercase;opacity:.65">
+    <a href="presence.html" style="text-decoration:none">01 PRESENCE</a><span>·</span>
+    <a href="growth.html" style="text-decoration:none">02 GROWTH</a><span>·</span>
+    <a href="commerce.html" style="text-decoration:none">03 COMMERCE</a><span>·</span>
+    <a href="custom.html" style="text-decoration:none">04 CUSTOM</a>
+    </div>
+<a class="btn" href="#details" data-it="SCOPRI COSA INCLUDE ↘" data-en="SEE WHAT'S INCLUDED ↘">SCOPRI COSA INCLUDE ↘</a></div>
+<div class="hero-side"><div class="big">€0<span style="font-size:11px;letter-spacing:.1em"> / SETUP</span></div><p data-it="Nessun costo di sviluppo iniziale. Il sistema viene gestito e fatto evolvere da MediaBay." data-en="No upfront development fee. The system is managed and evolved by MediaBay.">Nessun costo di sviluppo iniziale. Il sistema viene gestito e fatto evolvere da MediaBay.</p></div>
+</section>
+<section class="price-band"><div><div style="font-size:8px;letter-spacing:.17em">MEDIABAY · 02 · GROWTH</div><div class="price">€99 <small>/ MESE</small></div></div><p data-it="Porta più attenzione verso azioni che fanno crescere il business." data-en="Porta più attenzione verso azioni che fanno crescere il business.">Porta più attenzione verso azioni che fanno crescere il business.</p></section>
+<section class="section paper" id="details"><div class="section-head"><div><div class="eyebrow" style="color:#182318">01 · COSA COSTRUIAMO</div><h2 data-it="Non una pagina.<br>Una presenza." data-en="Not a page.<br>A presence.">Non una pagina.<br>Una presenza.</h2></div><p data-it="Per trasformare la presenza digitale in attenzione, fiducia e crescita." data-en="Turn digital presence into attention, trust and growth.">Per trasformare la presenza digitale in attenzione, fiducia e crescita.</p></div>
+<div class="feature-grid"><article class="feature"><b>01 · STRATEGIA</b><h3>STRATEGIA</h3><p>Un piano digitale costruito sugli obiettivi reali del business.</p></article><article class="feature"><b>02 · SOCIAL</b><h3>SOCIAL</h3><p>Contenuti e direzione creativa per costruire riconoscibilità.</p></article><article class="feature"><b>03 · SEO</b><h3>SEO</h3><p>Più possibilità di essere trovato dalle persone giuste.</p></article><article class="feature"><b>04 · AUTOMAZIONE</b><h3>AUTOMAZIONE</h3><p>Riduciamo i passaggi manuali dove la tecnologia può aiutare.</p></article></div></section>
+
+<section class="section dark" id="growth-signal">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">02 · THE SIGNAL</div>
+      <h2 data-it="Se ti<br>vedono,<br>possono<br>sceglierti." data-en="If they<br>see you,<br>they can<br>choose you.">Se ti<br>vedono,<br>possono<br>sceglierti.</h2>
+    </div>
+    <p data-it="Growth trasforma la presenza in un percorso chiaro: attenzione, fiducia, scelta."
+       data-en="Growth turns presence into a clear path: attention, trust, choice.">
+      Growth trasforma la presenza in un percorso chiaro: attenzione, fiducia, scelta.
+    </p>
+  </div>
+  <div class="growth-dashboard">
+    <div class="dashboard-copy">
+      <div>
+        <div class="eyebrow">THE GROWTH ENGINE</div>
+        <h3 data-it="Prima<br>ti notano.<br>Poi si<br>ricordano." data-en="First they<br>notice you.<br>Then they<br>remember.">Prima<br>ti notano.<br>Poi si<br>ricordano.</h3>
+      </div>
+      <p data-it="Ogni punto di contatto deve rispondere alla stessa domanda: perché dovrei scegliere proprio te?"
+         data-en="Every touchpoint should answer the same question: why should I choose you?">
+        Ogni punto di contatto deve rispondere alla stessa domanda: perché dovrei scegliere proprio te?
+      </p>
+    </div>
+    <div class="dashboard-screen"></div>
+  </div>
+</section>
+
+
+<section class="section paper" id="decision">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" style="color:#087f9a">03 · THE DECISION PATH</div>
+      <h2 data-it="Riduci il rumore.<br>Aumenta la<br>chiarezza."
+          data-en="Reduce the noise.<br>Increase<br>clarity.">
+        Riduci il rumore.<br>Aumenta la<br>chiarezza.
+      </h2>
+    </div>
+    <p data-it="Le persone non hanno bisogno di più informazioni. Hanno bisogno di capire rapidamente cosa fai, per chi è e qual è il prossimo passo."
+       data-en="People don't need more information. They need to quickly understand what you do, who it is for and what the next step is.">
+      Le persone non hanno bisogno di più informazioni. Hanno bisogno di capire rapidamente cosa fai, per chi è e qual è il prossimo passo.
+    </p>
+  </div>
+
+  <div class="decision-grid">
+    <article><span>01</span><strong>ATTENZIONE</strong><p>Un messaggio riconoscibile interrompe il rumore.</p></article>
+    <article><span>02</span><strong>COMPRENSIONE</strong><p>Una proposta semplice riduce lo sforzo mentale.</p></article>
+    <article><span>03</span><strong>FIDUCIA</strong><p>Coerenza, prova e chiarezza rendono la scelta più naturale.</p></article>
+    <article><span>04</span><strong>AZIONE</strong><p>Un prossimo passo evidente elimina l'incertezza.</p></article>
+  </div>
+
+  <div class="growth-mantra">
+    <div class="eyebrow">THE PRINCIPLE</div>
+    <div class="mantra-text" data-it="Non convincere.<br>Rendi facile capire."
+         data-en="Don't pressure.<br>Make it easy to understand.">
+      Non convincere.<br>Rendi facile capire.
+    </div>
+  </div>
+</section>
+
+<section class="section dark"><div class="section-head"><div><div class="eyebrow">02 · IL PROCESSO</div><h2 data-it="Capisci.<br>Costruiamo.<br>Attiviamo." data-en="Understand.<br>Build.<br>Activate.">Capisci.<br>Costruiamo.<br>Attiviamo.</h2></div><p data-it="Un processo semplice, con un sistema professionale dietro. Tu racconti il business. MediaBay traduce le esigenze in infrastruttura digitale." data-en="A simple process, backed by a professional system. You explain the business. MediaBay translates needs into digital infrastructure.">Un processo semplice, con un sistema professionale dietro. Tu racconti il business. MediaBay traduce le esigenze in infrastruttura digitale.</p></div>
+<div class="process"><div class="process-row"><b>01</b><h3>CAPISCI</h3><p>Partiamo dal punto in cui sei, non da un template.</p></div><div class="process-row"><b>02</b><h3>COSTRUISCI</h3><p>Disegniamo la presenza e gli strumenti necessari.</p></div><div class="process-row"><b>03</b><h3>ATTIVA</h3><p>Mettiamo il sistema realmente al lavoro.</p></div><div class="process-row"><b>04</b><h3>EVOLVI</h3><p>Quando cambia il business, cambiano anche gli strumenti.</p></div></div></section>
+<section class="section paper"><div class="section-head"><div><div class="eyebrow" style="color:#182318">04 · FAQ</div><h2>Prima di<br>iniziare.</h2></div><p>Le risposte alle domande più importanti prima di scegliere.</p></div>
+<div class="faq"><details><summary>Il sito viene acquistato?</summary><p>MediaBay opera con un modello in abbonamento: il sistema rimane nell'infrastruttura MediaBay e viene gestito e aggiornato nel tempo.</p></details><details><summary>Posso cambiare pacchetto?</summary><p>Sì. Il percorso è pensato per poter aggiungere capacità quando cambiano le esigenze del business.</p></details><details><summary>C'è un costo di sviluppo iniziale?</summary><p>No. Il modello è basato sulla fee mensile del sistema e dei servizi inclusi.</p></details><details><summary>Cosa succede dopo il lancio?</summary><p>Il rapporto continua: gestione, supporto e possibilità di evoluzione fanno parte del modello.</p></details></div></section>
+<section class="cta" id="start"><div><div class="eyebrow">05 · START</div><h2 data-it="Fatti<br>ricordare." data-en="Be<br>remembered.">Fatti<br>ricordare.</h2><a class="btn" href="brief.html" data-it="DISEGNAMO IL TUO PERCORSO ↗" data-en="DESIGN YOUR GROWTH PATH ↗">DISEGNAMO IL TUO PERCORSO ↗</a></div>
+<section class="mobility-mini" id="mobility">
+  <div class="mobility-mini-inner">
+    <div class="mobility-mini-kicker" data-it="05 — MOBILITY" data-en="05 — MOBILITY">05 — MOBILITY</div>
+    <div class="mobility-mini-grid">
+      <div>
+        <h2 data-it="IL TUO BUSINESS<br>NON STA FERMO." data-en="YOUR BUSINESS<br>DOESN’T STAND STILL.">IL TUO BUSINESS<br>NON STA FERMO.</h2>
+      </div>
+      <div class="mobility-mini-copy">
+        <p data-it="Portiamo il brand fuori dallo schermo. Mobility collega presenza fisica, movimento e comunicazione per attività che vogliono essere viste anche nel mondo reale." data-en="We take your brand beyond the screen. Mobility connects physical presence, movement and communication for businesses that want to be seen in the real world.">Portiamo il brand fuori dallo schermo. Mobility collega presenza fisica, movimento e comunicazione per attività che vogliono essere viste anche nel mondo reale.</p>
+        <div class="mobility-mini-tags">
+          <span>PHYSICAL</span><span>MOBILE</span><span>LOCAL</span>
+        </div>
+        <a class="mobility-mini-link" href="https://www.instagram.com/mediabay.it/" target="_blank" rel="noopener" data-it="SCOPRI MOBILITY ↗" data-en="DISCOVER MOBILITY ↗">SCOPRI MOBILITY ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-col">
+    <span class="footer-label">MEDIABAY</span>
+    <span class="footer-brand">PHYSICAL PRESENCE.<br>DIGITAL IMPACT.</span>
+    <span class="footer-muted" data-it="Un ecosistema digitale per attività reali. Web · Commerce · AI · Social." data-en="A digital ecosystem for real businesses. Web · Commerce · AI · Social.">Un ecosistema digitale per attività reali. Web · Commerce · AI · Social.</span>
+  </div>
+  <div class="footer-col">
+    <span class="footer-label" data-it="NAVIGAZIONE" data-en="NAVIGATION">NAVIGAZIONE</span>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html#problem" data-it="01 · ABOUT" data-en="01 · ABOUT">01 · ABOUT</a>
+      <a href="index.html#diagnostic" data-it="02 · PUNTO DI PARTENZA" data-en="02 · STARTING POINT">02 · PUNTO DI PARTENZA</a>
+      <a href="index.html#system" data-it="03 · SISTEMA" data-en="03 · SYSTEM">03 · SISTEMA</a>
+      <a href="index.html#packages" data-it="04 · PACCHETTI" data-en="04 · PACKAGES">04 · PACCHETTI</a>
+      <a href="index.html#how" data-it="05 · COME FUNZIONA" data-en="05 · HOW IT WORKS">05 · COME FUNZIONA</a>
+      <a href="businesses.html" data-it="06 · BUSINESS" data-en="06 · BUSINESSES">06 · BUSINESS</a>
+      <a href="index.html#start" data-it="07 · INIZIA" data-en="07 · START">07 · INIZIA</a>
+    </nav>
+  </div>
+  <div class="footer-col">
+    <span class="footer-label" data-it="CONTATTI" data-en="CONTACT">CONTATTI</span>
+    <a href="mailto:info@mediabay.it">info@mediabay.it</a>
+    <a href="tel:+393518472396">+39 351 847 2396</a>
+    <span class="footer-muted">Via Mercurio 2<br>09045 Sardegna, Italia</span>
+    <a href="https://www.instagram.com/mediabay.it/" target="_blank" rel="noopener">Instagram @mediabay.it ↗</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MediaBay</span>
+    <span>EST. 2013 · MEDIA BIKE → MEDIABAY</span>
+    <span>Web · Social · AI · Mobility</span>
+  </div>
+</footer></section>
+
+<script>
+const panel=document.getElementById('menuPanel'),btn=document.getElementById('menuBtn');
+btn.addEventListener('click',()=>{panel.classList.toggle('open');btn.textContent=panel.classList.contains('open')?'CLOSE':'MENU'});
+panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{panel.classList.remove('open');btn.textContent='MENU'}));
+function setLang(lang){localStorage.setItem('mediabay-language',lang);document.documentElement.lang=lang;
+document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+document.querySelectorAll('[data-it]').forEach(el=>{const v=el.getAttribute('data-'+lang);if(v!==null)el.innerHTML=v})}
+setLang(localStorage.getItem('mediabay-language')||'it');
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+</script>
+<div id="mb-cookie" role="dialog" aria-label="Informativa cookie">
+  <div class="mb-cookie-copy">
+    <strong>Cookie & privacy</strong>
+    <p>Usiamo cookie e strumenti tecnici necessari al funzionamento del sito e, se lo scegli, per ricordare le tue preferenze. Nessun cookie pubblicitario di terze parti è attivo in questa versione.</p>
+  </div>
+  <div class="mb-cookie-actions">
+    <button class="mb-cookie-btn" type="button" id="mb-cookie-close">Continua</button>
+    <button class="mb-cookie-btn primary" type="button" id="mb-cookie-ok">OK</button>
+  </div>
+</div>
+
+
+<script id="mediabay-ui-system">
+(function(){
+  const body=document.body;
+  const loader=document.getElementById('mb-loader');
+  body.classList.add('mb-loading');
+  const hideLoader=()=>{setTimeout(()=>{body.classList.remove('mb-loading');loader?.classList.add('is-hidden')},950)};
+  if(document.readyState==='complete') hideLoader(); else window.addEventListener('load',hideLoader,{once:true});
+
+  document.querySelectorAll('a[href]').forEach(a=>{
+    a.addEventListener('click',function(e){
+      const href=this.getAttribute('href');
+      if(!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || this.target==='_blank') return;
+      let url; try{url=new URL(href,location.href)}catch(_){return}
+      if(url.origin!==location.origin) return;
+      if(url.pathname===location.pathname && url.hash) return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+      e.preventDefault();
+      body.classList.add('mb-leaving');
+      setTimeout(()=>{location.href=url.href},260);
+    });
+  });
+
+  const cookie=document.getElementById('mb-cookie');
+  const close=()=>{localStorage.setItem('mediabay-cookie-notice-v116','seen');cookie?.classList.add('is-hidden')};
+  if(localStorage.getItem('mediabay-cookie-notice-v116')==='seen') cookie?.classList.add('is-hidden');
+  document.getElementById('mb-cookie-close')?.addEventListener('click',close);
+  document.getElementById('mb-cookie-ok')?.addEventListener('click',close);
+})();
+</script>
+
+</body></html>
