@@ -182,6 +182,240 @@
 }
 </style>
 
+
+<style id="flip-shop-content-v2">
+
+/* BRAND SECTION */
+.flip-shop-brands{
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  padding:80px 0;
+  margin-top:110px;
+}
+
+.flip-shop-brands-head{
+  display:grid;
+  grid-template-columns:1fr .8fr;
+  gap:60px;
+  align-items:end;
+}
+
+.flip-shop-brands h2,
+.flip-shop-find h2{
+  font-size:clamp(52px,7vw,105px);
+  line-height:.76;
+  letter-spacing:-.08em;
+  margin:14px 0 0;
+}
+
+.flip-shop-brands h2 i,
+.flip-shop-find h2 i{
+  font-style:normal;
+  color:#f05a3c;
+  font-family:'Instrument Serif',Georgia,serif;
+  font-weight:400;
+}
+
+.flip-shop-brands-copy{
+  font-size:17px;
+  line-height:1.15;
+  max-width:380px;
+}
+
+.flip-shop-brand-list{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+  margin-top:65px;
+}
+
+.flip-shop-brand{
+  min-height:105px;
+  display:flex;
+  align-items:center;
+  border-right:1px solid var(--line);
+  padding:20px;
+  font-size:clamp(18px,2.2vw,30px);
+  letter-spacing:-.05em;
+}
+
+.flip-shop-brand:nth-child(4n){
+  border-right:0;
+}
+
+
+/* FIND YOUR */
+.flip-shop-find{
+  padding:110px 0;
+}
+
+.flip-shop-find-head{
+  display:grid;
+  grid-template-columns:1fr .7fr;
+  gap:60px;
+  align-items:end;
+}
+
+.flip-shop-find-copy{
+  font-size:17px;
+  line-height:1.15;
+  max-width:360px;
+}
+
+.flip-shop-find-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  margin-top:65px;
+}
+
+.flip-shop-find-card{
+  min-height:260px;
+  padding:25px;
+  border-right:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  text-decoration:none;
+  color:var(--ink);
+  transition:.25s ease;
+}
+
+.flip-shop-find-card:last-child{
+  border-right:0;
+}
+
+.flip-shop-find-card:hover{
+  background:#f05a3c;
+  color:#fff;
+}
+
+.flip-shop-find-card small{
+  font:8px 'DM Mono',monospace;
+  letter-spacing:.12em;
+}
+
+.flip-shop-find-card h3{
+  font-size:clamp(30px,3.5vw,50px);
+  line-height:.85;
+  letter-spacing:-.06em;
+  margin:25px 0 12px;
+}
+
+.flip-shop-find-card p{
+  font-size:14px;
+  line-height:1.2;
+  max-width:280px;
+  margin:0;
+}
+
+.flip-shop-find-card .flip-arrow{
+  font:9px 'DM Mono',monospace;
+  letter-spacing:.1em;
+  margin-top:30px;
+}
+
+
+/* STORE CTA */
+.flip-shop-store{
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  padding:90px 0;
+  display:grid;
+  grid-template-columns:1fr .7fr auto;
+  gap:50px;
+  align-items:end;
+}
+
+.flip-shop-store h2{
+  font-size:clamp(55px,7vw,105px);
+  line-height:.72;
+  letter-spacing:-.08em;
+  margin:15px 0 0;
+  max-width:8ch;
+}
+
+.flip-shop-store h2 i{
+  font-style:normal;
+  color:#f05a3c;
+  font-family:'Instrument Serif',Georgia,serif;
+  font-weight:400;
+}
+
+.flip-shop-store p{
+  font-size:17px;
+  line-height:1.1;
+  margin:0;
+  max-width:350px;
+}
+
+@media(max-width:760px){
+
+  .flip-shop-brands{
+    padding:65px 0;
+    margin-top:75px;
+  }
+
+  .flip-shop-brands-head,
+  .flip-shop-find-head{
+    display:block;
+  }
+
+  .flip-shop-brands-copy,
+  .flip-shop-find-copy{
+    margin-top:35px;
+    font-size:17px;
+  }
+
+  .flip-shop-brand-list{
+    grid-template-columns:repeat(2,1fr);
+    margin-top:45px;
+  }
+
+  .flip-shop-brand{
+    min-height:85px;
+    font-size:22px;
+  }
+
+  .flip-shop-brand:nth-child(4n){
+    border-right:1px solid var(--line);
+  }
+
+  .flip-shop-brand:nth-child(2n){
+    border-right:0;
+  }
+
+  .flip-shop-find{
+    padding:75px 0;
+  }
+
+  .flip-shop-find-grid{
+    display:block;
+    margin-top:45px;
+  }
+
+  .flip-shop-find-card{
+    min-height:190px;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .flip-shop-find-card:last-child{
+    border-bottom:0;
+  }
+
+  .flip-shop-store{
+    display:block;
+    padding:65px 0;
+  }
+
+  .flip-shop-store p{
+    margin:35px 0;
+  }
+}
+</style>
+
 </head>
 <body data-page="shop" class="flip-shop-page">
   <div id="siteHeader"></div>
@@ -245,14 +479,109 @@
 
       <div class="v46-grid" id="productGrid"></div>
 
-      <div class="v46-end">
-        <div>
-          <span class="eyebrow">ONLINE + STORE</span>
-          <h2>Ti piace?<br><i>Passa a provarlo.</i></h2>
-        </div>
-        <p>Quello che vedi online è solo una parte. In negozio trovi altri pezzi, altre taglie e soprattutto ci siamo noi.</p>
-        <a class="arrow" href="https://wa.me/393661087819" target="_blank" rel="noopener">SCRIVICI SU WHATSAPP ↗</a>
+
+<!-- FLIP&CO — EDITORIAL CONTENT -->
+
+<section class="flip-shop-brands">
+  <div class="flip-shop-brands-head">
+    <div>
+      <span class="eyebrow">I BRAND</span>
+      <h2>I nomi che<br><i>ci piacciono.</i></h2>
+    </div>
+
+    <p class="flip-shop-brands-copy">
+      Brand che conosci, nomi che segui e qualche scoperta che magari ancora non conosci.
+      Li scegliamo per quello che hanno da dire, non per riempire uno scaffale.
+    </p>
+  </div>
+
+  <div class="flip-shop-brand-list">
+    <div class="flip-shop-brand">DSQUARED2</div>
+    <div class="flip-shop-brand">MOSCHINO</div>
+    <div class="flip-shop-brand">NEW BALANCE</div>
+    <div class="flip-shop-brand">GCDS</div>
+    <div class="flip-shop-brand">BARROW</div>
+    <div class="flip-shop-brand">NIKE</div>
+    <div class="flip-shop-brand">STONE ISLAND</div>
+    <div class="flip-shop-brand">E ALTRI</div>
+  </div>
+</section>
+
+
+<section class="flip-shop-find">
+  <div class="flip-shop-find-head">
+    <div>
+      <span class="eyebrow">NON SAI DA DOVE PARTIRE?</span>
+      <h2>Cerchi<br><i>qualcosa?</i></h2>
+    </div>
+
+    <p class="flip-shop-find-copy">
+      Parti da quello che ti piace. Se non sai ancora cosa stai cercando,
+      possiamo aiutarti noi.
+    </p>
+  </div>
+
+  <div class="flip-shop-find-grid">
+
+    <a class="flip-shop-find-card" href="shop.html?type=sneakers">
+      <div>
+        <small>01 / SCARPE</small>
+        <h3>Sneakers.</h3>
+        <p>
+          Modelli da tutti i giorni, pezzi più particolari e qualche
+          sneaker che si fa notare.
+        </p>
       </div>
+      <span class="flip-arrow">VEDI LE SNEAKERS ↗</span>
+    </a>
+
+    <a class="flip-shop-find-card" href="shop.html?category=Donna">
+      <div>
+        <small>02 / LOOK</small>
+        <h3>Il look.</h3>
+        <p>
+          Parti da un pezzo che ti piace e costruisci il resto intorno.
+          Abbigliamento, scarpe e accessori.
+        </p>
+      </div>
+      <span class="flip-arrow">SCOPRI IL LOOK ↗</span>
+    </a>
+
+    <a class="flip-shop-find-card" href="https://wa.me/393661087819" target="_blank" rel="noopener">
+      <div>
+        <small>03 / REGALO</small>
+        <h3>Un'idea.</h3>
+        <p>
+          Non sai cosa scegliere? Scrivici. Ti aiutiamo a trovare
+          qualcosa che abbia senso.
+        </p>
+      </div>
+      <span class="flip-arrow">CHIEDICI UN CONSIGLIO ↗</span>
+    </a>
+
+  </div>
+</section>
+
+
+<section class="flip-shop-store">
+  <div>
+    <span class="eyebrow">ONLINE + STORE</span>
+    <h2>Online è solo<br><i>una parte.</i></h2>
+  </div>
+
+  <p>
+    Quello che vedi qui è solo una parte di quello che trovi da Flip&Co.
+    Il negozio cambia continuamente: nuovi arrivi, altre taglie e pezzi
+    che online magari non vedrai mai.
+    <br><br>
+    Se sei a Cagliari, passa a trovarci. Se cerchi qualcosa in particolare,
+    scrivici prima.
+  </p>
+
+  <a class="arrow" href="https://wa.me/393661087819" target="_blank" rel="noopener">
+    SCRIVICI SU WHATSAPP ↗
+  </a>
+</section>
     </section>
   </main>
 
