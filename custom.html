@@ -684,6 +684,51 @@ html,body{
 }
 </style>
 
+<style id="custom-bespoke-band-v1">
+.identity-custom .custom-bespoke-band{
+  min-height:220px;
+  padding:42px 4vw;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:end;
+  gap:6vw;
+}
+.identity-custom .custom-bespoke-band .custom-band-label{
+  font-size:8px;
+  letter-spacing:.17em;
+  font-weight:700;
+}
+.identity-custom .custom-bespoke-band .price{
+  margin-top:6px;
+}
+.identity-custom .custom-bespoke-band .custom-band-meta{
+  font-size:9px;
+  letter-spacing:.12em;
+  margin-top:8px;
+}
+.identity-custom .custom-bespoke-band p{
+  margin:0;
+  max-width:500px;
+  font-size:13px;
+  line-height:1.5;
+}
+@media(max-width:800px){
+  .identity-custom .custom-bespoke-band{
+    display:block;
+    min-height:0;
+    padding:38px 20px 42px;
+  }
+  .identity-custom .custom-bespoke-band .price{
+    font-size:clamp(3.3rem,15vw,5.5rem);
+  }
+  .identity-custom .custom-bespoke-band p{
+    margin-top:22px;
+    font-size:12px;
+    max-width:340px;
+  }
+}
+</style>
+
 </head><body class="identity-custom">
 
 <div id="mb-loader" aria-hidden="true">
@@ -718,19 +763,15 @@ html,body{
 </div>
 <a class="btn" href="#details" data-it="SCOPRI COSA POSSIAMO COSTRUIRE ↘" data-en="SEE WHAT WE CAN BUILD ↘">SCOPRI COSA POSSIAMO COSTRUIRE ↘</a>
 </div>
-<div class="hero-side">
-<div class="big">SU MISURA<span style="font-size:11px;letter-spacing:.1em"> / SYSTEM</span></div>
-<p data-it="Non partiamo da ciò che abbiamo già. Partiamo da ciò che vuoi ottenere." data-en="We don't start from what we already have. We start from what you want to achieve.">Non partiamo da ciò che abbiamo già. Partiamo da ciò che vuoi ottenere.</p>
-</div>
 </section>
 
-<section class="price-band">
+<section class="price-band custom-bespoke-band">
 <div>
-<div style="font-size:8px;letter-spacing:.17em">MEDIABAY · CUSTOM</div>
+<div class="custom-band-label">MEDIABAY · CUSTOM</div>
 <div class="price">CUSTOM <small>/ SU MISURA</small></div>
-<div style="font-size:9px;letter-spacing:.12em;margin-top:6px">INVESTIMENTO · DEFINITO SUL PROGETTO</div>
+<div class="custom-band-meta">SU MISURA / SYSTEM · INVESTIMENTO DEFINITO SUL PROGETTO</div>
 </div>
-<p data-it="Un progetto su misura che può unire strategia, tecnologia, marketing, campagne online e offline, mobility, AI, automazione e dati." data-en="A bespoke project combining strategy, technology, marketing, online and offline campaigns, mobility, AI, automation and data.">Un progetto su misura che può unire strategia, tecnologia, marketing, campagne online e offline, mobility, AI, automazione e dati.</p>
+<p data-it="Un sistema digitale costruito intorno al tuo business. Strategia, tecnologia, marketing, AI, automazione e dati, combinati in base a ciò che vuoi ottenere." data-en="A digital system built around your business. Strategy, technology, marketing, AI, automation and data, combined around what you want to achieve.">Un sistema digitale costruito intorno al tuo business. Strategia, tecnologia, marketing, AI, automazione e dati, combinati in base a ciò che vuoi ottenere.</p>
 </section>
 
 <section class="section paper" id="details">
