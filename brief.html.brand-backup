@@ -425,178 +425,19 @@ h1 em{font-style:normal;color:var(--lime)}
 @media(max-width:760px){.footer{grid-template-columns:1fr;gap:30px;margin-top:48px;padding-top:34px}.footer-nav{grid-template-columns:1fr 1fr}.footer-bottom{grid-column:auto;flex-direction:column;gap:7px}}
 
 </style>
-<link rel="icon" type="image/png" href="assets/mediabay-logo.png">
-
-<style id="mediabay-brand-logo-v1">
-/* MEDIABAY BRAND SYSTEM — official logo */
-.site-header .logo{
-  display:flex!important;
-  align-items:center!important;
-  width:auto!important;
-  height:auto!important;
-  text-decoration:none!important;
-  font-size:0!important;
-  line-height:0!important;
-  letter-spacing:0!important;
-}
-.site-header .logo img{
-  display:block!important;
-  width:42px!important;
-  height:42px!important;
-  object-fit:contain!important;
-}
-.footer-logo{
-  display:block!important;
-  width:52px!important;
-  height:52px!important;
-  object-fit:contain!important;
-  margin-bottom:18px!important;
-}
-.mb-loader-logo{
-  width:min(190px,52vw)!important;
-  margin:0 auto!important;
-  line-height:0!important;
-  font-size:0!important;
-  letter-spacing:0!important;
-}
-.mb-loader-logo img{
-  display:block!important;
-  width:100%!important;
-  height:auto!important;
-  object-fit:contain!important;
-}
-#mb-loader{
-  background:#070a0b!important;
-}
-.mb-loader-inner{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  justify-content:center!important;
-}
-.mb-loader-sub{
-  margin-top:18px!important;
-  color:#c8ff00!important;
-  font-size:8px!important;
-  letter-spacing:.24em!important;
-}
-.mb-loader-line{
-  margin-top:24px!important;
-  width:100px!important;
-  height:2px!important;
-  background:#ffffff18!important;
-}
-@media(max-width:800px){
-  .site-header .logo img{
-    width:38px!important;
-    height:38px!important;
-  }
-  .footer-logo{
-    width:48px!important;
-    height:48px!important;
-  }
-  .mb-loader-logo{
-    width:min(170px,48vw)!important;
-  }
-}
-</style>
-
-
-<style id="mediabay-centered-logo-v1">
-/* MEDIABAY — CENTERED HEADER LOGO */
-.site-header{
-  position:fixed!important;
-}
-
-.site-header .logo{
-  position:absolute!important;
-  left:50%!important;
-  top:50%!important;
-  transform:translate(-50%,-50%)!important;
-  z-index:5!important;
-}
-
-@media(max-width:800px){
-  .site-header .logo{
-    left:50%!important;
-    top:50%!important;
-    transform:translate(-50%,-50%)!important;
-  }
-}
-</style>
-
-
-<style id="mediabay-header-layout-v2">
-/* MEDIABAY HEADER — LANGUAGE LEFT / LOGO CENTER / MENU RIGHT */
-
-.site-header{
-  position:fixed!important;
-  top:0!important;
-  left:0!important;
-  right:0!important;
-  z-index:1000!important;
-}
-
-.site-header .logo{
-  position:absolute!important;
-  left:50%!important;
-  top:50%!important;
-  transform:translate(-50%,-50%)!important;
-  z-index:5!important;
-}
-
-/* Language selector */
-.site-header .lang{
-  position:absolute!important;
-  left:32px!important;
-  top:50%!important;
-  transform:translateY(-50%)!important;
-  z-index:10!important;
-}
-
-/* Menu */
-.site-header .menu{
-  position:absolute!important;
-  right:32px!important;
-  top:50%!important;
-  transform:translateY(-50%)!important;
-  z-index:10!important;
-}
-
-/* The wrapper containing lang + menu should not affect centering */
-.site-header > div:last-child{
-  position:static!important;
-  display:block!important;
-}
-
-@media(max-width:800px){
-  .site-header .lang{
-    left:20px!important;
-  }
-
-  .site-header .menu{
-    right:20px!important;
-  }
-}
-</style>
-
 </head><body class="identity-brief">
 
 <div id="mb-loader" aria-hidden="true">
   <div class="mb-loader-inner">
-    <div class="mb-loader-logo">
-      <img src="assets/mediabay-logo.png" alt="MediaBay">
-    </div>
+    <div class="mb-loader-logo">MediaBay</div>
     <div class="mb-loader-sub">PHYGITAL MARKETING</div>
     <div class="mb-loader-line"></div>
   </div>
 </div>
 
-</div>
-
 
 <header class="site-header">
-<a class="logo" href="index.html"><img src="assets/mediabay-logo.png" alt="MediaBay"></a>
+<a class="logo" href="index.html">MediaBay<small>PHYGITAL MARKETING</small></a>
 <nav class="nav"><a href="index.html#system">SYSTEM</a><a href="index.html#diagnostic">STARTING POINT</a><a href="index.html#packages">PACKAGES</a><a href="index.html#process">HOW IT WORKS</a><a href="businesses.html">CASES</a><a href="brief.html">START</a></nav>
 <div style="display:flex;align-items:center;gap:18px"><div class="lang"><button class="active" data-lang="it">IT</button><button data-lang="en">EN</button></div><button class="menu" id="menuBtn">MENU</button></div>
 </header>
@@ -705,7 +546,7 @@ h1 em{font-style:normal;color:var(--lime)}
 <footer class="footer">
   <div class="footer-col">
     <span class="footer-label">MEDIABAY</span>
-    <img class="footer-logo" src="assets/mediabay-logo.png" alt="MediaBay"><span class="footer-brand">PHYSICAL PRESENCE.<br>DIGITAL IMPACT.</span>
+    <span class="footer-brand">PHYSICAL PRESENCE.<br>DIGITAL IMPACT.</span>
     <span class="footer-muted" data-it="Un ecosistema digitale per attività reali. Web · Commerce · AI · Social." data-en="A digital ecosystem for real businesses. Web · Commerce · AI · Social.">Un ecosistema digitale per attività reali. Web · Commerce · AI · Social.</span>
   </div>
   <div class="footer-col">

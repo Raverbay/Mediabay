@@ -25,8 +25,173 @@ footer{background:var(--green);color:var(--cream);padding:30px 4vw;display:flex;
 .mb-site-menu.open{transform:translateY(0)}.mb-site-menu .mb-menu-info,.mb-site-menu .mb-menu-foot{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.17em;text-transform:uppercase}.mb-site-menu nav{margin:auto 0}.mb-site-menu nav a{display:grid;grid-template-columns:55px 1fr;text-decoration:none;color:inherit;font-size:clamp(52px,9.5vw,145px);line-height:.84;letter-spacing:-.08em;font-weight:800;border-bottom:1px solid rgba(16,21,16,.25);padding:5px 0;transition:padding-left .3s}.mb-site-menu nav a:hover{padding-left:25px}.mb-site-menu nav span{font-size:10px;letter-spacing:.1em;font-weight:400}
 body.mb-menu-active{overflow:hidden}
 @media(max-width:700px){.mb-site-header{height:62px;padding:0 18px}.mb-site-header .mb-logo{font-size:17px}.mb-site-header .mb-brand-logo{height:18px}.mb-lang-switch{margin-right:10px;gap:2px}.mb-lang-switch button{font-size:8px}.mb-menu-icon{width:28px}.mb-site-menu{padding:82px 18px 20px}.mb-site-menu .mb-menu-info,.mb-site-menu .mb-menu-foot{font-size:7px}.mb-site-menu nav a{grid-template-columns:32px 1fr;font-size:15.2vw;padding:7px 0}.mb-site-menu nav span{font-size:8px}.mb-site-menu nav a:hover{padding-left:0}}
-</style>\n</head><body>\n<header class="mb-site-header" id="mbHeader">
-<a class="mb-logo" href="index.html#top" aria-label="MediaBay home"><span class="mb-brand-symbol"><img alt="" class="mb-brand-logo mb-logo-white" src="mediabay-logo-white.png"><img alt="" class="mb-brand-logo mb-logo-green" src="mediabay-logo-green.png"></span><span>MediaBay</span></a>
+</style>\n<link rel="icon" type="image/png" href="assets/mediabay-logo.png">
+
+<style id="mediabay-brand-logo-v1">
+/* MEDIABAY BRAND SYSTEM — official logo */
+.site-header .logo{
+  display:flex!important;
+  align-items:center!important;
+  width:auto!important;
+  height:auto!important;
+  text-decoration:none!important;
+  font-size:0!important;
+  line-height:0!important;
+  letter-spacing:0!important;
+}
+.site-header .logo img{
+  display:block!important;
+  width:42px!important;
+  height:42px!important;
+  object-fit:contain!important;
+}
+.footer-logo{
+  display:block!important;
+  width:52px!important;
+  height:52px!important;
+  object-fit:contain!important;
+  margin-bottom:18px!important;
+}
+.mb-loader-logo{
+  width:min(190px,52vw)!important;
+  margin:0 auto!important;
+  line-height:0!important;
+  font-size:0!important;
+  letter-spacing:0!important;
+}
+.mb-loader-logo img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
+#mb-loader{
+  background:#070a0b!important;
+}
+.mb-loader-inner{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.mb-loader-sub{
+  margin-top:18px!important;
+  color:#c8ff00!important;
+  font-size:8px!important;
+  letter-spacing:.24em!important;
+}
+.mb-loader-line{
+  margin-top:24px!important;
+  width:100px!important;
+  height:2px!important;
+  background:#ffffff18!important;
+}
+@media(max-width:800px){
+  .site-header .logo img{
+    width:38px!important;
+    height:38px!important;
+  }
+  .footer-logo{
+    width:48px!important;
+    height:48px!important;
+  }
+  .mb-loader-logo{
+    width:min(170px,48vw)!important;
+  }
+}
+</style>
+
+
+<style id="mediabay-centered-logo-v1">
+/* MEDIABAY — CENTERED HEADER LOGO */
+.site-header{
+  position:fixed!important;
+}
+
+.site-header .logo{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:5!important;
+}
+
+@media(max-width:800px){
+  .site-header .logo{
+    left:50%!important;
+    top:50%!important;
+    transform:translate(-50%,-50%)!important;
+  }
+}
+</style>
+
+
+<style id="mediabay-header-layout-v2">
+/* MEDIABAY HEADER — LANGUAGE LEFT / LOGO CENTER / MENU RIGHT */
+
+.site-header{
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  z-index:1000!important;
+}
+
+.site-header .logo{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:5!important;
+}
+
+/* Language selector */
+.site-header .lang{
+  position:absolute!important;
+  left:32px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  z-index:10!important;
+}
+
+/* Menu */
+.site-header .menu{
+  position:absolute!important;
+  right:32px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  z-index:10!important;
+}
+
+/* The wrapper containing lang + menu should not affect centering */
+.site-header > div:last-child{
+  position:static!important;
+  display:block!important;
+}
+
+@media(max-width:800px){
+  .site-header .lang{
+    left:20px!important;
+  }
+
+  .site-header .menu{
+    right:20px!important;
+  }
+}
+</style>
+
+</head><body>
+<div id="mb-loader" aria-hidden="true">
+  <div class="mb-loader-inner">
+    <div class="mb-loader-logo">
+      <img src="assets/mediabay-logo.png" alt="MediaBay">
+    </div>
+    <div class="mb-loader-sub">PHYGITAL MARKETING</div>
+    <div class="mb-loader-line"></div>
+  </div>
+</div>
+\n<header class="mb-site-header" id="mbHeader">
+<a class="mb-logo" href="index.html#top" aria-label="MediaBay home"><img src="assets/mediabay-logo.png" alt="MediaBay"></a>
 <div class="mb-lang-switch" aria-label="Language"><button type="button" data-lang="it">IT</button><button type="button" data-lang="en">EN</button></div>
 <button aria-controls="mbSiteMenu" aria-expanded="false" class="mb-menu-btn" id="mbMenuBtn" type="button"><b aria-hidden="true" class="mb-menu-icon"><i></i><i></i></b></button>
 </header>

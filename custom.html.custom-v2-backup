@@ -929,545 +929,19 @@ html,body{
 }
 </style>
 
-
-<style id="custom-v2-details-mobile">
-/* CUSTOM V2 — editorial problem section */
-.custom-problem-section{
-  overflow:hidden;
-}
-
-.custom-problem-section .custom-section-intro{
-  align-items:flex-end;
-}
-
-.custom-problem-section .custom-section-intro h2{
-  max-width:900px;
-  font-size:clamp(42px,7.2vw,112px)!important;
-  line-height:.86!important;
-  letter-spacing:-.055em!important;
-  margin:0!important;
-}
-
-.custom-problem-section .custom-section-intro > p{
-  max-width:440px;
-  font-size:clamp(17px,1.5vw,22px);
-  line-height:1.45;
-}
-
-.custom-cards{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:1px;
-  margin-top:7vw;
-  background:#182318;
-  border:1px solid #182318;
-}
-
-.custom-card{
-  background:#eee9dc;
-  padding:32px 30px 36px;
-  min-height:290px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-
-.custom-card-top{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  font-size:9px;
-  letter-spacing:.15em;
-  font-weight:700;
-  opacity:.7;
-}
-
-.custom-card h3{
-  font-size:clamp(25px,3vw,46px)!important;
-  line-height:.92!important;
-  letter-spacing:-.035em!important;
-  margin:42px 0 18px!important;
-}
-
-.custom-card p{
-  max-width:430px;
-  font-size:16px;
-  line-height:1.45;
-  margin:0;
-}
-
-.custom-bridge{
-  margin-top:9vw;
-  padding-top:32px;
-  border-top:1px solid rgba(24,35,24,.28);
-  display:grid;
-  grid-template-columns:1fr 1.5fr 1fr;
-  gap:30px;
-  align-items:start;
-}
-
-.custom-bridge-label{
-  font-size:9px;
-  letter-spacing:.16em;
-  font-weight:700;
-}
-
-.custom-bridge-title{
-  font-size:clamp(40px,6vw,86px);
-  line-height:.84;
-  letter-spacing:-.05em;
-  font-weight:800;
-}
-
-.custom-bridge p{
-  font-size:17px;
-  line-height:1.45;
-  margin:0;
-  max-width:360px;
-}
-
-@media (max-width:700px){
-  .custom-problem-section{
-    padding-top:58px!important;
-    padding-bottom:72px!important;
-  }
-
-  .custom-problem-section .custom-section-intro{
-    display:block!important;
-  }
-
-  .custom-problem-section .custom-section-intro .eyebrow{
-    margin-bottom:24px!important;
-    font-size:9px!important;
-    line-height:1.4!important;
-  }
-
-  .custom-problem-section .custom-section-intro h2{
-    font-size:clamp(43px,12.8vw,70px)!important;
-    line-height:.88!important;
-    letter-spacing:-.055em!important;
-    max-width:100%!important;
-    overflow:visible!important;
-  }
-
-  .custom-problem-section .custom-section-intro > p{
-    margin-top:34px!important;
-    font-size:18px!important;
-    line-height:1.45!important;
-    color:#626b66!important;
-  }
-
-  .custom-cards{
-    display:block;
-    margin-top:46px;
-    background:transparent;
-    border:0;
-  }
-
-  .custom-card{
-    min-height:0;
-    padding:27px 0 31px;
-    border-top:1px solid rgba(24,35,24,.28);
-    background:transparent;
-  }
-
-  .custom-card:last-child{
-    border-bottom:1px solid rgba(24,35,24,.28);
-  }
-
-  .custom-card-top{
-    font-size:9px;
-  }
-
-  .custom-card h3{
-    font-size:31px!important;
-    line-height:.94!important;
-    margin:25px 0 14px!important;
-  }
-
-  .custom-card p{
-    font-size:17px;
-    line-height:1.42;
-    max-width:100%;
-  }
-
-  .custom-bridge{
-    margin-top:58px;
-    padding-top:26px;
-    display:block;
-  }
-
-  .custom-bridge-label{
-    margin-bottom:20px;
-  }
-
-  .custom-bridge-title{
-    font-size:48px;
-    line-height:.86;
-  }
-
-  .custom-bridge p{
-    margin-top:25px;
-    font-size:17px;
-  }
-}
-</style>
-
-
-<style id="custom-v3-mobile-fix">
-@media (max-width:700px){
-  .page-hero h1,
-  .section h2,
-  .signal-title,
-  .custom-bridge-title{
-    max-width:100%!important;
-    overflow-wrap:normal!important;
-    word-break:normal!important;
-    transform:none!important;
-  }
-
-  .section h2{
-    font-size:clamp(42px,12.5vw,68px)!important;
-    line-height:.9!important;
-    letter-spacing:-.045em!important;
-  }
-
-  .custom-bridge-title{
-    font-size:clamp(42px,12.5vw,64px)!important;
-    line-height:.9!important;
-  }
-
-  .custom-problem-section .custom-section-intro h2{
-    font-size:clamp(42px,12vw,66px)!important;
-    line-height:.9!important;
-  }
-
-  .signal{
-    padding-top:52px!important;
-    padding-bottom:58px!important;
-    overflow:hidden!important;
-  }
-
-  .signal .eyebrow{
-    color:rgba(255,255,255,.55)!important;
-    margin-bottom:24px!important;
-  }
-
-  .signal-title{
-    color:#fff!important;
-    font-size:clamp(43px,13vw,70px)!important;
-    line-height:.9!important;
-  }
-
-  .signal-copy{
-    color:#fff!important;
-  }
-
-  .signal-copy p{
-    font-size:18px!important;
-    line-height:1.42!important;
-  }
-
-  .custom-problem-section{
-    overflow:hidden!important;
-  }
-}
-
-@media (min-width:701px){
-  .signal .eyebrow{
-    color:#fff!important;
-  }
-}
-</style>
-
-
-<style id="custom-v3-capabilities">
-.custom-capabilities-v3{overflow:hidden}
-.custom-cap-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:1px;
-  margin-top:7vw;
-  background:#182318;
-  border:1px solid #182318;
-}
-.custom-cap-grid article{
-  background:#eee9dc;
-  min-height:230px;
-  padding:26px 24px 28px;
-  display:flex;
-  flex-direction:column;
-}
-.custom-cap-grid span{
-  font-size:9px;
-  letter-spacing:.15em;
-  font-weight:700;
-  opacity:.65;
-}
-.custom-cap-grid h3{
-  font-size:clamp(25px,2.5vw,38px)!important;
-  line-height:.9!important;
-  letter-spacing:-.035em!important;
-  margin:45px 0 14px!important;
-}
-.custom-cap-grid p{
-  font-size:16px;
-  line-height:1.42;
-  margin:0;
-  max-width:360px;
-}
-.custom-cap-end{
-  margin-top:7vw;
-  padding-top:28px;
-  border-top:1px solid rgba(24,35,24,.28);
-  display:grid;
-  grid-template-columns:1fr 1.2fr;
-  gap:30px;
-}
-.custom-cap-end strong{
-  font-size:clamp(24px,3vw,42px);
-  line-height:.95;
-  letter-spacing:-.035em;
-}
-.custom-cap-end p{
-  font-size:17px;
-  line-height:1.45;
-  margin:0;
-  max-width:430px;
-}
-@media(max-width:700px){
-  .custom-capabilities-v3{
-    padding-top:64px!important;
-    padding-bottom:70px!important;
-  }
-  .custom-capabilities-v3 .section-head{
-    display:block!important;
-  }
-  .custom-capabilities-v3 .section-head .eyebrow{
-    margin-bottom:24px!important;
-  }
-  .custom-capabilities-v3 .section-head h2{
-    font-size:clamp(44px,13vw,70px)!important;
-    line-height:.88!important;
-  }
-  .custom-capabilities-v3 .section-head>p{
-    margin-top:30px!important;
-    font-size:18px!important;
-    line-height:1.45!important;
-    color:#626b66!important;
-  }
-  .custom-cap-grid{
-    display:block;
-    margin-top:46px;
-    background:transparent;
-    border:0;
-  }
-  .custom-cap-grid article{
-    min-height:0;
-    padding:27px 0 30px;
-    border-top:1px solid rgba(24,35,24,.28);
-    background:transparent;
-  }
-  .custom-cap-grid article:last-child{
-    border-bottom:1px solid rgba(24,35,24,.28);
-  }
-  .custom-cap-grid h3{
-    font-size:31px!important;
-    margin:23px 0 13px!important;
-  }
-  .custom-cap-grid p{
-    font-size:17px;
-    line-height:1.42;
-  }
-  .custom-cap-end{
-    display:block;
-    margin-top:54px;
-    padding-top:25px;
-  }
-  .custom-cap-end strong{
-    display:block;
-    font-size:38px;
-    line-height:.9;
-  }
-  .custom-cap-end p{
-    margin-top:22px;
-    font-size:17px;
-  }
-}
-</style>
-
-<link rel="icon" type="image/png" href="assets/mediabay-logo.png">
-
-<style id="mediabay-brand-logo-v1">
-/* MEDIABAY BRAND SYSTEM — official logo */
-.site-header .logo{
-  display:flex!important;
-  align-items:center!important;
-  width:auto!important;
-  height:auto!important;
-  text-decoration:none!important;
-  font-size:0!important;
-  line-height:0!important;
-  letter-spacing:0!important;
-}
-.site-header .logo img{
-  display:block!important;
-  width:42px!important;
-  height:42px!important;
-  object-fit:contain!important;
-}
-.footer-logo{
-  display:block!important;
-  width:52px!important;
-  height:52px!important;
-  object-fit:contain!important;
-  margin-bottom:18px!important;
-}
-.mb-loader-logo{
-  width:min(190px,52vw)!important;
-  margin:0 auto!important;
-  line-height:0!important;
-  font-size:0!important;
-  letter-spacing:0!important;
-}
-.mb-loader-logo img{
-  display:block!important;
-  width:100%!important;
-  height:auto!important;
-  object-fit:contain!important;
-}
-#mb-loader{
-  background:#070a0b!important;
-}
-.mb-loader-inner{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  justify-content:center!important;
-}
-.mb-loader-sub{
-  margin-top:18px!important;
-  color:#c8ff00!important;
-  font-size:8px!important;
-  letter-spacing:.24em!important;
-}
-.mb-loader-line{
-  margin-top:24px!important;
-  width:100px!important;
-  height:2px!important;
-  background:#ffffff18!important;
-}
-@media(max-width:800px){
-  .site-header .logo img{
-    width:38px!important;
-    height:38px!important;
-  }
-  .footer-logo{
-    width:48px!important;
-    height:48px!important;
-  }
-  .mb-loader-logo{
-    width:min(170px,48vw)!important;
-  }
-}
-</style>
-
-
-<style id="mediabay-centered-logo-v1">
-/* MEDIABAY — CENTERED HEADER LOGO */
-.site-header{
-  position:fixed!important;
-}
-
-.site-header .logo{
-  position:absolute!important;
-  left:50%!important;
-  top:50%!important;
-  transform:translate(-50%,-50%)!important;
-  z-index:5!important;
-}
-
-@media(max-width:800px){
-  .site-header .logo{
-    left:50%!important;
-    top:50%!important;
-    transform:translate(-50%,-50%)!important;
-  }
-}
-</style>
-
-
-<style id="mediabay-header-layout-v2">
-/* MEDIABAY HEADER — LANGUAGE LEFT / LOGO CENTER / MENU RIGHT */
-
-.site-header{
-  position:fixed!important;
-  top:0!important;
-  left:0!important;
-  right:0!important;
-  z-index:1000!important;
-}
-
-.site-header .logo{
-  position:absolute!important;
-  left:50%!important;
-  top:50%!important;
-  transform:translate(-50%,-50%)!important;
-  z-index:5!important;
-}
-
-/* Language selector */
-.site-header .lang{
-  position:absolute!important;
-  left:32px!important;
-  top:50%!important;
-  transform:translateY(-50%)!important;
-  z-index:10!important;
-}
-
-/* Menu */
-.site-header .menu{
-  position:absolute!important;
-  right:32px!important;
-  top:50%!important;
-  transform:translateY(-50%)!important;
-  z-index:10!important;
-}
-
-/* The wrapper containing lang + menu should not affect centering */
-.site-header > div:last-child{
-  position:static!important;
-  display:block!important;
-}
-
-@media(max-width:800px){
-  .site-header .lang{
-    left:20px!important;
-  }
-
-  .site-header .menu{
-    right:20px!important;
-  }
-}
-</style>
-
 </head><body class="identity-custom">
 
 <div id="mb-loader" aria-hidden="true">
   <div class="mb-loader-inner">
-    <div class="mb-loader-logo">
-      <img src="assets/mediabay-logo.png" alt="MediaBay">
-    </div>
+    <div class="mb-loader-logo">MediaBay</div>
     <div class="mb-loader-sub">PHYGITAL MARKETING</div>
     <div class="mb-loader-line"></div>
   </div>
 </div>
 
-</div>
-
 
 <header class="site-header">
-<a class="logo" href="index.html"><img src="assets/mediabay-logo.png" alt="MediaBay"></a>
+<a class="logo" href="index.html">MediaBay<small>PHYGITAL MARKETING</small></a>
 <nav class="nav"><a href="index.html#system">SYSTEM</a><a href="index.html#diagnostic">STARTING POINT</a><a href="index.html#packages">PACKAGES</a><a href="index.html#process">HOW IT WORKS</a><a href="businesses.html">CASES</a><a href="brief.html">START</a></nav>
 <div style="display:flex;align-items:center;gap:18px"><div class="lang"><button class="active" data-lang="it">IT</button><button data-lang="en">EN</button></div><button class="menu" id="menuBtn">MENU</button></div>
 </header>
@@ -1497,48 +971,25 @@ html,body{
 </div>
 <p>Prima capiamo cosa vuoi ottenere. Poi definiamo attività, strumenti, tempi e investimento. Nessun pacchetto forzato.</p>
 </section>
-<section class="section paper custom-problem-section" id="details">
-<div class="section-head custom-section-intro">
+<section class="section paper" id="details">
+<div class="section-head">
 <div>
 <div class="eyebrow" style="color:#182318">01 · QUANDO I PACCHETTI NON BASTANO</div>
-<h2>HAI UN'IDEA.<br>UN OBIETTIVO.<br>UN PROBLEMA.</h2>
+<h2>HAI UN OBIETTIVO.<br>NON NECESSARIAMENTE<br>UN SERVIZIO.</h2>
 </div>
-<p>Non devi arrivare sapendo già cosa comprare. Ci racconti cosa vuoi fare, cosa vuoi cambiare o dove vuoi arrivare. <strong>Da lì costruiamo il progetto.</strong></p>
+<p>Un'attività può avere bisogno di tante cose diverse. Un sito da una parte, la pubblicità da un'altra, i social, la grafica, i contenuti, l'automazione. Custom parte dall'obiettivo e mette insieme ciò che serve.</p>
 </div>
-
-<div class="custom-cards">
-<article class="custom-card">
-<div class="custom-card-top"><span>01</span><span>START</span></div>
-<h3>DEVI APRIRE<br>UNA NUOVA ATTIVITÀ?</h3>
-<p>Partiamo da zero: identità, presenza digitale, comunicazione, contenuti, lancio e promozione.</p>
-</article>
-
-<article class="custom-card">
-<div class="custom-card-top"><span>02</span><span>LAUNCH</span></div>
-<h3>STAI APRENDO<br>UN NUOVO NEGOZIO?</h3>
-<p>Costruiamo ciò che serve per arrivare sul mercato online e sul territorio con un progetto coordinato.</p>
-</article>
-
-<article class="custom-card">
-<div class="custom-card-top"><span>03</span><span>GROW</span></div>
-<h3>HAI UN PROGETTO<br>DA FAR PARTIRE?</h3>
-<p>Un prodotto, un servizio, una campagna o un'idea che non rientra nei pacchetti standard.</p>
-</article>
-
-<article class="custom-card">
-<div class="custom-card-top"><span>04</span><span>SOLVE</span></div>
-<h3>HAI UN PROBLEMA<br>DA RISOLVERE?</h3>
-<p>Un processo lento, troppo lavoro manuale, poca visibilità o qualcosa che semplicemente non sta funzionando.</p>
-</article>
+<div class="service-grid">
+<div class="service-card"><div><div class="num">01</div><h3>NUOVA ATTIVITÀ</h3></div><p>Dal concept al lancio: identità, presenza digitale, comunicazione, campagne e strumenti per partire.</p></div>
+<div class="service-card"><div><div class="num">02</div><h3>NUOVO NEGOZIO</h3></div><p>Costruisci l'apertura online e sul territorio con branding, contenuti, advertising e attivazioni locali.</p></div>
+<div class="service-card"><div><div class="num">03</div><h3>NUOVO PROGETTO</h3></div><p>Un prodotto, un servizio, una campagna o un sistema che non rientra nei pacchetti standard.</p></div>
+<div class="service-card"><div><div class="num">04</div><h3>PROBLEMA SPECIFICO</h3></div><p>Hai un processo da migliorare, un'attività da automatizzare o un obiettivo che non sai ancora come affrontare.</p></div>
 </div>
-
-<div class="custom-bridge">
-<div class="custom-bridge-label">IL PUNTO DI PARTENZA</div>
-<div class="custom-bridge-title">NON DEVI<br>COSTRUIRE TU<br>IL PUZZLE.</div>
-<p>Ci racconti cosa hai in mente. Noi capiamo quali pezzi servono davvero e come metterli insieme.</p>
+<div class="signal-copy" style="margin-top:6vw">
+<p><strong>Non devi costruire tu il puzzle.</strong></p>
+<p>Ci racconti cosa vuoi ottenere. Noi analizziamo il progetto e definiamo il percorso più adatto.</p>
 </div>
 </section>
-
 <section class="signal">
 <div class="eyebrow" style="color:#182318">02 · UN SOLO PUNTO DI RIFERIMENTO</div>
 <div class="signal-title">DIGITALE.<br>MARKETING.<br>AI.<br><em>FISICO.</em></div>
@@ -1550,30 +1001,23 @@ html,body{
 
 </section>
 
-<section class="section paper custom-capabilities-v3">
+<section class="section paper" id="details">
 <div class="section-head">
-<div>
-<div class="eyebrow" style="color:#182318">03 · COSA POSSIAMO COSTRUIRE</div>
-<h2>NON È SOLO<br>DIGITALE.</h2>
+<div><div class="eyebrow" style="color:#182318">01 · COSA POSSIAMO COSTRUIRE</div>
+<h2 data-it="NON È SOLO<br>DIGITALE." data-en="IT'S NOT JUST<br>DIGITAL.">NON È SOLO<br>DIGITALE.</h2></div>
+<p>È il tuo business, visto da ogni direzione. Una piattaforma, una campagna, un sistema AI, un'attivazione sul territorio o una combinazione di tutto questo.</p>
 </div>
-<p>Un progetto può attraversare più mondi. Possiamo combinare ciò che facciamo in base a quello che vuoi ottenere.</p>
-</div>
-
-<div class="custom-cap-grid">
-<article><span>01</span><h3>WEB</h3><p>Siti, landing page, e-commerce, piattaforme e progetti digitali speciali.</p></article>
-<article><span>02</span><h3>MARKETING</h3><p>Campagne, lanci, acquisizione clienti, promozioni e strategie mirate.</p></article>
-<article><span>03</span><h3>SOCIAL</h3><p>Strategia, contenuti, creatività, gestione e campagne social.</p></article>
-<article><span>04</span><h3>AI & AUTOMAZIONE</h3><p>Assistenti, chatbot, workflow e sistemi che riducono il lavoro ripetitivo.</p></article>
-<article><span>05</span><h3>VIDEO & CONTENT</h3><p>Grafiche, identità, fotografia, video e contenuti per raccontare il progetto.</p></article>
-<article><span>06</span><h3>OFFLINE</h3><p>Stampa, volantinaggio, advertising locale, territorio e Mediabike.</p></article>
-</div>
-
-<div class="custom-cap-end">
-<strong>UNA SQUADRA. PIÙ COMPETENZE.</strong>
-<p>Non devi coordinare fornitori diversi per ogni pezzo. Quando ha senso, possiamo costruire il progetto insieme.</p>
+<div class="feature-grid">
+<article class="feature"><b>01 · WEB</b><h3>WEB</h3><p>Siti, piattaforme, portali, landing system, aree riservate e strumenti digitali.</p></article>
+<article class="feature"><b>02 · COMMERCE</b><h3>COMMERCE</h3><p>E-commerce, cataloghi, configuratori, checkout e sistemi di vendita.</p></article>
+<article class="feature"><b>03 · AI</b><h3>AI</h3><p>Assistenti intelligenti, chatbot e AI integrate nei processi del business.</p></article>
+<article class="feature"><b>04 · AUTOMATION</b><h3>AUTOMATION</h3><p>Workflow, raccolta dati, notifiche, integrazioni e processi automatizzati.</p></article>
+<article class="feature"><b>05 · DATA</b><h3>DATA</h3><p>Analytics, dashboard, raccolta e organizzazione delle informazioni.</p></article>
+<article class="feature"><b>06 · MOBILITY</b><h3>MOBILITY</h3><p>Advertising mobile, biciclette pubblicitarie, mezzi brandizzati e presenza itinerante sul territorio.</p></article>
+<article class="feature"><b>07 · CAMPAIGNS</b><h3>CAMPAIGNS</h3><p>Campagne strutturate online e offline: strategia, creative, digital, territorio e activation.</p></article>
+<article class="feature"><b>08 · INTEGRATION</b><h3>INTEGRATION</h3><p>Colleghiamo strumenti, piattaforme, dati e servizi già presenti nel business.</p></article>
 </div>
 </section>
-
 
 <section class="section dark" id="system-architecture">
 <div class="section-head">
@@ -1738,7 +1182,7 @@ html,body{
 <footer class="footer">
   <div class="footer-col">
     <span class="footer-label">MEDIABAY</span>
-    <img class="footer-logo" src="assets/mediabay-logo.png" alt="MediaBay"><span class="footer-brand">PHYSICAL PRESENCE.<br>DIGITAL IMPACT.</span>
+    <span class="footer-brand">PHYSICAL PRESENCE.<br>DIGITAL IMPACT.</span>
     <span class="footer-muted" data-it="Un ecosistema digitale per attività reali. Web · Commerce · AI · Social." data-en="A digital ecosystem for real businesses. Web · Commerce · AI · Social.">Un ecosistema digitale per attività reali. Web · Commerce · AI · Social.</span>
   </div>
   <div class="footer-col">
