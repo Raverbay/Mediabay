@@ -22,7 +22,48 @@ body:before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;ba
 .note{background:#151515}.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}.note-card{margin-top:50px;border-top:1px solid var(--line)}.note-item{padding:20px 0;border-bottom:1px solid var(--line);font-size:12px;color:#aaa;line-height:1.6}.note-item strong{display:block;color:#fff;margin-bottom:4px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
 .end{background:var(--paper);color:#080808;min-height:100svh;display:flex;align-items:center}.end h2{font-size:clamp(60px,11vw,150px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:0}.end h2 em{font-family:var(--serif);font-weight:400;text-transform:none}.end-copy{max-width:620px;margin-top:45px;font-size:18px;line-height:1.6;color:#555}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:42px}.action{padding:16px 20px;border:1px solid #bbb;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.action.primary{background:#080808;color:#fff;border-color:#080808}.action:hover{transform:translateY(-3px);background:var(--acid);color:#000;border-color:#000}.fine{margin-top:55px;padding-top:20px;border-top:1px solid #ccc;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#777}
 footer{background:#080808;padding:70px 0 25px}.foot{display:flex;justify-content:space-between;gap:40px;align-items:flex-end}.foot-brand{font-size:24px;font-weight:900;letter-spacing:-.06em}.foot-brand span{color:var(--acid)}.foot small{display:block;color:#666;font-size:9px;line-height:1.7;margin-top:10px}.foot-links{display:flex;gap:20px;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#888}.foot-links a:hover{color:#fff}
-@media(max-width:800px){.cursor{display:none}.progress{right:9px;height:100px}.nav{padding:18px 16px}.nav-meta{display:none}.nav-cta{padding:8px}.wrap{width:calc(100% - 32px)}.hero-content{width:calc(100% - 32px);padding-bottom:42px}.hero h1{font-size:clamp(55px,17vw,100px)}.hero-sub{display:block}.hero-sub p{font-size:14px;margin-bottom:25px}.section{padding:90px 0}.intro-grid,.flow-layout,.note-grid,.split{grid-template-columns:1fr;gap:45px}.intro-grid{display:block}.intro-copy{margin-top:45px;font-size:18px}.tabs{grid-template-columns:1fr 1fr}.tab{min-height:300px}.tab h3{font-size:28px}.tab p{opacity:1;transform:none}.split-copy{min-height:60vh;padding:70px 24px}.look-stage{min-height:75vh}.hotspot .tip{display:none}.flow-sticky{position:relative;top:auto}.flow-row{min-height:120px}.flow-row h3{font-size:38px}.demo-head{display:block}.demo-head p{margin-top:25px}.preview{height:65vw}.demo-cta{padding-bottom:80px}.end{min-height:80svh}.end h2{font-size:18vw}.end-copy{font-size:16px}.foot{display:block}.foot-links{margin-top:30px;flex-wrap:wrap}}
+@media(max-width:800px){
+.cursor{display:none}
+.progress{right:9px;height:100px}
+.nav{padding:18px 16px}
+.nav-meta{display:none}
+.nav-cta{padding:8px}
+.wrap{width:calc(100% - 32px)}
+.hero-content{width:calc(100% - 32px);padding-bottom:42px}
+.hero h1{font-size:clamp(55px,17vw,100px)}
+.hero-sub{display:block}
+.hero-sub p{font-size:14px;margin-bottom:25px}
+.section{padding:90px 0}
+.intro-grid,.flow-layout,.note-grid,.split{grid-template-columns:1fr;gap:45px}
+.intro-grid{display:block}
+.intro-copy{margin-top:45px;font-size:18px}
+
+/* CHOICE — MOBILE REFLOW */
+.choice-head{display:block}
+.choice-head > div{width:100%}
+.choice-note{max-width:520px;margin:34px 0 0;font-size:14px;line-height:1.65}
+.tabs{grid-template-columns:1fr 1fr;margin-top:48px}
+.tab{min-height:360px}
+.tab-content{inset:auto 18px 20px}
+.tab h3{font-size:30px}
+.tab p{opacity:1;transform:none}
+
+.split-copy{min-height:60vh;padding:70px 24px}
+.look-stage{min-height:75vh}
+.hotspot .tip{display:none}
+.flow-sticky{position:relative;top:auto}
+.flow-row{min-height:120px}
+.flow-row h3{font-size:38px}
+.demo-head{display:block}
+.demo-head p{margin-top:25px}
+.preview{height:65vw}
+.demo-cta{padding-bottom:80px}
+.end{min-height:80svh}
+.end h2{font-size:18vw}
+.end-copy{font-size:16px}
+.foot{display:block}
+.foot-links{margin-top:30px;flex-wrap:wrap}
+}
 
 /* V57 — presentation hero cleanup */
 .hero-media{background:
