@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Flip&Co × MediaBay — Una prima versione pensata per voi</title>
-<meta name="description" content="MediaBay ha costruito una prima versione dello store online per Flip&Co. Guardatela, provatela e decidete voi se questa direzione vi rappresenta.">
+<meta name="description" content="Una presentazione privata per Flip&Co: perché MediaBay ha iniziato a costruire una prima versione dello store e come possiamo trasformarla in un servizio reale.">
 <style>
 :root{--ink:#080808;--paper:#f3f0e9;--acid:#d9ff3f;--soft:#a8aaa5;--line:rgba(243,240,233,.15);--serif:Georgia,'Times New Roman',serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;border:0;background:none;color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}::selection{background:var(--acid);color:#000}
@@ -270,6 +270,108 @@ footer{background:#080808;padding:70px 0 25px}.foot{display:flex;justify-content
 }
 </style>
 
+
+<style id="flipco-v64-responsive">
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  .section,
+  .section .wrap,
+  .end,
+  .end .wrap,
+  .note,
+  .note .wrap,
+  .demo,
+  .demo .wrap {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+
+  .giant {
+    max-width: 100%;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none;
+    font-size: clamp(46px, 13.5vw, 88px) !important;
+    line-height: .88 !important;
+    letter-spacing: -.045em !important;
+  }
+
+  .end .giant {
+    font-size: clamp(44px, 12.8vw, 82px) !important;
+    max-width: calc(100vw - 56px);
+  }
+
+  .end-copy {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .note-grid,
+  .demo-head,
+  .note-card,
+  .note-item,
+  .actions {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .actions .big-btn {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .browser {
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .browser .preview,
+  .browser img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .foot {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero,
+  .hero *,
+  .section *,
+  footer,
+  footer * {
+    max-width: 100%;
+  }
+}
+</style>
+
+<meta name="flipco-version" content="V64">
 </head>
 <body>
 <div class="cursor"></div><div class="progress"><i></i></div>
@@ -282,20 +384,25 @@ footer{background:#080808;padding:70px 0 25px}.foot{display:flex;justify-content
     <h1 class="reveal delay1">Abbiamo già<br>iniziato a costruire<br><em>il vostro store.</em></h1>
     <div class="hero-sub reveal delay2"><p>Siamo MediaBay: costruiamo presenza digitale, siti, e-commerce e sistemi digitali per attività e imprese.
 <br><br>
-Siamo partiti da Flip&Co, non da un template. Abbiamo guardato il vostro negozio, il vostro modo di scegliere i brand e l'esperienza che vivono le persone quando entrano da voi.<br><br><strong>Poi abbiamo iniziato a costruire.</strong></p><div class="scroll"><b></b> Scorri per entrare</div></div>
+Siamo partiti da Flip&Co, non da un template. Abbiamo guardato il vostro negozio, il vostro modo di scegliere i brand e l'esperienza che vivono le persone quando entrano da voi.<br><br><strong>Poi abbiamo iniziato a costruire.</strong></p><div class="scroll"><b></b> Scorri. Ti mostriamo il progetto.</div></div>
   </div>
 </section>
 
 <section class="section intro">
  <div class="wrap intro-grid">
   <div class="reveal"><div class="eyebrow">Perché abbiamo iniziato</div><h2 class="giant">Flip&Co non è<br>una semplice<br><span class="serif">vetrina.</span></h2></div>
-  <div class="intro-copy reveal delay1"><p>Ci sono selezione, brand, stile, persone, consiglio e soprattutto un'esperienza che succede dentro il negozio.</p><p><strong>Per questo non abbiamo voluto costruire un semplice catalogo online.</strong></p><p>Abbiamo provato a portare una parte di quell'esperienza anche sul digitale.</p><div class="quiet">Non vi raccontiamo cosa potrebbe essere. Ve lo facciamo vedere.</div></div>
+  <div class="intro-copy reveal delay1">
+<p>Ci sono selezione, brand, stile, persone, consiglio e soprattutto un'esperienza che succede dentro il negozio.</p>
+<p><strong>Per questo non abbiamo voluto costruire un semplice catalogo online.</strong></p>
+<p>Volevamo capire come portare quella stessa logica anche sul digitale.</p>
+<div class="quiet">Non vi chiediamo di immaginarlo. Vi mostriamo come abbiamo iniziato a costruirlo.</div>
+</div>
  </div>
 </section>
 
 <section class="section choice">
  <div class="wrap">
-  <div class="choice-head"><div class="reveal"><div class="eyebrow">Per questo abbiamo fatto una cosa semplice</div><h2 class="giant">Invece di<br>spiegarvelo,<br><span class="serif">lo abbiamo costruito.</span></h2></div><p class="choice-note reveal delay1">Abbiamo costruito una prima versione dello store online, pensata intorno a Flip&Co. Potete già entrarci, guardarla, provarla e capire se questa direzione vi rappresenta.</p></div>
+  <div class="choice-head"><div class="reveal"><div class="eyebrow">Per questo abbiamo fatto una cosa semplice</div><h2 class="giant">Invece di<br>spiegarvelo,<br><span class="serif">lo abbiamo costruito.</span></h2></div><p class="choice-note reveal delay1">Abbiamo costruito una prima versione dello store online, pensata intorno a Flip&Co. Adesso ve la mostriamo, passo dopo passo. Prima vi mostriamo la logica del progetto. Alla fine potrete entrarci e provarla direttamente.</p></div>
   <div class="tabs reveal delay1">
    <article class="tab active"><img src="assets/editorial/home/flipco-uomo.jpg" alt="Uomo"><div class="tab-content"><div class="tab-num">01 · ESPERIENZA</div><h3>Uomo</h3><p>Brand, sneakers e capi scelti per costruire il tuo prossimo look.</p></div></article>
    <article class="tab"><img src="assets/editorial/home/flipco-donna.jpg" alt="Donna"><div class="tab-content"><div class="tab-num">02 · ESPERIENZA</div><h3>Donna</h3><p>Una selezione da scoprire, combinare e portare nel tuo stile.</p></div></article>
@@ -324,39 +431,123 @@ Siamo partiti da Flip&Co, non da un template. Abbiamo guardato il vostro negozio
 </section>
 
 <section class="section demo">
- <div class="wrap">
-  <div class="demo-head"><div class="reveal"><div class="eyebrow">Adesso provatelo</div><h2 class="giant">Non ve lo<br>raccontiamo.<br><span class="serif">Entrate.</span></h2></div><p class="reveal delay1">Non dovete immaginare come potrebbe essere. <strong>La prima versione è già qui.</strong> Entrate nello store, cliccate, guardate i percorsi e provatelo con calma.</p></div>
-  <div class="browser reveal delay1"><div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="browser-url">flip&co · demo</span></div><span class="big-btn disabled-btn">IL LINK ALLO STORE ARRIVA ALLA FINE ↓</span></div>
-  <div class="demo-cta"><span class="big-btn disabled-btn">IL LINK ALLO STORE ARRIVA ALLA FINE ↓</span></div>
- </div>
+<div class="wrap">
+<div class="demo-head">
+<div class="reveal">
+<div class="eyebrow">Ma non volevamo fermarci all'idea</div>
+<h2 class="giant">Non solo<br>un'idea.<br><span class="serif">Una prima versione.</span></h2>
+</div>
+
+<p class="reveal delay1">
+Per questo abbiamo fatto un passo in più.
+Abbiamo preso questa direzione e iniziato a trasformarla in una prima versione reale dello store.
+<strong>Non un mockup da immaginare.</strong>
+Una prima esperienza navigabile, costruita partendo da Flip&amp;Co.
+</p>
+</div>
+
+<div class="browser reveal delay1">
+<div class="browser-top">
+<i class="dot"></i><i class="dot"></i><i class="dot"></i>
+<span class="browser-url">flip&amp;co · prima versione</span>
+</div>
+<div class="preview">
+<img src="assets/editorial/home/hero-01-store.jpg"
+alt="Prima versione dello store Flip&amp;Co">
+</div>
+</div>
+
+<div class="demo-cta">
+<p style="max-width:520px;margin:0 auto;text-align:center;color:var(--soft);font-size:12px;line-height:1.7">
+Ma prima di farvela aprire, vogliamo mostrarvi perché l'abbiamo costruita in questo modo.
+</p>
+</div>
+</div>
 </section>
 
 <section class="section note">
- <div class="wrap note-grid">
-  <div class="reveal"><div class="eyebrow">Prima di chiedervi qualsiasi cosa</div><h2 class="giant">Non vi chiediamo<br>di crederci<br><span class="serif">sulla parola.</span></h2></div>
-  <div class="note-card reveal delay1">
-   <div class="note-item"><strong>Ve lo abbiamo già mostrato</strong>Non vi chiediamo di comprare un'idea. Una prima versione dello store esiste già.</div>
-   <div class="note-item"><strong>Potete provarla</strong>Entrate, guardate come funziona e immaginate cosa potrebbe diventare con i vostri prodotti, brand e contenuti reali.</div>
-   <div class="note-item"><strong>La prima versione non è il punto di arrivo</strong>È il punto da cui possiamo lavorare insieme: catalogo, contenuti, funzionalità e dettagli possono essere costruiti intorno alle vostre esigenze.</div>
-   <div class="note-item"><strong>Prima ve lo facciamo vedere. Poi ve lo facciamo provare.</strong>Solo dopo, se per voi ha senso, parliamo di come portarlo online davvero.</div>
-  </div>
- </div>
+<div class="wrap note-grid">
+
+<div class="reveal">
+<div class="eyebrow">Prima di chiedervi qualsiasi cosa</div>
+<h2 class="giant">Prima<br>lavoriamo.<br><span class="serif">Poi parliamo.</span></h2>
+</div>
+
+<div class="note-card reveal delay1">
+
+<div class="note-item">
+<strong>Non vi stiamo vendendo un'idea</strong>
+Abbiamo già iniziato a costruire una prima versione partendo da Flip&amp;Co.
+</div>
+
+<div class="note-item">
+<strong>Avete visto da dove siamo partiti</strong>
+Non abbiamo scelto un template e cambiato il logo.
+Abbiamo costruito il progetto intorno alla vostra identità, ai vostri prodotti e all'esperienza del negozio.
+</div>
+
+<div class="note-item">
+<strong>Questa non è la versione definitiva</strong>
+È il punto di partenza.
+Contenuti, catalogo, funzionalità e dettagli possono essere sviluppati insieme.
+</div>
+
+<div class="note-item">
+<strong>Il progetto ve lo abbiamo mostrato. La prova arriva adesso.</strong>
+Prima vi abbiamo fatto vedere la direzione che abbiamo immaginato per Flip&amp;Co.
+Alla fine della presentazione potrete entrare nella prima versione dello store e provarla direttamente.
+</div>
+
+</div>
+</div>
 </section>
 
 <section class="section end">
- <div class="wrap reveal">
-  <div class="eyebrow" style="color:#607800">Se la direzione vi piace</div>
-  <h2>Possiamo farlo<br><em>diventare vostro.</em></h2>
-  <p class="end-copy">Lo store che avete appena visto può diventare il vostro vero store online. MediaBay si occupa dello sviluppo, della gestione, degli aggiornamenti, dell'infrastruttura e del supporto attraverso un unico servizio mensile.</p>
-  <p class="end-copy" style="margin-top:22px"><strong>Per Flip&amp;Co il primo mese è gratuito.</strong> Nessun costo di sviluppo iniziale. Lo provate realmente, vedete come lavoriamo e poi decidete voi se continuare.</p>
-  <div class="actions">
-<a class="big-btn" href="index.html">ORA VISITA LO STORE ↗</a>
+<div class="wrap">
+
+<div class="eyebrow">Se la direzione vi piace</div>
+
+<h2 class="giant">
+Non vi vendiamo<br>
+semplicemente un<br>
+<span class="serif">sito.</span>
+</h2>
+
+<p class="end-copy">
+Vi mettiamo a disposizione un sistema che gestiamo nel tempo.
+Lo sviluppo iniziale è incluso:
+MediaBay si occupa dello sviluppo, della gestione, degli aggiornamenti,
+dell'infrastruttura e del supporto attraverso un unico servizio mensile.
+</p>
+
+<p class="end-copy" style="margin-top:22px">
+<strong>Per Flip&amp;Co il primo mese è gratuito.</strong>
+Nessun costo di sviluppo iniziale.
+Entrate nel servizio, vedete come lavoriamo e valutate concretamente il risultato.
+Poi decidete voi se continuare.
+</p>
+
+<div class="actions">
+<a class="big-btn" href="index.html">PROVATE IL VOSTRO STORE ↗</a>
 </div>
-  <div class="fine">Primo mese gratuito per Flip&amp;Co · Nessun costo di sviluppo iniziale · Servizio mensile · Decidete voi se continuare</div>
- </div>
+
+</div>
 </section>
 
-<footer><div class="wrap foot"><div><div class="foot-brand">MEDIA<span>BAY</span></div><small>Physical presence. Digital impact.<br>Web · Commerce · AI · Automation</small></div><div class="foot-links"><a href="mailto:info@mediabay.it">info@mediabay.it</a><a href="https://wa.me/393518472396">WhatsApp</a><a href="../../index.html">MediaBay ↗</a></div></div></footer>
+<footer>
+<div class="wrap foot">
+<div>
+<div class="foot-brand">MEDIA<span>BAY</span></div>
+<small>
+Physical presence. Digital impact.<br>
+Web · Commerce · AI · Automation
+</small>
+</div>
+<div class="foot-links">
+<span>PRESENTAZIONE PRIVATA · FLIP&amp;CO · CAGLIARI</span>
+</div>
+</div>
+</footer>
 <script>
 const cursor=document.querySelector('.cursor');
 if(matchMedia('(pointer:fine)').matches){document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.classList.add('on')});document.querySelectorAll('a,.tab,.hotspot').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('big'));el.addEventListener('mouseleave',()=>cursor.classList.remove('big'))})}
