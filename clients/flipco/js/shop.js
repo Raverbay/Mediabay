@@ -37,12 +37,32 @@
     p.type==='swimwear'?'Costumi':'Abbigliamento'
   );
 
+  const params=new URLSearchParams(location.search);
+
+  // Normalize menu links into the shop filter model.
+  // category=Uomo/Donna/Kids -> audience
+  // type=sneaker/accessory/... -> product category
+  const rawAudience=params.get('audience')||params.get('category')||'all';
+  const rawType=params.get('type')||'all';
+
+  const typeMap={
+    sneaker:'Sneakers',
+    sneakers:'Sneakers',
+    accessory:'Accessori',
+    accessories:'Accessori',
+    bag:'Borse',
+    bags:'Borse',
+    swimwear:'Costumi',
+    costume:'Costumi',
+    apparel:'Abbigliamento'
+  };
+
   let state={
-    audience:new URLSearchParams(location.search).get('audience')||'all',
-    category:new URLSearchParams(location.search).get('type')||'all',
-    subcategory:new URLSearchParams(location.search).get('subcategory')||'all',
-    brand:new URLSearchParams(location.search).get('brand')||'all',
-    price:new URLSearchParams(location.search).get('price')||'all'
+    audience:['Uomo','Donna','Kids'].includes(rawAudience)?rawAudience:'all',
+    category:typeMap[rawType.toLowerCase()]||(['Abbigliamento','Sneakers','Borse','Accessori','Costumi'].includes(rawType)?rawType:'all'),
+    subcategory:params.get('subcategory')||'all',
+    brand:params.get('brand')||'all',
+    price:params.get('price')||'all'
   };
 
   const matchesAudience=(p,a)=>{
