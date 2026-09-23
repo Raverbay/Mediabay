@@ -258,8 +258,9 @@ boot();
     }
     // V52 — client-supplied editorial hero: two final campaign images.
     const hero=[
-      {image:"assets/editorial/home/hero-01-red-edit-v2.jpg",brand:"FLIP&CO",name:"THE RED EDIT",price:"CAGLIARI",link:"shop.html",pos:"center center"},
-      {image:"assets/editorial/home/hero-02-yellow-edit-v2.jpg",brand:"FLIP&CO",name:"THE YELLOW EDIT",price:"CAGLIARI",link:"shop.html",pos:"center center"}
+      {image:"assets/editorial/home/hero-01-store.jpg",brand:"FLIP&CO",name:"THE STORE",price:"CAGLIARI",link:"shop.html",pos:"center center"},
+      {image:"assets/editorial/home/hero-02-woman.jpg",brand:"FLIP&CO",name:"THE LOOK",price:"CAGLIARI",link:"shop.html",pos:"center center"},
+      {image:"assets/editorial/home/hero-03-store-edit.jpg",brand:"FLIP&CO",name:"THE EDIT",price:"CAGLIARI",link:"shop.html",pos:"center center"}
     ];
     let hi=0;
     const himg=document.querySelector("#heroImg");
