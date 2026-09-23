@@ -982,6 +982,125 @@ html,body{
 }
 </style>
 
+
+<style id="commerce-scope-boxes-v2">
+/* =========================================================
+   COMMERCE — PACKAGE SCOPE BOXES V2
+   ========================================================= */
+
+.identity-commerce #package-scope .feature-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:2px!important;
+  margin-top:42px!important;
+  background:#18231822!important;
+  width:100%!important;
+}
+
+.identity-commerce #package-scope .feature{
+  min-width:0!important;
+  min-height:310px!important;
+  padding:30px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:space-between!important;
+  overflow:hidden!important;
+}
+
+.identity-commerce #package-scope .feature b{
+  display:block!important;
+  font-size:8px!important;
+  line-height:1!important;
+  letter-spacing:.18em!important;
+  opacity:.58!important;
+}
+
+.identity-commerce #package-scope .feature h3{
+  margin:55px 0 14px!important;
+  max-width:100%!important;
+  font-family:var(--serif)!important;
+  font-weight:400!important;
+  font-size:clamp(2.2rem,3.4vw,4rem)!important;
+  line-height:.88!important;
+  letter-spacing:-.055em!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+}
+
+.identity-commerce #package-scope .feature p{
+  margin:0!important;
+  max-width:520px!important;
+  font-size:11px!important;
+  line-height:1.55!important;
+  opacity:.72!important;
+}
+
+.identity-commerce #package-scope > div[style*="margin-top:7vw"]{
+  margin-top:90px!important;
+}
+
+.identity-commerce #package-scope > div[style*="margin-top:7vw"] .feature-grid{
+  margin-top:42px!important;
+}
+
+/* Non-included section: slightly more restrained */
+.identity-commerce #package-scope > div[style*="margin-top:7vw"] .feature{
+  min-height:290px!important;
+  background:#e9e5dc!important;
+}
+
+.identity-commerce #package-scope > div[style*="margin-top:7vw"] .feature:nth-child(2){
+  background:#e3dfd6!important;
+}
+
+.identity-commerce #package-scope > div[style*="margin-top:7vw"] .feature:nth-child(3){
+  background:#dedbd3!important;
+}
+
+.identity-commerce #package-scope > div[style*="margin-top:7vw"] .feature:nth-child(4){
+  background:#d9d6ce!important;
+}
+
+/* TABLET / MOBILE */
+@media(max-width:900px){
+  .identity-commerce #package-scope .feature-grid{
+    grid-template-columns:1fr!important;
+    gap:2px!important;
+    margin-top:32px!important;
+  }
+
+  .identity-commerce #package-scope .feature{
+    min-height:0!important;
+    padding:26px 24px!important;
+  }
+
+  .identity-commerce #package-scope .feature h3{
+    margin:48px 0 14px!important;
+    font-size:clamp(2.25rem,10vw,4rem)!important;
+    line-height:.86!important;
+  }
+
+  .identity-commerce #package-scope .feature p{
+    font-size:12px!important;
+    line-height:1.55!important;
+  }
+
+  .identity-commerce #package-scope > div[style*="margin-top:7vw"]{
+    margin-top:70px!important;
+  }
+}
+
+@media(max-width:420px){
+  .identity-commerce #package-scope .feature{
+    padding:24px 20px!important;
+  }
+
+  .identity-commerce #package-scope .feature h3{
+    font-size:clamp(2.15rem,11vw,3.3rem)!important;
+  }
+}
+</style>
+
 </head><body class="identity-commerce service-page" style="--service-accent:#ff3b30">
 
 <div id="mb-loader" aria-hidden="true">
@@ -1005,9 +1124,9 @@ Commerce costruisce il percorso tra desiderio e acquisto: prodotto, valore, fidu
 <section class="price-band">
 <div>
 <div style="font-size:8px;letter-spacing:.17em">MEDIABAY · COMMERCE</div>
-<div class="price">DA €199,90 <small>/ MESE</small></div>
+<div class="price">DA €199 <small>/ MESE</small></div>
 <div style="font-size:9px;letter-spacing:.12em;margin-top:6px">
-SETUP €1.999,90 · INCLUSO ALL’ATTIVAZIONE
+SETUP €1.999 · INCLUSO ALL’ATTIVAZIONE
 </div>
 </div>
 <p data-it="Una piattaforma e-commerce completa per presentare prodotti, guidare la scelta e arrivare al checkout. Fino a 50 prodotti." data-en="Una piattaforma e-commerce completa per presentare prodotti, guidare la scelta e arrivare al checkout. Fino a 50 prodotti.">Una piattaforma e-commerce completa per presentare prodotti, guidare la scelta e arrivare al checkout. Fino a 50 prodotti.</p>
