@@ -1,0 +1,79 @@
+.pcf-video-hero {
+  position: relative;
+  min-height: min(760px, 86svh);
+  min-height: min(760px, 86dvh);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #15251d;
+  color: #fff;
+}
+.pcf-video-hero video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.pcf-video-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,rgba(8,20,15,.78),rgba(8,20,15,.28) 75%),
+              linear-gradient(0deg,rgba(8,20,15,.45),transparent 55%);
+}
+.pcf-video-inner {
+  width: min(1180px,100%);
+  margin: 0 auto;
+  padding: clamp(115px,16vh,170px) 7% 90px;
+}
+.pcf-video-kicker {
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  opacity: .88;
+}
+.pcf-video-slide { display: none; max-width: 820px; }
+.pcf-video-slide.is-active { display: block; animation: pcfVideoIn .7s ease both; }
+.pcf-video-slide h2 {
+  margin: 24px 0;
+  font-size: clamp(42px,7vw,88px);
+  line-height: .98;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+.pcf-video-slide h2 em { color: #d1e2c9; font-weight: 400; }
+.pcf-video-slide p {
+  max-width: 540px;
+  font-size: clamp(15px,1.5vw,18px);
+  line-height: 1.75;
+  color: rgba(255,255,255,.88);
+}
+.pcf-video-actions { display:flex; flex-wrap:wrap; align-items:center; gap:18px; margin-top:30px; }
+.pcf-video-cta {
+  display:inline-flex; align-items:center; gap:24px;
+  padding:17px 21px; background:#f6f5ef; color:#203b2e;
+  text-decoration:none; font-size:13px; font-weight:650;
+}
+.pcf-video-cta:hover { background:#dce8d7; }
+.pcf-video-link { color:white; font-size:13px; text-underline-offset:5px; }
+.pcf-video-controls { display:flex; align-items:center; gap:12px; margin-top:42px; }
+.pcf-video-dot {
+  width:28px; height:3px; border:0; padding:0; cursor:pointer;
+  background:rgba(255,255,255,.45);
+}
+.pcf-video-dot[aria-pressed="true"] { width:52px; background:#fff; }
+.pcf-video-count { font-size:10px; letter-spacing:.16em; margin-left:8px; }
+@keyframes pcfVideoIn { from {opacity:0;transform:translateY(12px)} to {opacity:1;transform:translateY(0)} }
+@media (prefers-reduced-motion: reduce) {
+  .pcf-video-slide.is-active { animation:none; }
+}
+@media (max-width:600px) {
+  .pcf-video-hero { min-height: 78svh; }
+  .pcf-video-inner { padding:120px 6% 60px; }
+  .pcf-video-slide h2 { font-size:clamp(40px,12vw,62px); }
+}

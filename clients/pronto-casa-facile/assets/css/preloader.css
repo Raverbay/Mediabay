@@ -1,0 +1,58 @@
+/* PCF PRELOADER — LOGO PULSANTE MINIMAL */
+#pcf-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f6f0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+#pcf-preloader .pcf-loader-inner {
+  display: flex;
+  width: min(72vw, 300px);
+  align-items: center;
+  justify-content: center;
+}
+
+#pcf-preloader .pcf-loader-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  animation: pcfLogoPulse .9s ease-in-out infinite;
+}
+
+#pcf-preloader .pcf-loader-track,
+#pcf-preloader .pcf-loader-caption {
+  display: none !important;
+}
+
+#pcf-preloader.pcf-loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+html.pcf-loading,
+html.pcf-loading body {
+  overflow: hidden;
+}
+
+@keyframes pcfLogoPulse {
+  0%, 100% { transform: scale(1); opacity: .88; }
+  50% { transform: scale(1.045); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pcf-preloader .pcf-loader-logo {
+    animation: none;
+  }
+  #pcf-preloader {
+    transition: none;
+  }
+}

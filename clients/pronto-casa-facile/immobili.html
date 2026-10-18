@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5ef">
+  <meta name="description" content="Esplora gli immobili in vendita e in affitto di Pronto Casa Facile. Filtra per località, prezzo e caratteristiche.">
+  <title>Immobili in vendita e in affitto — Pronto Casa Facile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/immobili.css">
+  <link rel="stylesheet" href="assets/css/preloader.css">
+</head>
+<body>
+
+  <div id="pcf-preloader" role="status" aria-label="Caricamento del sito">
+    <div class="pcf-loader-inner">
+      <img class="pcf-loader-logo" src="assets/images/logo-pcf-verde.png" alt="Pronto Casa Facile">
+      <div class="pcf-loader-track" aria-hidden="true">
+        <div class="pcf-loader-progress"></div>
+      </div>
+      <p class="pcf-loader-caption">Pronto Casa Facile</p>
+    </div>
+  </div>
+
+  <div class="catalog-top">
+    <span>PRONTO CASA FACILE</span>
+    <span>CAGLIARI · SARDEGNA</span>
+  </div>
+  <header class="catalog-header">
+    <a class="catalog-brand" href="index.html" aria-label="Torna alla homepage">
+      <img src="assets/images/logo-pcf-verde.png" alt="Pronto Casa Facile">
+    </a>
+    <a class="catalog-back" href="index.html">← Homepage <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="catalog-hero">
+      <p class="catalog-eyebrow">IL CATALOGO IMMOBILIARE</p>
+      <h1>Trova il posto<br>che puoi chiamare <em>casa.</em></h1>
+      <p class="catalog-hero-copy">Esplora gli annunci disponibili, confronta le informazioni e contattaci per approfondire. Pubblichiamo solo proprietà inserite nel catalogo: quando un dato non è ancora confermato, lo indichiamo chiaramente.</p>
+    </section>
+
+    <section class="catalog-main" aria-label="Ricerca immobili">
+      <div class="catalog-toolbar">
+        <h2>Le proprietà</h2>
+        <span class="catalog-count" id="catalog-count" aria-live="polite">Caricamento…</span>
+      </div>
+
+      <div class="catalog-layout">
+        <aside class="catalog-filters">
+          <div class="catalog-filter-heading">
+            <h3>Filtra la ricerca</h3>
+            <button class="catalog-reset" id="catalog-reset" type="button">Azzera</button>
+          </div>
+          <form id="catalog-filters">
+            <div class="catalog-filter-grid">
+              <div class="catalog-field">
+                <label for="f-operazione">Operazione</label>
+                <select id="f-operazione" name="operazione">
+                  <option value="">Vendita e affitto</option>
+                  <option value="vendita">In vendita</option>
+                  <option value="affitto">In affitto</option>
+                </select>
+              </div>
+              <div class="catalog-field">
+                <label for="f-localita">Località</label>
+                <select id="f-localita" name="localita">
+                  <option value="">Tutte le località</option>
+                  <option value="Quartu Sant'Elena">Quartu Sant'Elena</option>
+                  <option value="Cagliari">Cagliari</option>
+                  <option value="Assemini">Assemini</option>
+                  <option value="Gonnesa">Gonnesa</option>
+                  <option value="Dolianova">Dolianova</option>
+                  <option value="San Vito">San Vito</option>
+                  <option value="Domus de Maria">Domus de Maria / Chia</option>
+                </select>
+              </div>
+              <div class="catalog-field">
+                <label for="f-tipologia">Tipologia</label>
+                <select id="f-tipologia" name="tipologia">
+                  <option value="">Tutte le tipologie</option>
+                  <option value="Appartamento">Appartamento</option>
+                  <option value="Villa">Villa</option>
+                  <option value="Casa indipendente">Casa indipendente</option>
+                  <option value="Attico">Attico</option>
+                  <option value="Terreno">Terreno</option>
+                </select>
+              </div>
+              <div class="catalog-field">
+                <label>Prezzo (€)</label>
+                <div class="catalog-price-row">
+                  <input name="prezzo-min" type="number" min="0" step="5000" placeholder="Minimo" aria-label="Prezzo minimo">
+                  <input name="prezzo-max" type="number" min="0" step="5000" placeholder="Massimo" aria-label="Prezzo massimo">
+                </div>
+              </div>
+              <div class="catalog-field">
+                <label for="f-camere">Camere da letto, minimo</label>
+                <select id="f-camere" name="camere">
+                  <option value="">Indifferente</option>
+                  <option value="1">1 o più</option>
+                  <option value="2">2 o più</option>
+                  <option value="3">3 o più</option>
+                  <option value="4">4 o più</option>
+                </select>
+              </div>
+              <div class="catalog-field">
+                <label for="f-bagni">Bagni, minimo</label>
+                <select id="f-bagni" name="bagni">
+                  <option value="">Indifferente</option>
+                  <option value="1">1 o più</option>
+                  <option value="2">2 o più</option>
+                  <option value="3">3 o più</option>
+                </select>
+              </div>
+              <div class="catalog-field">
+                <label>Superficie (m²)</label>
+                <div class="catalog-price-row">
+                  <input name="mq-min" type="number" min="0" step="5" placeholder="Minima" aria-label="Superficie minima in metri quadrati">
+                  <input name="mq-max" type="number" min="0" step="5" placeholder="Massima" aria-label="Superficie massima in metri quadrati">
+                </div>
+              </div>
+              <button class="catalog-apply" type="submit">Applica filtri ↗</button>
+            </div>
+          </form>
+        </aside>
+
+        <div class="catalog-results">
+          <div class="catalog-sort-row">
+            <p id="catalog-summary" aria-live="polite">Consulta gli annunci disponibili.</p>
+            <select id="catalog-sort" aria-label="Ordina gli immobili">
+              <option value="recenti">Ordine predefinito</option>
+              <option value="prezzo-crescente">Prezzo crescente</option>
+              <option value="prezzo-decrescente">Prezzo decrescente</option>
+            </select>
+          </div>
+          <div class="catalog-grid" id="catalog-grid">
+            <p>Caricamento degli immobili…</p>
+          </div>
+          <p class="catalog-note">Prezzi, disponibilità, documentazione e caratteristiche devono essere confermati con Pronto Casa Facile. I filtri relativi a caratteristiche non ancora verificate non includono l'annuncio fino alla conferma del dato.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="catalog-footer">
+    <span>© <span id="catalog-year"></span> Pronto Casa Facile</span>
+    <a href="index.html">Torna alla homepage ↗</a>
+  </footer>
+  <script src="assets/js/immobili.js"></script>
+  <script>document.getElementById("catalog-year").textContent = new Date().getFullYear();</script>
+  <script src="assets/js/preloader.js"></script>
+</body>
+</html>
