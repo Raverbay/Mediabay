@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Un percorso di personal training costruito intorno a te. Marco Sanna, Personal Trainer a Pirri, Cagliari.">
+  <title>Marco Sanna — Il tuo percorso, il tuo allenamento</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#home" aria-label="Marco Sanna, home">
+      <img class="brand-logo" src="assets/logo-ms.png" alt="Marco Sanna Personal Trainer">
+    </a>
+    <a class="nav-cta" href="#inizia">INIZIA DA QUI <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> IL TUO PERCORSO INIZIA QUI</p>
+        <h1>NON DEVI<br>ADATTARTI A<br>UNA <em>SCHEDA.</em></h1>
+        <p class="hero-sub">È l'allenamento che deve adattarsi a te.</p>
+        <p class="intro">Obiettivi, livello di partenza, tempo a disposizione. Costruiamo un percorso pensato per la tua vita, un passo alla volta.</p>
+        <a class="button button-lime" href="#inizia">SCOPRI DA DOVE INIZIARE <span>↘</span></a>
+        <div class="hero-meta"><span class="live-dot"></span> PERSONAL TRAINING · PIRRI, CAGLIARI</div>
+      </div>
+      <div class="hero-index"><span>01</span><span class="index-line"></span><span>03</span></div>
+    </section>
+
+    <section class="principle section-pad">
+      <p class="eyebrow"><span></span> IL METODO</p>
+      <h2>Il punto di partenza<br>sei <em>tu.</em></h2>
+      <p class="section-intro">Ogni persona parte da un punto diverso. Il percorso si costruisce tenendo conto di quello che conta davvero per te.</p>
+      <div class="principles">
+        <article><span class="principle-no">01</span><div><h3>Il tuo obiettivo</h3><p>Definiamo insieme dove vuoi arrivare.</p></div><span class="symbol">◎</span></article>
+        <article><span class="principle-no">02</span><div><h3>Il tuo livello</h3><p>Partiamo da dove sei oggi, senza confronti.</p></div><span class="symbol">↗</span></article>
+        <article><span class="principle-no">03</span><div><h3>Il tuo tempo</h3><p>Un programma compatibile con la tua quotidianità.</p></div><span class="symbol">◷</span></article>
+        <article><span class="principle-no">04</span><div><h3>Il tuo percorso</h3><p>Osserviamo i progressi e adattiamo il lavoro.</p></div><span class="symbol">↗</span></article>
+      </div>
+    </section>
+
+    <section class="services section-pad" id="servizi">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span></span> COME ALLENARTI</p><h2>Un percorso.<br><em>Il tuo modo.</em></h2></div>
+        <p>Scegli la formula più adatta a te e alle tue esigenze.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card individual">
+          <div class="service-top"><span>01 / INDIVIDUALE</span><span class="service-arrow">↗</span></div>
+          <div class="service-icon">↗</div>
+          <h3>Personal<br>Training <em>1:1</em></h3>
+          <p>Allenamento personalizzato, con attenzione dedicata ai tuoi obiettivi e al tuo punto di partenza.</p>
+          <a href="#inizia" class="text-link">È LA FORMULA PER ME <span>→</span></a>
+        </article>
+        <article class="service-card duo">
+          <div class="service-top"><span>02 / IN DUE</span><span class="service-arrow">↗</span></div>
+          <div class="service-icon">＋</div>
+          <h3>Allenamento<br><em>condiviso</em></h3>
+          <p>Allenatevi insieme, condividete la motivazione e costruite un percorso con obiettivi compatibili.</p>
+          <a href="#inizia" class="text-link">CI ALLENIAMO IN DUE <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="start section-pad" id="inizia">
+      <div class="start-heading">
+        <p class="eyebrow"><span></span> IL PRIMO PASSO</p>
+        <h2>Da dove<br>vuoi <em>partire?</em></h2>
+        <p>Rispondi a poche domande. Ti aiuteranno a raccontare cosa cerchi e a iniziare la conversazione.</p>
+        <div class="start-note"><span>↳</span> Nessun impegno. Solo un primo contatto.</div>
+      </div>
+      <form id="lead-form" class="lead-form">
+        <div class="form-progress"><span id="step-label">PASSO 01 / 04</span><div><i id="progress-bar"></i></div></div>
+        <fieldset data-step="0">
+          <legend>Qual è il tuo obiettivo principale?</legend>
+          <label class="option"><input type="radio" name="goal" value="Migliorare la forma fisica" required><span>Migliorare la forma fisica</span><b>↗</b></label>
+          <label class="option"><input type="radio" name="goal" value="Aumentare forza e resistenza"><span>Aumentare forza e resistenza</span><b>↗</b></label>
+          <label class="option"><input type="radio" name="goal" value="Riprendere ad allenarmi"><span>Riprendere ad allenarmi</span><b>↗</b></label>
+          <label class="option"><input type="radio" name="goal" value="Creare una routine costante"><span>Creare una routine costante</span><b>↗</b></label>
+        </fieldset>
+        <fieldset data-step="1" hidden>
+          <legend>Da dove parti oggi?</legend>
+          <label class="option"><input type="radio" name="level" value="Principiante" required><span>Sto iniziando</span><b>↗</b></label>
+          <label class="option"><input type="radio" name="level" value="Ripresa dopo una pausa"><span>Riprendo dopo una pausa</span><b>↗</b></label>
+          <label class="option"><input type="radio" name="level" value="Mi alleno già"><span>Mi alleno già</span><b>↗</b></label>
+        </fieldset>
+        <fieldset data-step="2" hidden>
+          <legend>Come preferisci allenarti?</legend>
+          <label class="option"><input type="radio" name="format" value="Personal training individuale" required><span>Individualmente, 1:1</span><b>↗</b></label>
+          <label class="option"><input type="radio" name="format" value="Allenamento condiviso in due"><span>In due, con un'altra persona</span><b>↗</b></label>
+          <label class="option"><input type="radio" name="format" value="Vorrei un consiglio sulla formula"><span>Vorrei un consiglio</span><b>↗</b></label>
+        </fieldset>
+        <fieldset data-step="3" hidden>
+          <legend>Come ti chiami?</legend>
+          <label class="field-label" for="lead-name">NOME</label>
+          <input class="text-input" id="lead-name" name="name" autocomplete="given-name" placeholder="Il tuo nome" required>
+          <label class="field-label" for="lead-time">QUANDO PREFERIRESTI ALLENARTI? <small>(FACOLTATIVO)</small></label>
+          <select class="text-input" id="lead-time" name="time">
+            <option value="Da concordare">Da concordare</option>
+            <option value="Mattina">Mattina</option>
+            <option value="Pomeriggio">Pomeriggio</option>
+            <option value="Sera">Sera</option>
+          </select>
+        </fieldset>
+        <div class="form-actions"><button type="button" id="back-btn" class="back-btn" hidden>← INDIETRO</button><button type="button" id="next-btn" class="button button-lime">CONTINUA <span>→</span></button></div>
+        <p class="form-footnote">La demo prepara un messaggio WhatsApp con le tue risposte. Nessun dato viene inviato finché non scegli di aprire WhatsApp.</p>
+      </form>
+    </section>
+
+    <section class="location section-pad">
+      <div><p class="eyebrow"><span></span> DOVE ALLENARSI</p><h2>Il tuo spazio.<br><em>Il tuo percorso.</em></h2></div>
+      <div class="location-info"><span class="pin">⌖</span><div><h3>Zona Barraccamanna — Pirri</h3><p>Cagliari, Sardegna</p><p class="muted">Scrivi per conoscere disponibilità e modalità di allenamento.</p><a class="text-link" href="#inizia">PARLIAMONE <span>→</span></a></div></div>
+    </section>
+  </main>
+
+  <div class="mobile-cta"><a href="#inizia">INIZIA IL TUO PERCORSO <span>↗</span></a></div>
+
+  <footer class="footer">
+    <a class="footer-logo-link" href="#home" aria-label="Torna all'inizio">
+      <img class="footer-logo" src="assets/logo-ms.png" alt="Logo Marco Sanna">
+    </a>
+    <a class="footer-credit" href="https://mediabay.it/" target="_blank" rel="noopener noreferrer">
+      DEMO CONCEPT <span>·</span> POWERED BY <strong>MEDIABAY</strong> <span class="footer-credit-arrow">↗</span>
+    </a>
+  </footer>
+  <script src="motion.js" defer></script>
+  <script src="cta-footer.js" defer></script>
+  <script src="app.js"></script>
+</body>
+</html>
