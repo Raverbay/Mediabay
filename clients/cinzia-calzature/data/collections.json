@@ -1,0 +1,40 @@
+{
+  "collections": [
+    {
+      "slug": "novita",
+      "title": "Novità",
+      "eyebrow": "01 / NUOVI ARRIVI",
+      "description": "Una selezione da scoprire. I prodotti reali saranno inseriti dopo la conferma dell'assortimento.",
+      "filter": {
+        "badge": "NEW"
+      }
+    },
+    {
+      "slug": "calzature",
+      "title": "Calzature",
+      "eyebrow": "02 / SCARPE",
+      "description": "Scarpe per accompagnare ogni giorno, ogni occasione e ogni stile.",
+      "filter": {
+        "type": "sneaker"
+      }
+    },
+    {
+      "slug": "abbigliamento",
+      "title": "Abbigliamento",
+      "eyebrow": "03 / ABBIGLIAMENTO",
+      "description": "Proposte da indossare, da aggiornare in base alla selezione del negozio.",
+      "filter": {
+        "type": "apparel"
+      }
+    },
+    {
+      "slug": "accessori",
+      "title": "Accessori",
+      "eyebrow": "04 / DETTAGLI",
+      "description": "Dettagli che completano il look.",
+      "filter": {
+        "type": "accessory"
+      }
+    }
+  ]
+}

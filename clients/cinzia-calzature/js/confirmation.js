@@ -1,0 +1,1 @@
+(()=>{try{const o=JSON.parse(sessionStorage.getItem('cinzia_calzature_order')||'{}');document.querySelector('#orderNumber').textContent=o.id||'CC-DEMO';document.querySelector('#orderName').textContent=o.name||'Cliente'}catch{}})();

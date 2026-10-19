@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cinzia Calzature × MediaBay — Una prima versione pensata per voi</title>
+<meta name="description" content="Una presentazione privata per Cinzia Calzature: perché MediaBay ha iniziato a costruire una prima versione dello store e come possiamo trasformarla in un servizio reale.">
+<style>
+:root{--ink:#080808;--paper:#f3f0e9;--acid:#d9ff3f;--soft:#a8aaa5;--line:rgba(243,240,233,.15);--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;border:0;background:none;color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}::selection{background:var(--acid);color:#000}
+body:before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;background:linear-gradient(90deg,transparent 0,transparent calc(100% - 1px),rgba(255,255,255,.03) calc(100% - 1px));opacity:.4}
+.cursor{position:fixed;left:0;top:0;width:18px;height:18px;border:1px solid var(--acid);border-radius:50%;pointer-events:none;z-index:200;transform:translate(-50%,-50%) scale(0);transition:transform .2s ease,background .2s,border .2s;mix-blend-mode:difference}.cursor.on{transform:translate(-50%,-50%) scale(1)}.cursor.big{transform:translate(-50%,-50%) scale(3);background:var(--acid);border-color:var(--acid)}
+.progress{position:fixed;right:22px;top:50%;z-index:80;width:2px;height:140px;background:rgba(255,255,255,.15);transform:translateY(-50%)}.progress i{display:block;width:100%;height:0;background:var(--acid);transition:height .15s}
+.nav{position:fixed;z-index:90;top:0;left:0;width:100%;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff}.brand{font-size:15px;font-weight:900;letter-spacing:-.06em}.brand span{color:var(--acid)}.nav-meta{font-size:9px;text-transform:uppercase;letter-spacing:.16em;opacity:.75}.nav-cta{padding:9px 12px;border:1px solid rgba(255,255,255,.5);font-size:9px;text-transform:uppercase;letter-spacing:.13em}
+.hero{min-height:100svh;position:relative;overflow:hidden;display:flex;align-items:flex-end}.hero-media{position:absolute;inset:0}.hero-media img{object-position:center 38%;filter:saturate(.78) contrast(1.08)}.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.05) 35%,rgba(0,0,0,.82))}.hero-content{position:relative;z-index:2;width:min(1380px,calc(100% - 56px));margin:auto;padding:0 0 70px}.eyebrow{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--acid);font-weight:800;margin-bottom:18px}.hero h1{font-size:clamp(58px,12vw,180px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:0;max-width:1100px}.hero h1 em{font-family:var(--serif);font-weight:400;text-transform:none;letter-spacing:-.06em}.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:35px}.hero-sub p{max-width:520px;font-size:15px;line-height:1.55;color:rgba(255,255,255,.78);margin:0}.scroll{font-size:9px;text-transform:uppercase;letter-spacing:.18em;display:flex;align-items:center;gap:12px}.scroll b{display:block;width:50px;height:1px;background:var(--acid)}
+.section{position:relative;padding:150px 0}.wrap{width:min(1240px,calc(100% - 56px));margin:auto}.eyebrow.dark{color:var(--acid)}.giant{font-size:clamp(50px,9vw,126px);line-height:.82;letter-spacing:-.075em;text-transform:uppercase;margin:0}.serif{font-family:var(--serif);font-weight:400;text-transform:none}.intro{background:var(--paper);color:#090909}.intro .eyebrow{color:#607800}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:end}.intro-copy{font-size:21px;line-height:1.55;max-width:570px}.intro-copy p{margin:0 0 25px}.intro-copy strong{font-weight:700}.quiet{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#666;margin-top:55px;padding-top:18px;border-top:1px solid rgba(0,0,0,.15)}
+.reveal{opacity:0;transform:translateY(45px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}.delay1{transition-delay:.12s}.delay2{transition-delay:.22s}
+.choice{background:#0b0b0b}.choice-head{display:flex;justify-content:space-between;gap:30px;align-items:flex-end}.choice-note{max-width:340px;color:var(--soft);font-size:12px;line-height:1.6}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:65px}.tab{position:relative;min-height:520px;background:#111;overflow:hidden;cursor:pointer}.tab img{position:absolute;inset:0;filter:grayscale(1);opacity:.5;transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .5s,filter .5s}.tab:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.9));}.tab-content{position:absolute;z-index:2;inset:auto 25px 28px}.tab-num{font-size:9px;color:var(--acid);letter-spacing:.16em}.tab h3{font-size:42px;letter-spacing:-.06em;margin:8px 0 8px;text-transform:uppercase}.tab p{font-size:11px;line-height:1.5;color:#bbb;max-width:210px;margin:0;opacity:0;transform:translateY(12px);transition:.4s}.tab:hover img,.tab.active img{transform:scale(1.06);opacity:.82;filter:grayscale(0)}.tab:hover p,.tab.active p{opacity:1;transform:none}
+.split{display:grid;grid-template-columns:.82fr 1.18fr;min-height:90vh}.split-copy{background:var(--acid);color:#080808;padding:100px clamp(28px,6vw,90px);display:flex;flex-direction:column;justify-content:center}.split-copy h2{font-size:clamp(50px,8vw,110px);line-height:.8;letter-spacing:-.08em;text-transform:uppercase;margin:0}.split-copy p{max-width:430px;font-size:16px;line-height:1.55;margin-top:35px}.look-stage{position:relative;min-height:90vh;background:#161616;overflow:hidden}.look-stage img{position:absolute;inset:0;object-position:center}.look-stage:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.15),transparent 55%,rgba(0,0,0,.4))}.hotspot{position:absolute;z-index:3;width:34px;height:34px;border:1px solid #fff;border-radius:50%;display:grid;place-items:center;cursor:pointer}.hotspot:before{content:"";width:8px;height:8px;background:var(--acid);border-radius:50%;box-shadow:0 0 0 8px rgba(217,255,63,.15);transition:.3s}.hotspot:hover:before{transform:scale(1.5)}.hotspot .tip{position:absolute;left:45px;top:-12px;min-width:150px;padding:12px;background:#fff;color:#000;font-size:10px;opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s}.hotspot:hover .tip{opacity:1;transform:none}
+.flow-section{background:var(--paper);color:#090909}.flow-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:90px}.flow-sticky{position:sticky;top:110px;height:max-content}.flow-sticky p{font-size:15px;line-height:1.55;max-width:340px;color:#666}.flow-list{border-top:1px solid rgba(0,0,0,.2)}.flow-row{min-height:170px;border-bottom:1px solid rgba(0,0,0,.2);display:flex;align-items:center;gap:30px}.flow-no{font-size:10px;color:#687b00;width:45px}.flow-row h3{font-size:clamp(34px,5vw,68px);letter-spacing:-.065em;text-transform:uppercase;margin:0}.arrow{margin-left:auto;font-size:30px;transition:.3s}.flow-row:hover .arrow{transform:translate(8px,-8px)}
+.demo{background:#080808;padding-bottom:0}.demo-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px}.demo-head p{max-width:390px;color:var(--soft);font-size:13px;line-height:1.6}.browser{border:1px solid rgba(255,255,255,.2);background:#111;padding:9px;box-shadow:0 40px 100px rgba(0,0,0,.5);transform:perspective(1400px) rotateX(2deg);transition:transform .8s}.browser:hover{transform:perspective(1400px) rotateX(0)}.browser-top{height:32px;display:flex;align-items:center;gap:6px;padding:0 8px}.dot{width:6px;height:6px;border-radius:50%;background:#555}.browser-url{margin-left:10px;font-size:8px;color:#777;letter-spacing:.08em}.preview{height:min(68vw,690px);overflow:hidden;position:relative}.preview img{object-position:center top;transition:transform 1.2s}.browser:hover .preview img{transform:scale(1.025)}.demo-cta{display:flex;justify-content:center;padding:55px 0 130px}.big-btn{display:inline-flex;align-items:center;gap:20px;border:1px solid rgba(255,255,255,.35);padding:20px 25px;font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;transition:.3s}.big-btn:hover{background:var(--acid);color:#000;border-color:var(--acid);padding-left:32px;padding-right:32px}
+.note{background:#151515}.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}.note-card{margin-top:50px;border-top:1px solid var(--line)}.note-item{padding:20px 0;border-bottom:1px solid var(--line);font-size:12px;color:#aaa;line-height:1.6}.note-item strong{display:block;color:#fff;margin-bottom:4px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.end{background:var(--paper);color:#080808;min-height:100svh;display:flex;align-items:center}.end h2{font-size:clamp(60px,11vw,150px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:0}.end h2 em{font-family:var(--serif);font-weight:400;text-transform:none}.end-copy{max-width:620px;margin-top:45px;font-size:18px;line-height:1.6;color:#555}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:42px}.action{padding:16px 20px;border:1px solid #bbb;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.action.primary{background:#080808;color:#fff;border-color:#080808}.action:hover{transform:translateY(-3px);background:var(--acid);color:#000;border-color:#000}.fine{margin-top:55px;padding-top:20px;border-top:1px solid #ccc;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#777}
+footer{background:#080808;padding:70px 0 25px}.foot{display:flex;justify-content:space-between;gap:40px;align-items:flex-end}.foot-brand{font-size:24px;font-weight:900;letter-spacing:-.06em}.foot-brand span{color:var(--acid)}.foot small{display:block;color:#666;font-size:9px;line-height:1.7;margin-top:10px}.foot-links{display:flex;gap:20px;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#888}.foot-links a:hover{color:#fff}
+@media(max-width:800px){
+.cursor{display:none}
+.progress{right:9px;height:100px}
+.nav{padding:18px 16px}
+.nav-meta{display:none}
+.nav-cta{padding:8px}
+.wrap{width:calc(100% - 32px)}
+.hero-content{width:calc(100% - 32px);padding-bottom:42px}
+.hero h1{font-size:clamp(55px,17vw,100px)}
+.hero-sub{display:block}
+.hero-sub p{font-size:14px;margin-bottom:25px}
+.section{padding:90px 0}
+.intro-grid,.flow-layout,.note-grid,.split{grid-template-columns:1fr;gap:45px}
+.intro-grid{display:block}
+.intro-copy{margin-top:45px;font-size:18px}
+
+/* CHOICE — MOBILE REFLOW */
+.choice-head{display:block}
+.choice-head > div{width:100%}
+.choice-note{max-width:520px;margin:34px 0 0;font-size:14px;line-height:1.65}
+.tabs{grid-template-columns:1fr 1fr;margin-top:48px}
+.tab{min-height:360px}
+.tab-content{inset:auto 18px 20px}
+.tab h3{font-size:30px}
+.tab p{opacity:1;transform:none}
+
+.split-copy{min-height:60vh;padding:70px 24px}
+.look-stage{min-height:75vh}
+.hotspot .tip{display:none}
+.flow-sticky{position:relative;top:auto}
+.flow-row{min-height:120px}
+.flow-row h3{font-size:38px}
+.demo-head{display:block}
+.demo-head p{margin-top:25px}
+.preview{height:65vw}
+.demo-cta{padding-bottom:80px}
+.end{min-height:80svh}
+.end h2{font-size:18vw}
+.end-copy{font-size:16px}
+.foot{display:block}
+.foot-links{margin-top:30px;flex-wrap:wrap}
+}
+
+/* V57 — presentation hero cleanup */
+.hero-media{background:
+  radial-gradient(circle at 78% 24%,rgba(217,255,63,.10),transparent 28%),
+  linear-gradient(135deg,#151515 0%,#090909 58%,#101010 100%);
+}
+.hero-media:before{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(0,0,0,.12),transparent 48%,rgba(217,255,63,.035)),
+  repeating-linear-gradient(90deg,transparent 0,transparent calc(12.5% - 1px),rgba(255,255,255,.035) calc(12.5% - 1px),rgba(255,255,255,.035) 12.5%);
+  opacity:.9;
+}
+.hero-media:after{background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.72));}
+@media(max-width:800px){
+  .hero{min-height:calc(100svh - 58px);align-items:flex-end;}
+  .hero-content{padding-bottom:34px;}
+  .hero h1{font-size:clamp(48px,15vw,78px);line-height:.84;max-width:100%;}
+  .hero-sub{margin-top:24px;}
+  .hero-sub p{font-size:14px;line-height:1.5;max-width:330px;}
+}
+</style>
+
+<style id="cinzia-presentation-v60">
+/* V60 — final presentation polish */
+.hero h1{max-width:1180px}
+.hero-sub p{max-width:560px}
+.intro-copy strong,.split-copy strong,.flow-sticky strong,.demo-head strong,.end-copy strong{color:inherit}
+.note-item strong{color:var(--acid)}
+.end-copy{color:#4f514c}
+.action.primary{min-width:170px;text-align:center}
+@media(max-width:800px){
+  .nav{padding:16px}
+  .brand{font-size:14px}
+  .nav-cta{font-size:8px}
+  .hero h1{font-size:clamp(47px,14.5vw,78px)!important;line-height:.86!important;letter-spacing:-.075em!important}
+  .hero-sub p{font-size:14px;line-height:1.55}
+  .giant{font-size:clamp(45px,13vw,72px);line-height:.86}
+  .intro-copy{font-size:18px;line-height:1.55}
+  .tab h3{font-size:30px!important}
+  .split-copy h2{font-size:clamp(54px,15vw,82px)!important}
+  .flow-row h3{font-size:35px!important}
+  .end h2{font-size:clamp(52px,16vw,86px)!important}
+  .end-copy{font-size:17px;line-height:1.55}
+  .actions{display:grid;grid-template-columns:1fr}
+  .action{width:100%;text-align:center}
+  .fine{line-height:1.55}
+}
+</style>
+
+
+<style id="v61-mobile-fix">
+/* V61 MOBILE FIX */
+@media (max-width: 700px) {
+
+  /* Header */
+  nav,
+  .nav,
+  .site-nav,
+  .topbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+  }
+
+  /* MediaBay logo: dimensione controllata */
+  .brand img,
+  nav .brand img,
+  .nav .brand img,
+  .site-nav .brand img {
+    display: block !important;
+    width: 112px !important;
+    max-width: 112px !important;
+    height: auto !important;
+    max-height: 32px !important;
+    object-fit: contain !important;
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  .brand {
+    display: flex !important;
+    align-items: center !important;
+    width: auto !important;
+    height: auto !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  /* La presentazione resta chiusa fino alla fine */
+  .nav-cta {
+    display: none !important;
+  }
+
+  .nav-meta {
+    font-size: 9px !important;
+    letter-spacing: .14em !important;
+    white-space: nowrap !important;
+  }
+
+  /* Hero pulita */
+  .hero {
+    position: relative !important;
+    overflow: hidden !important;
+    background: #080808 !important;
+  }
+
+  .hero-media {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Nessun elemento grafico della hero deve coprire il testo */
+  .hero::before,
+  .hero::after {
+    opacity: 0 !important;
+  }
+
+  /* Titolo leggibile */
+  .hero h1,
+  .hero h1 *,
+  .hero-title,
+  .hero-title * {
+    color: #f5f2eb !important;
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: #f5f2eb !important;
+    mix-blend-mode: normal !important;
+    text-shadow: none !important;
+  }
+
+  /* Testo hero sopra ogni decorazione */
+  .hero-content,
+  .hero-copy,
+  .hero-inner {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  /* Più spazio sotto l'header */
+  .hero {
+    padding-top: 120px !important;
+  }
+}
+</style>
+
+
+<style id="v62-logo-opacity">
+@media (max-width: 700px) {
+
+  /* Manteniamo il grande logo come elemento grafico di fondo */
+  .hero {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .hero-media {
+    opacity: 0.10 !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Se il logo è dentro la hero, lo rendiamo molto discreto */
+  .hero-media img,
+  .hero img {
+    opacity: 0.10 !important;
+    z-index: 0 !important;
+  }
+
+  /* Tutto il contenuto resta sopra */
+  .hero-content,
+  .hero-copy,
+  .hero-inner,
+  .hero h1,
+  .hero p,
+  .hero .eyebrow,
+  .hero .kicker {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  /* Il titolo rimane pulito */
+  .hero h1,
+  .hero h1 *,
+  .hero-title,
+  .hero-title * {
+    mix-blend-mode: normal !important;
+    text-shadow: none !important;
+  }
+
+  /* Leggero velo scuro sopra il logo, sotto il testo */
+  .hero::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,0.28) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+}
+</style>
+
+
+<style id="cinzia-v64-responsive">
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  .section,
+  .section .wrap,
+  .end,
+  .end .wrap,
+  .note,
+  .note .wrap,
+  .demo,
+  .demo .wrap {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+
+  .giant {
+    max-width: 100%;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none;
+    font-size: clamp(46px, 13.5vw, 88px) !important;
+    line-height: .88 !important;
+    letter-spacing: -.045em !important;
+  }
+
+  .end .giant {
+    font-size: clamp(44px, 12.8vw, 82px) !important;
+    max-width: calc(100vw - 56px);
+  }
+
+  .end-copy {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .note-grid,
+  .demo-head,
+  .note-card,
+  .note-item,
+  .actions {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .actions .big-btn {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .browser {
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .browser .preview,
+  .browser img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .foot {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero,
+  .hero *,
+  .section *,
+  footer,
+  footer * {
+    max-width: 100%;
+  }
+}
+</style>
+
+<meta name="cinzia-version" content="V65">
+</head>
+<body>
+<div class="cursor"></div><div class="progress"><i></i></div>
+<nav class="nav"><a class="brand" href="../../index.html"><img src="../../assets/mediabay-logo.png" alt="MediaBay"></a><div class="nav-meta">Progetto privato · Cinzia Calzature · Cagliari</div><span class="nav-meta">PRESENTAZIONE PRIVATA · Cinzia Calzature</span></nav>
+
+<section class="hero" id="top">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="eyebrow reveal">Cinzia Calzature × MediaBay · Una prima versione, già qui</div>
+    <h1 class="reveal delay1">Abbiamo già<br>iniziato a costruire<br><em>il vostro store.</em></h1>
+    <div class="hero-sub reveal delay2"><p>Siamo MediaBay: costruiamo presenza digitale, siti, e-commerce e sistemi digitali per attività e imprese.
+<br><br>
+Siamo partiti da Cinzia Calzature, non da un template. Abbiamo guardato il vostro negozio, il vostro modo di scegliere i brand e l'esperienza che vivono le persone quando entrano da voi.<br><br><strong>Poi abbiamo iniziato a costruire.</strong></p><div class="scroll"><b></b> Scorri. Ti mostriamo il progetto.</div></div>
+  </div>
+</section>
+
+<section class="section intro">
+ <div class="wrap intro-grid">
+  <div class="reveal"><div class="eyebrow">Perché abbiamo iniziato</div><h2 class="giant">Cinzia Calzature non è<br>una semplice<br><span class="serif">vetrina.</span></h2></div>
+  <div class="intro-copy reveal delay1">
+<p>Ci sono selezione, brand, stile, persone, consiglio e soprattutto un'esperienza che succede dentro il negozio.</p>
+<p><strong>Per questo non abbiamo voluto costruire un semplice catalogo online.</strong></p>
+<p>Volevamo capire come portare quella stessa logica anche sul digitale.</p>
+<div class="quiet">Non vi chiediamo di immaginarlo. Vi mostriamo come abbiamo iniziato a costruirlo.</div>
+</div>
+ </div>
+</section>
+
+<section class="section choice">
+ <div class="wrap">
+  <div class="choice-head"><div class="reveal"><div class="eyebrow">Per questo abbiamo fatto una cosa semplice</div><h2 class="giant">Invece di<br>spiegarvelo,<br><span class="serif">lo abbiamo costruito.</span></h2></div><p class="choice-note reveal delay1">Abbiamo costruito una prima versione dello store online, pensata intorno a Cinzia Calzature. Adesso ve la mostriamo, passo dopo passo. Prima vi mostriamo la logica del progetto. Alla fine potrete entrarci e provarla direttamente.</p></div>
+  <div class="tabs reveal delay1">
+
+
+
+   <article class="tab"><img src="assets/editorial/home/cinzia-hero-00-first.png" alt="Unisex"><div class="tab-content"><div class="tab-num">04 · ESPERIENZA</div><h3>Unisex</h3><p>Pezzi trasversali, brand e idee che non hanno bisogno di etichette.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="split">
+ <div class="split-copy reveal"><div class="eyebrow" style="color:#536400">Il concetto</div><h2>Ti facciamo<br>il <em>look.</em></h2><p>Online non volevamo limitarci a mostrare un prodotto.<br><br>Volevamo portare online una parte di quello che succede in negozio: <strong>scoprire, scegliere, combinare, chiedere un consiglio.</strong><br><br>Il prodotto è una parte dell'esperienza. <strong>Il look è il punto di partenza.</strong></p></div>
+ <div class="look-stage"><img src="assets/editorial/shop-the-look/look-donna.jpg" alt="Shop the look"><div class="hotspot" style="left:28%;top:40%"><span class="tip">LOOK · Outfit completo</span></div><div class="hotspot" style="left:62%;top:58%"><span class="tip">PRODUCT · Scopri il prodotto</span></div><div class="hotspot" style="left:72%;top:30%"><span class="tip">STORE · Vieni in negozio</span></div></div>
+</section>
+
+<section class="section flow-section">
+ <div class="wrap flow-layout">
+  <div class="flow-sticky reveal"><div class="eyebrow" style="color:#607800">Il percorso</div><h2 class="giant">Non un<br>catalogo.<br><span class="serif">Un percorso.</span></h2><p>La persona può scoprire, lasciarsi ispirare, scegliere un look, trovare il prodotto e arrivare in negozio.<br><br><strong>Il digitale diventa un'estensione dell'esperienza Cinzia Calzature.</strong></p></div>
+  <div class="flow-list reveal delay1">
+   <div class="flow-row"><span class="flow-no">01</span><h3>Discover</h3><span class="arrow">↗</span></div>
+   <div class="flow-row"><span class="flow-no">02</span><h3>Get inspired</h3><span class="arrow">↗</span></div>
+   <div class="flow-row"><span class="flow-no">03</span><h3>Shop the look</h3><span class="arrow">↗</span></div>
+   <div class="flow-row"><span class="flow-no">04</span><h3>Choose</h3><span class="arrow">↗</span></div>
+   <div class="flow-row"><span class="flow-no">05</span><h3>Visit Cinzia Calzature</h3><span class="arrow">↗</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section demo">
+<div class="wrap">
+<div class="demo-head">
+<div class="reveal">
+<div class="eyebrow">Ma non volevamo fermarci all'idea</div>
+<h2 class="giant">Non solo<br>un'idea.<br><span class="serif">Una prima versione.</span></h2>
+</div>
+
+<p class="reveal delay1">
+Per questo abbiamo fatto un passo in più.
+Abbiamo preso questa direzione e iniziato a trasformarla in una prima versione reale dello store.
+<strong>Non un mockup da immaginare.</strong>
+Una prima esperienza navigabile, costruita partendo da Cinzia Calzature.
+</p>
+</div>
+
+<div class="browser reveal delay1">
+<div class="browser-top">
+<i class="dot"></i><i class="dot"></i><i class="dot"></i>
+<span class="browser-url">Cinzia Calzature · prima versione</span>
+</div>
+<div class="preview">
+<img src="assets/editorial/home/hero-01-store.jpg"
+alt="Prima versione dello store Cinzia Calzature">
+</div>
+</div>
+
+<div class="demo-cta">
+<p style="max-width:520px;margin:0 auto;text-align:center;color:var(--soft);font-size:12px;line-height:1.7">
+Ma prima di farvela aprire, vogliamo mostrarvi perché l'abbiamo costruita in questo modo.
+</p>
+</div>
+</div>
+</section>
+
+<section class="section note">
+<div class="wrap note-grid">
+
+<div class="reveal">
+<div class="eyebrow">Prima di chiedervi qualsiasi cosa</div>
+<h2 class="giant">Prima<br>lavoriamo.<br><span class="serif">Poi parliamo.</span></h2>
+</div>
+
+<div class="note-card reveal delay1">
+
+<div class="note-item">
+<strong>Non vi stiamo vendendo un'idea</strong>
+Abbiamo già iniziato a costruire una prima versione partendo da Cinzia Calzature.
+</div>
+
+<div class="note-item">
+<strong>Avete visto da dove siamo partiti</strong>
+Non abbiamo scelto un template e cambiato il logo.
+Abbiamo costruito il progetto intorno alla vostra identità, ai vostri prodotti e all'esperienza del negozio.
+</div>
+
+<div class="note-item">
+<strong>Questa non è la versione definitiva</strong>
+È il punto di partenza.
+Contenuti, catalogo, funzionalità e dettagli possono essere sviluppati insieme.
+</div>
+
+<div class="note-item">
+<strong>Il progetto ve lo abbiamo mostrato. La prova arriva adesso.</strong>
+Prima vi abbiamo fatto vedere la direzione che abbiamo immaginato per Cinzia Calzature.
+Alla fine della presentazione potrete entrare nella prima versione dello store e provarla direttamente.
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section end">
+<div class="wrap">
+
+<div class="eyebrow">Se la direzione vi piace</div>
+
+<h2 class="giant">
+Non vi vendiamo<br>
+semplicemente un<br>
+<span class="serif">sito.</span>
+</h2>
+
+<p class="end-copy">
+Vi mettiamo a disposizione un sistema che gestiamo nel tempo.
+Lo sviluppo iniziale è incluso:
+MediaBay si occupa dello sviluppo, della gestione, degli aggiornamenti,
+dell'infrastruttura e del supporto attraverso un unico servizio mensile.
+</p>
+
+<p class="end-copy" style="margin-top:22px">
+<strong>Per Cinzia Calzature il primo mese è gratuito.</strong>
+Nessun costo di sviluppo iniziale.
+Entrate nel servizio, vedete come lavoriamo e valutate concretamente il risultato.
+Poi decidete voi se continuare.
+</p>
+
+<div class="actions">
+<a class="big-btn" href="index.html">APRI LA DEMO ↗</a>
+<a class="big-btn" href="../../index.html">VISITA MEDIABAY ↗</a>
+<a class="big-btn" href="https://wa.me/393408373662?text=Ciao%20Cinzia%20Calzature%2C%20vorrei%20informazioni%20sul%20negozio." target="_blank" rel="noopener">PARLA CON UN CONSULENTE ↗</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="wrap foot">
+<div>
+<div class="foot-brand">MEDIA<span>BAY</span></div>
+<small>
+Physical presence. Digital impact.<br>
+Web · Commerce · AI · Automation
+</small>
+</div>
+<div class="foot-links">
+<span>PRESENTAZIONE PRIVATA · Cinzia Calzature · CAGLIARI</span>
+</div>
+</div>
+</footer>
+<script>
+const cursor=document.querySelector('.cursor');
+if(matchMedia('(pointer:fine)').matches){document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.classList.add('on')});document.querySelectorAll('a,.tab,.hotspot').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('big'));el.addEventListener('mouseleave',()=>cursor.classList.remove('big'))})}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const progress=document.querySelector('.progress i');addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.height=(scrollY/Math.max(h,1)*100)+'%'},{passive:true});
+const tabs=[...document.querySelectorAll('.tab')];tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active')}));
+</script>
+</body>
+</html>
